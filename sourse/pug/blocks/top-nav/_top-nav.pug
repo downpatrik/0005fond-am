@@ -13,7 +13,15 @@ mixin mob-mnu()
 mixin top-nav() 
 	// start top-nav
 	+b.top-nav.block-with-lazy
-		.container
-			+mnu()
-					
+		.container-fluid
+			.row
+				+e.col.col-auto
+				.col
+					+mnu2()
+					+mnu0()
+				+e.col.col-auto
+					+b.link-donate(href="#")
+						+e.icon-wrap
+							+icon('donate')
+						| ПОЖЕРТВОВАТЬ
 	// end top-nav

@@ -129,16 +129,48 @@ mixin mnu()
 mixin mnu()
 	-
 		var nav= {
-			"Главная":"/",
-			"Услуги  ":"#",
-			"Подбор септика   ":"#",
-			"Акции ":"#"," О компании  ":"#",
-			" Доставка и оплата ":"#",
-			" Клиентам  ":"#",
-			" Наши работы   ":"#",
-			"Контакты ":"#"
-			}
-	+e.UL.nav(itemscope itemtype="http://schema.org/SiteNavigationElement")
+			"Главная":"#",
+			"О фонде":"#",
+			"Текущие проекты":"#",
+			"Реализованные проекты":"#",
+			"Новости":"#",
+			"Контакты":"#",
+			"":"#",
+			"":"#",
+			} 
+			
+	+b.UL.nav--lg(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		each linkPatch, linkName in nav
+			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+//- /menu
+mixin mnu0()
+	-
+		var nav= { 
+			"О фонде":"#",
+			"Текущие проекты":"#",
+			"Реализованные проекты":"#",
+			"Новости":"#",
+			"Контакты":"#",
+			"":"#",
+			"":"#",
+			} 
+
+	+b.UL.nav--lg(itemscope itemtype="http://schema.org/SiteNavigationElement")
+		each linkPatch, linkName in nav
+			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+//- /menu
+
+mixin mnu2()
+	-
+		var nav= {
+			"Официальные документы":"#",
+			"Финансовые отчёты":"#",
+			"Заявка на попечение":"#",
+			"Инфо-стойки фонда":"#",
+			"Поделиться":"#",
+			} 
+			
+	+b.UL.nav--sm(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		each linkPatch, linkName in nav
 			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
 //- /menu

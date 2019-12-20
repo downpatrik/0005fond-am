@@ -1,0 +1,223 @@
+.project-lg {
+  @include media-breakpoint-down(xs) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  color: #FFFFFF;
+
+  @include media-breakpoint-up(xl) {
+
+    padding: rem(43) rem(50) rem(20);
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    padding: rem(30) rem(25) rem(20);
+  }
+
+  padding: rem(30) rem(15) rem(20);
+  background-color: rgba(60, 65, 79, 1);
+  mix-blend-mode: normal;
+  position: relative;
+  overflow: hidden;
+
+  @include media-breakpoint-up(sm) {
+
+    border-radius: 8px;
+    box-shadow: 0px 16px 32px rgba(80, 87, 105, 0.3);
+  }
+
+  @include media-breakpoint-up(xl) {
+
+    height: rem(700);
+  }
+
+  @include media-breakpoint-up(sm) {
+
+    height: rem(430);
+  }
+
+  height: rem(370);
+  z-index: 2;
+
+  picture {
+    opacity: 0.4;
+  }
+
+
+
+  &__label {
+    letter-spacing: 0.1em;
+    background-image: linear-gradient(90deg, #CF2500 0%, #FF4545 100%);
+    border-radius: 20px;
+    display: inline-block;
+    border-radius: rem(20);
+    padding: rem(3) rem(15);
+    text-align: left;
+    min-width: rem(25);
+    font-size: rem(13);
+    text-transform: uppercase;
+    color: #ffffff;
+
+    &:first-letter {
+      font-size: 1.32em;
+    }
+
+    z-index: 4;
+    position: relative;
+    // margin-bottom: rem(3);
+    // text-transform: uppercase;
+
+  }
+
+  &__title {
+    z-index: 4;
+    position: relative;
+    // @extend .h1;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(xl) {
+
+      font-size: rem(36);
+    }
+
+    @include rfs(rem(30));
+    @extend .mono;
+    // margin-top: rem(5);
+    // font-size: 48px;
+    max-width: em(170);
+    line-height: 1.14;
+    min-height: 4em;
+
+    &:first-letter {
+      font-size: 1.4em;
+    }
+
+    a {
+      color: #ffffff;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  &__center {
+    position: absolute;
+    width: 100%;
+
+    @include media-breakpoint-up(xl) {
+
+      top: 26%;
+    }
+
+    top: 16%;
+    left: 0;
+  }
+
+  &__play {
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(xl) {
+
+      width: rem(160px);
+      height: rem(160px);
+      border: 3px solid #ffffff;
+    }
+
+    border: 1px solid #ffffff;
+    width: rem(80);
+    height: rem(80);
+    display: block;
+    color: #ffffff;
+    border-radius: 50%;
+    position: relative;
+    margin-top: rem(90);
+    margin-bottom: rem(10);
+
+    &::before {
+      content: '';
+
+      @include media-breakpoint-up(xl) {
+
+        @include triangle(rem(70 * .9) rem(64 * .9), currentColor, right);
+      }
+
+      @include triangle(rem(70 * .9 / 2) rem(64 * .9 / 2), currentColor, right);
+      @include a-cent;
+      margin-left: 5%;
+    }
+  }
+
+  &__center-text {
+
+    // @extend .h2;
+    @include media-breakpoint-up(xl) {
+
+      font-size: rem(36);
+    }
+
+    font-size: rem(30);
+    @include rfs(rem(30));
+    @extend .mono;
+    margin-bottom: rem(55);
+    margin-left: auto;
+    margin-right: auto;
+    max-width: em(206);
+    text-align: center;
+    // margin-bottom: rem(20);
+  }
+}
+
+.project-lg-wrap {
+  position: relative;
+  margin-bottom: rem(60);
+
+  &__btn {
+    color: #ffffff;
+    padding: rem(6);
+    padding-top: rem(6 * 1.2);
+    padding-bottom: rem(6 * .8);
+    bottom: 11%;
+
+    @include media-breakpoint-up(xl) {
+      background-color: transparent !important;
+      border-color: #ffffff;
+      // display: block;
+      @include a-cent(x);
+
+      &:hover {
+        background-color: #FFFFFF !important;
+        /* Тень видео */
+        box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.25);
+        color: #C5AA79;
+      }
+
+      &:focus {
+        color: #FFFFFF;
+        background-color: #B9A073 !important;
+        border-color: #B9A073 !important;
+        box-shadow: 0px 4px 8px rgba(197, 170, 121, 0.5) !important;
+      }
+
+      margin-top: 0;
+    }
+
+    margin-top: rem(40);
+    background-color: $primary !important;
+    box-shadow: 0px 8px 16px rgba(197, 170, 121, 0.25);
+
+    &:hover {
+      background: #B9A073 !important;
+      box-shadow: 0px 8px 16px rgba(197, 170, 121, 0.25);
+      color: #fff;
+    }
+
+  }
+}

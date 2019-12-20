@@ -1,0 +1,52 @@
+mixin s-project()
+	// start s-project
+	+b.SECTION.s-project.section#s-project&attributes(attributes)
+		.container
+			+b.section-title.text-center
+				h2 Текущие проекты
+			+b.project-lg-wrap
+				+b.project-lg.bg-wrap
+					+pic("project-main-1","bg",'')(class="picture-bg")
+					+e.label Основной проект фонда
+					+e.title
+						a(href="#") Новоспасский монастырь
+					+e.center
+						+e.play(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
+						+e.center-text Всем миром украсим храм для&nbsp;#[em &laquo;Bсецарицы&raquo;]
+				+e.btn.btn-more(href="#") ПОДРОБНЕЕ
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					- for (var x = 0; x < 6; x++)
+						+e.slide.swiper-slide
+							+b.project-item.bg-wrap
+								+pic("projec-1",'bg','')(class="picture-bg")
+								+e.place
+									+icon('mark')
+									|  г. Клин
+								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
+									br
+									em в Клину
+								+e.text= p
+								+e.price
+									.row
+										.col-6
+											+e.price-title Требуется
+											+e.number 500 000 000
+										
+										.col-6
+											+e.price-title Собрано
+											+e.number 399 050 860
+								+e.btn(href="#") ПОМОЧЬ ХРАМУ
+								+e.foot
+									+e.foot-item
+										+icon("eye")
+										| 45
+									
+									+e.foot-item
+										+icon("donate")
+										| 133
+									+e.foot-item
+										+icon("share")
+										| 18
+				+arrow()
+	// end s-project

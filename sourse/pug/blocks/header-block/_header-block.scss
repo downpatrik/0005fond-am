@@ -1,7 +1,16 @@
 .header-block {
 	display: block;
- 
-	
+	background-color: #93344A;
+	background-image: url(../img/@2x/header-bg.jpg);
+	@include bgs;
+	min-height: 100vh;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: rem(95);
+	padding-bottom: rem(20);
+
 	// 
 	@include media-breakpoint-up(xl) {}
 

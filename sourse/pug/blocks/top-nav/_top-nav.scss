@@ -1,31 +1,63 @@
 .top-nav {
-	padding-top: 15px;
-	// position: absolute;
-	top: 100%;
-	// @include clearfix;ss
+
 	z-index: 20;
-	padding-top: 3px;
+	padding-top: rem(20);
+	padding-left: rem(10);
+	padding-right: rem(10);
 	@include mt;
 	padding-bottom: 10px;
 	top: 0;
 	left: 0;
 	width: 100%;
+	position: absolute;
 
-	&.fixed {
-		width: 100vw;
-		bottom: auto;
-		margin-top: 0;
-		background-color: #fff;
+
+	.nav {
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+		@include roww(15);
+		margin-bottom: 0;
+		padding-top: rem(10);
+		padding-bottom: rem(2);
+
+		// font-weight: normal;
+
+		&__item {
+			display: block;
+			text-align: center;
+		}
+
+		&--lg {
+			@include roww(16);
+			@extend .h4;
+			@extend .mono;
+			font-weight: 500;
+
+			.nav__item:nth-child(1) {
+				// display: none;
+			}
+		}
+
+		&__link {
+			color: #ffffff;
+			text-decoration: none !important;
+
+			&:hover {
+				color: $primary;
+			}
+		}
 	}
 
-	&__nav {
-		text-align: center;
-		list-style-type: none;
+	&__link {
+		display: inline-flex;
+
 	}
 
-	&__item {
-		display: inline-block;
-		list-style-type: none;
+	&__icon_wrap {}
+
+	&__col {
+		width: rem(214);
 	}
 
 	// 
@@ -63,4 +95,38 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {}
+}
+
+.link-donate {
+	display: inline-flex;
+	color: #ffffff;
+	font-size: rem(13);
+	letter-spacing: rem(1.95px);
+	align-items: center;
+	text-decoration: none !important;
+
+	&__icon-wrap {
+		border-radius: 50%;
+		width: rem(40);
+		height: rem(40);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $primary;
+		margin-right: rem(15);
+		@include mt;
+
+		.icon {
+			color: #ffffff;
+			font-size: rem(20);
+		}
+	}
+
+	&:hover {
+		color: #B9A073;
+	}
+
+	&:hover &__icon-wrap {
+		background-color: #b9a073;
+	}
 }
