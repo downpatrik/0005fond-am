@@ -117,25 +117,10 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
-
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
 
 	// /закрыть/открыть мобильное меню
 
@@ -143,24 +128,21 @@ function eventHandler() {
 
 		const w = $(window).width();
 
-		// $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
 		// скрывает моб меню
 
 		const topH = $("header ").innerHeight();
 
 		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
+			if ($(window).scrollTop() > 150) {
+				$('.top-line  ').addClass('fixed');
 			} else {
-				$('.top-nav  ').removeClass('fixed');
+				$('.top-line  ').removeClass('fixed');
 			}
 		});
 		// конец добавил
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
+		// 	if (window.matchMedia("(min-width: 992px)").matches) {
+		// 		JSCCommon.closeMenu();
+		// 	}
 	}
 
 	$(window).resize(function () {
@@ -213,25 +195,112 @@ function eventHandler() {
 
 		}
 	});
+	let mySwiperMob = new Swiper('.slider-auto-mob-js', {
+		speed: 400,
+		loop: true,
+		loopedSlides: 4,
+		spaceBetween: 20,
+		slidesPerView: 'auto',
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
+		loop: false,
+		breakpoints: {
+			576: {
+				spaceBetween: 30,
+			},
+		}
+	});
 
 	var mySwiper2 = new Swiper('.s-project__slider--js', {
 		// effect: 'coverflow',
 		// grabCursor: true,
-		slidesPerView: 3,
-		spaceBetween: 30,
+		slidesPerView: 1,
+		spaceBetween: 20,
 		loop: true,
-		loopedSlides: 20,
-		slidesOffsetBefore: -60,
-		slidesOffsetAfter: -60,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},
-		// slidesPerView: 110,
-		// slidesPerGroup: 2,
-		// slidesOffsetBefore: 110,
+		loopedSlides: 6,
 
+
+		breakpoints: {
+			// 576: {
+
+			// },
+			576: {
+				slidesPerView: 2,
+
+			},
+			991: {
+				slidesPerView: 3,
+
+			},
+
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+				slidesOffsetBefore: -80,
+				slidesOffsetAfter: -80,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			},
+
+		}
 	});
+	var mySwiper3 = new Swiper('.s-project__slider--3-js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		loopedSlides: 6,
+		breakpoints: {
+			991: {
+				slidesPerView: 2,
+
+			},
+
+			1200: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+				slidesOffsetBefore: -80,
+				slidesOffsetAfter: -80,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			},
+
+		}
+	});
+	$(".section").each(function () {
+
+		let mySwiper4 = new Swiper($(this).find('.slider-js'), {
+			speed: 400,
+			loop: true,
+			loopedSlides: 4,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev'),
+			},
+		});
+	})
+	var mySwiper5 = new Swiper('.s-news__slider--js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		loopedSlides: 6,
+		breakpoints: {
+			576: {
+				slidesPerView: 2,
+
+			}
+		}
+	});
+
+	$(".project-item").hover(function () {
+		$(this).find(".project-item__btn-wrap").slideToggle(150)
+	})
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

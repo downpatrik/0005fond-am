@@ -3,7 +3,38 @@ mixin s-rews()
 	+b.SECTION.s-rews.section#s-rews&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 s-rews
-				
-			.row
+				h2 Отзывы
+			+e.slider-wrapper
+				+e.slider.slider-js.swiper-container
+					.swiper-wrapper
+						mixin slide()
+							+e.slide.swiper-slide 
+								+e.DIV.item
+									.row
+										.col
+											+e.place(href="#")
+												+e.DIV.img-wrap-sm
+													img.res-i(src="img/@2x/projec-2.jpg", alt="")
+												|  Храм Покрова Пресвятой Богородицы в Ясенве
+											p «Участвовали в проекте «Узнай! Вдохновись! Сделай!». Огромное спасибо за экскурсию об истории благотворительности. Много узнали о предпринимателях - благотворителях и меценатах! Лисицына А. - профессионал с большой буквы! Работники музея - фанаты своего дела, влюбленные в Москву, в страну, прекрасно владеющие знаниями по истории страны и навыками общения с посетителями! Спасибо»!
+											.row
+												.col
+													+e.man
+														+e.img-wrap-man
+															img.res-i(src="img/@2x/man.png", alt="")
+														div
+															+e.name Патриарх Кирилл
+															+e.prof Настоятель Всея Руси
+												.col-auto.d-none.d-md-block.d-lg-none
+													+e.img-wrap(href="img/@2x/rew.jpg" data-fancybox="rew")
+														img.res-i(src="img/@2x/rew.jpg", alt="")
+										.col-auto.d-none.d-lg-block
+											+e.img-wrap(href="img/@2x/rew.jpg" data-fancybox="rew")
+												img.res-i(src="img/@2x/rew.jpg", alt="")
+								 
+							// /+e.DIV.slide.swiper-slide
+						+slide()
+						+slide()
+						+slide()
+				+arrow()
 	// end s-rews

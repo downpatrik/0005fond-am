@@ -3,7 +3,26 @@ mixin s-why()
 	+b.SECTION.s-why.section#s-why&attributes(attributes)
 		.container
 			+b.section-title.text-center
-				h2 s-why
+				h2 Как пожертвовать
+				+e.text Если вам близки ценности фонда и&nbsp;вы&nbsp;хотите помочь нам в&nbsp;развитии благо дела &minus; храмоздания, вы&nbsp;можете сделать это  следующими способами:
 				
-			.row
+			+e.slider.slider-auto-mob-js.swiper-container
+				.swiper-wrapper
+					mixin slide(i, t,p)
+						+e.slide.swiper-slide 
+							+e.item
+								+e.icon-wrap
+									+icon('s-why-'+ i)
+								+e.title= t
+								p= p
+								block
+						// /+e.DIV.slide.swiper-slide
+					+slide('1','ЧЕРЕЗ ИНТЕРНЕТ','Банковской картой или электронными деньгами')
+						+e.foot
+							img.res-i(src="img/@2x/bank_icons.png", alt="")
+					+slide('2','СМС-ПОЖЕРТВОВАНИЕ','Отправить сообщение на короткий номер')
+						+e.foot
+							img.res-i(src="img/@2x/phone_icons 1.png", alt="")
+					+slide('3','НАЛИЧНЫМИ','Внести пожертвование на стойке фонда  в одном из ТЦ Москвы')
+					+slide('4','ЮРИДИЧЕСКИМ ЛИЦАМ','Заполнить форму основания платежа')
 	// end s-why

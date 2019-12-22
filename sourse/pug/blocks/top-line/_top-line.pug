@@ -1,6 +1,17 @@
 mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
-		.container
-			.row top-line
+		.container-fluid
+			.row
+				+e.col.col-auto
+					+b.toggle-menu-mobile--js
+						span
+				.col 
+					+e.logo
+						img.res-i(src="img/svg/logo.svg", alt="")
+				+e.col.col-auto
+					+b.link-donate(href="#")
+						+e.icon-wrap
+							+icon('donate')
+						.d-none.d-xxl-block ПОЖЕРТВОВАТЬ
 	// end .top-line

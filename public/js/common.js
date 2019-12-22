@@ -100,7 +100,7 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _;
+	var _, _ref;
 
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
@@ -113,39 +113,24 @@ function eventHandler() {
 	JSCCommon.mobileMenu();
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
-	// const url = document.location.href;
-	// $.each($(".top-nav__nav a "), function() {
-	// 	if (this.href == url) {
-	// 		if ($(this).hasClass("top-nav__link") == true) {
-	// 			$(this).addClass('top-nav__link-active');
-	// 		}
-	// 		if ($(this).hasClass("footer__link") == true) {
-	// 			$(this).addClass('footer__link-active');
-	// 		} 
-	// 	}; 
-	// }); 
+	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	// /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
-		var w = $(window).width(); // $(".main-wrapper").css("margin-bottom", $('footer').height())
-		// $(".otz__item .text-wrap ").height('auto').equalHeights();
-		// 
-		// скрывает моб меню
+		var w = $(window).width(); // скрывает моб меню
 
 		var topH = $("header ").innerHeight();
 		$(window).scroll(function () {
-			if ($(window).scrollTop() > topH) {
-				$('.top-nav  ').addClass('fixed');
+			if ($(window).scrollTop() > 150) {
+				$('.top-line  ').addClass('fixed');
 			} else {
-				$('.top-nav  ').removeClass('fixed');
+				$('.top-line  ').removeClass('fixed');
 			}
 		}); // конец добавил
-
-		if (window.matchMedia("(min-width: 992px)").matches) {
-			JSCCommon.closeMenu();
-		}
+		// 	if (window.matchMedia("(min-width: 992px)").matches) {
+		// 		JSCCommon.closeMenu();
+		// 	}
 	}
 
 	$(window).resize(function () {
@@ -183,22 +168,95 @@ function eventHandler() {
 			}, _defineProperty(_, "slidesPerView", 'auto'), _defineProperty(_, "watchOverflow", true), _defineProperty(_, "freeMode", true), _defineProperty(_, "freeModeMomentum", true), _defineProperty(_, "loop", false), _)
 		}
 	});
+	var mySwiperMob = new Swiper('.slider-auto-mob-js', (_ref = {
+		speed: 400,
+		loop: true,
+		loopedSlides: 4,
+		spaceBetween: 20,
+		slidesPerView: 'auto',
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true
+	}, _defineProperty(_ref, "loop", false), _defineProperty(_ref, "breakpoints", {
+		576: {
+			spaceBetween: 30
+		}
+	}), _ref));
 	var mySwiper2 = new Swiper('.s-project__slider--js', {
 		// effect: 'coverflow',
 		// grabCursor: true,
-		slidesPerView: 3,
-		spaceBetween: 30,
+		slidesPerView: 1,
+		spaceBetween: 20,
 		loop: true,
-		loopedSlides: 20,
-		slidesOffsetBefore: -60,
-		slidesOffsetAfter: -60,
-		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev'
-		} // slidesPerView: 110,
-		// slidesPerGroup: 2,
-		// slidesOffsetBefore: 110,
-
+		loopedSlides: 6,
+		breakpoints: {
+			// 576: {
+			// },
+			576: {
+				slidesPerView: 2
+			},
+			991: {
+				slidesPerView: 3
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 30,
+				slidesOffsetBefore: -80,
+				slidesOffsetAfter: -80,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				}
+			}
+		}
+	});
+	var mySwiper3 = new Swiper('.s-project__slider--3-js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		loopedSlides: 6,
+		breakpoints: {
+			991: {
+				slidesPerView: 2
+			},
+			1200: {
+				slidesPerView: 2,
+				spaceBetween: 30,
+				slidesOffsetBefore: -80,
+				slidesOffsetAfter: -80,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				}
+			}
+		}
+	});
+	$(".section").each(function () {
+		var mySwiper4 = new Swiper($(this).find('.slider-js'), {
+			speed: 400,
+			loop: true,
+			loopedSlides: 4,
+			slidesPerView: 1,
+			spaceBetween: 20,
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev')
+			}
+		});
+	});
+	var mySwiper5 = new Swiper('.s-news__slider--js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+		loopedSlides: 6,
+		breakpoints: {
+			576: {
+				slidesPerView: 2
+			}
+		}
+	});
+	$(".project-item").hover(function () {
+		$(this).find(".project-item__btn-wrap").slideToggle(150);
 	});
 }
 

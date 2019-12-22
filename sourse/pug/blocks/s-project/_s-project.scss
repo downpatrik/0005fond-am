@@ -3,26 +3,99 @@
 
 	swiper-slide-duplicate swiper-slide-prev {}
 
-	.swiper-slide {
-		@include mt;
+	&__slider {
+		@include media-breakpoint-up(xl) {
+
+			margin-bottom: rem(80);
+		}
+
+		@include media-breakpoint-up(sm) {
+
+			margin-bottom: rem(60);
+		}
+
+		margin-bottom: rem(30);
 	}
 
-	.swiper-slide-prev {
-		margin-right: rem(90) !important;
+	.swiper-slide {
+		@include mt;
+
+
+
+	}
+
+	@include media-breakpoint-up(xl) {
+
+		.swiper-slide-prev {
+			margin-right: rem(110) !important;
+			opacity: 0.25;
+
+			.project-item {
+
+				pointer-events: none;
+			}
+		}
+	}
+
+	.swiper-slide {
+		opacity: 0.25;
 	}
 
 	.swiper-slide-active {
 		padding: 0 !important;
+		opacity: 1;
 
+		@include media-breakpoint-up(xl) {
 
-		+.swiper-slide+.swiper-slide+.swiper-slide {
-			margin-left: rem(90) !important;
+			+.s-project__slide--lg.swiper-slide,
+			+.s-project__slide--lg.swiper-slide+.s-project__slide--lg.swiper-slide {
+				opacity: 1;
+			}
+
+			+.s-project__slide--lg.swiper-slide+.s-project__slide--lg.swiper-slide+.s-project__slide--lg.swiper-slide {
+				margin-left: rem(80) !important;
+				opacity: 0.25;
+
+				.project-item {
+
+					pointer-events: none;
+				}
+			}
+
+			+.s-project__slide--sm.swiper-slide+.s-project__slide--sm.swiper-slide {
+				margin-left: rem(80) !important;
+				opacity: 0.25;
+
+				.project-item {
+
+					pointer-events: none;
+				}
+			}
+
+			+.s-project__slide--sm.swiper-slide {
+				opacity: 1;
+			}
+
+			+.s-project__slide--sm.swiper-slide+.s-project__slide--sm.swiper-slide+.s-project__slide--sm.swiper-slide {
+				margin-left: rem(0) !important;
+				opacity: 0.25;
+
+				.project-item {
+
+					pointer-events: none;
+				}
+			}
 
 		}
 	}
 
 	.swiper-slide-next {
 		// padding-left: rem(90);
+	}
+
+	&__btn {
+		@extend .btn-outline-primary;
+		background-color: #ffffff !important;
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -53,11 +126,31 @@
 	//
 	@include media-breakpoint-down(xl) {}
 
-	@include media-breakpoint-down(lg) {}
+	@include media-breakpoint-down(lg) {
+		.swiper-button-hand {
+			display: none !important;
+		}
+	}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(xs) {
+		&__container {
+			max-width: rem(270px);
+		}
+	}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(md) {
+		&__container-sm {
+			max-width: rem(450px);
+		}
+
+	}
+
+	@include media-breakpoint-down(sm) {
+		&__container-sm {
+			max-width: rem(310px);
+		}
+
+	}
 
 	@include media-breakpoint-down(xs) {}
 

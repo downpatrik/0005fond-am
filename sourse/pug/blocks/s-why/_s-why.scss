@@ -1,29 +1,100 @@
+// start .s-why
+.s-why {
+	padding-bottom: 0 !important;
 
-	// start .s-why
-	.s-why {
-		 
+	.section-title {
+		padding-bottom: rem(60);
+	}
+
+	&__slide {
+		width: rem(263);
+		height: inherit;
+	}
+
+	.swiper-wrapper {
+		height: inherit;
+	}
+
+	&__icon-wrap {
+		.icon {
+			color: currentColor;
+			font-size: rem(65);
+			@include mt;
+
+		}
+
+		margin-bottom: rem(15);
+	}
+
+	&__title {
+		font-size: $small;
+		font-weight: 700;
+		letter-spacing: 1.3px;
+		margin-bottom: rem(10);
+		letter-spacing: 0.1em;
+	}
+
+	&__item {
+		background-color: #ffffff;
+		border-radius: 8px;
+		@include mt;
+		display: flex;
+		flex-direction: column;
+		padding: rem(20) rem(26) rem(10);
+		box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.25);
+		height: 100%;
+
+		&__foot {
+			margin-top: auto;
+		}
+
+		&:hover {
+			background: #3C414F;
+			/* Тень для карточек */
+			color: #ffffff;
+
+			.icon {
+				color: $primary;
+			}
+		}
+	}
+
 	@include media-breakpoint-up(xl) {}
+
 	@include media-breakpoint-up(lg) {}
+
 	@include media-breakpoint-up(md) {}
+
 	@include media-breakpoint-up(sm) {}
+
 	@include media-breakpoint-up(xs) {}
-	
+
 	//
-	@include media-breakpoint-between(md, xl) { }
-	
-	
+	@include media-breakpoint-between(md, xl) {}
+
+
 	//
 	@include media-breakpoint-only(xs) {}
+
 	@include media-breakpoint-only(sm) {}
+
 	@include media-breakpoint-only(md) {}
+
 	@include media-breakpoint-only(lg) {}
+
 	@include media-breakpoint-only(xl) {}
-	
+
 	//
 	@include media-breakpoint-down(xl) {}
-	@include media-breakpoint-down(lg) {}
-	@include media-breakpoint-down(md) {}
-	@include media-breakpoint-down(sm) {}
-	@include media-breakpoint-down(xs) {} 
 
-} // end.s-why
+	@include media-breakpoint-down(lg) {}
+
+	@include media-breakpoint-down(md) {}
+
+	@include media-breakpoint-down(sm) {}
+
+	@include media-breakpoint-down(xs) {}
+
+}
+
+// end.s-why

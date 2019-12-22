@@ -1,4 +1,41 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			h2 footer
+			.row
+				.col-lg-3.col-md-4.text-md-left.text-center
+					a(href="#")
+						img.res-i(src="img/svg/logo-lg.svg", alt="")
+				.col-lg-9.col-md-8
+					.row
+						+e.col.col-lg
+							.row
+								.col-lg-12.col-sm-6
+									+e.title: a(href="#") О фонде
+									ul.op
+										li: a(href="#") Официальные документы
+										li: a(href="#") Финансовые отчёты
+										li: a(href="#") Заявка на попечение
+										li: a(href="#") Инфо-стойки фонда
+								.col-lg-12.col-sm-6
+									+e.title: a(href="#") Текущие проекты
+									+e.title: a(href="#") Реализованные проекты
+									+e.title: a(href="#") Новости
+							
+						+e.col.col-lg.col-sm-6.order-lg-last.order-sm-0.order-first
+							+e.title Контакты
+							p 117463, г.Москва, #[br] ул. Новоясеневский пр-т, 42 #[br] #[a(href="tel:8(495)422-25-88") 8 (495) 422-25-88] 
+								br
+								a(href="mailto:info@fond-am.ru") info@fond-am.ru
+						+e.col.col-lg.col-sm-6.order-sm-0.order-first
+							+e.title Социальные сети
+							ul.socc
+								li: a(href="#") Vkontakte
+								li: a(href="#") Facebook
+								li: a(href="#") Instagram
+								li: a(href="#") Twitter 
+
+			+e.bottom.text-md-left.text-center
+				.row
+					.col.mb-3 © 2010 — 2019. Благотворительный фонд Святого Архангела Михаила
+					 
+					.col-xl-auto.col-md-5.mb-3 По всем вопросам обращайтесь на #[a(href="mailto:info@fond-am.ru") info@fond-am.ru]

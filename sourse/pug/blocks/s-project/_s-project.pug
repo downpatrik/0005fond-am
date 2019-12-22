@@ -7,26 +7,29 @@ mixin s-project()
 			+b.project-lg-wrap
 				+b.project-lg.bg-wrap
 					+pic("project-main-1","bg",'')(class="picture-bg")
-					+e.label Основной проект фонда
-					+e.title
-						a(href="#") Новоспасский монастырь
+					div
+						+e.label Основной проект фонда
+						+e.title
+							a(href="#") Новоспасский монастырь
 					+e.center
 						+e.play(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
 						+e.center-text Всем миром украсим храм для&nbsp;#[em &laquo;Bсецарицы&raquo;]
 				+e.btn.btn-more(href="#") ПОДРОБНЕЕ
+		+e.container.container
 			+e.slider--js.swiper-container
 				.swiper-wrapper
-					- for (var x = 0; x < 6; x++)
-						+e.slide.swiper-slide
+					- for (var x = 1; x < 7; x++)
+						+e.slide--lg.swiper-slide
 							+b.project-item.bg-wrap
 								+pic("projec-1",'bg','')(class="picture-bg")
 								+e.place
 									+icon('mark')
 									|  г. Клин
-								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
+								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
 									br
 									em в Клину
-								+e.text= p
+										= x
+								+e.text Требуется роспись стен
 								+e.price
 									.row
 										.col-6
@@ -36,7 +39,8 @@ mixin s-project()
 										.col-6
 											+e.price-title Собрано
 											+e.number 399 050 860
-								+e.btn(href="#") ПОМОЧЬ ХРАМУ
+								+e.btn-wrap
+									+e.btn.btn-sm(href="#") ПОМОЧЬ ХРАМУ
 								+e.foot
 									+e.foot-item
 										+icon("eye")
@@ -49,4 +53,72 @@ mixin s-project()
 										+icon("share")
 										| 18
 				+arrow()
+			+e.btn.btn-more(href="#") ВСЕ ПРОЕКТЫ
 	// end s-project
+
+mixin s-project2()
+	// start s-project
+	+b.SECTION.s-project.section#s-project&attributes(attributes)
+		.container
+			div
+				+b.section-title.text-center
+					h2 реализованные проекты
+			+b.project-lg-wrap
+				+b.project-lg--blue.bg-wrap
+					+pic("project-main-2","bg",'')(class="picture-bg")
+					//- +e.label Основной проект фонда
+					+e.title
+						a(href="#") Храм Покрова Пресвятой  Богородицы
+							| 
+							em в Ясеневе
+					+e.center
+						+e.play(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
+						//- +e.center-text Всем миром украсим храм для&nbsp;#[em &laquo;Bсецарицы&raquo;]
+					ul
+						li
+							strong 5 лет 
+
+							| строительства
+						
+						li
+							strong 5 в мире 
+
+							| по объёму  мозаики
+						li
+							strong 5
+							| уникальных архитектурных  проектов
+						li
+							strong 1 000 000
+							| участников
+
+
+				+e.btn.btn-more(href="#") ПОДРОБНЕЕ
+		+e.container-sm.container
+			+e.slider--3-js.swiper-container
+				.swiper-wrapper
+					- for (var x = 1; x < 7; x++)
+						+e.slide--sm.swiper-slide
+							+b.project-item--sm.bg-wrap
+								+pic("projec-2",'bg','')(class="picture-bg")
+								+e.place
+									+icon('mark')
+									|  г. Клин
+								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
+									br
+									em в Клину
+										= x
+
+								+e.foot-sm
+									+e.text-sm Приняло участие 
+									.row
+										.col
+											+e.user-count
+												+icon("user")
+												| 5 000
+											| человек 
+										.col-auto.d-none.d-md-block
+											+e.btn-more(href="#") ПОДРОБНЕЕ
+				+arrow()
+			+e.btn.btn-more(href="#") ВСЕ ПРОЕКТЫ
+	// end s-project
+

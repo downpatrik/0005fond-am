@@ -1,9 +1,13 @@
 mixin s-logo()
 	// start s-logo
-	+b.SECTION.s-logo.section#s-logo&attributes(attributes)
+	+b.s-logo.section#s-logo&attributes(attributes)
 		.container
-			+b.section-title.text-center
-				h2 s-logo
-				
-			.row
+			+e.slider.slider-auto-mob-js.swiper-container
+				.swiper-wrapper
+					mixin slide(i, t,p)
+						+e.slide.swiper-slide 
+							img.res-i(src=`img/@2x/logo-${i}.png`, alt="")
+						// /+e.DIV.slide.swiper-slide
+					- for (var x = 1; x < 7; x++)
+						+slide(x)
 	// end s-logo

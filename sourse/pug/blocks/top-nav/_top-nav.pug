@@ -1,14 +1,20 @@
 
 mixin mob-mnu()
-	+b.toggle-menu-mobile--js.d-lg-none
-		span
-	+b.menu-mobile--js.d-lg-none
-		+b.toggle-menu-mobile--js
-			span
+
+	+b.menu-mobile--js
 		+e.inner
+			+b.toggle-menu-mobile--js
+				img.res-i(src="img/svg/arrow-long-left.svg", alt="")
 		
 			+mnu()
-			.text-right
+			+mnu2()
+			+e.text
+				a(href="tel:+7 (495) 422-25-88") +7 (495) 422-25-88
+				br
+				a(href="mailto:info@fond-am.ru") info@fond-am.ru
+				br
+				| Москва, Новоясеневский пр-т, 42
+		+e.btn(href="#") ПОЖЕРТВОВАТЬ
 	//  мобильное меню
 mixin top-nav() 
 	// start top-nav
@@ -16,12 +22,15 @@ mixin top-nav()
 		.container-fluid
 			.row
 				+e.col.col-auto
+					+b.toggle-menu-mobile--js.d-lg-none
+						span
 				.col
-					+mnu2()
-					+mnu0()
+					.d-none.d-lg-block
+						+mnu2()
+						+mnu0()
 				+e.col.col-auto
 					+b.link-donate(href="#")
 						+e.icon-wrap
 							+icon('donate')
-						| ПОЖЕРТВОВАТЬ
+						.d-none.d-xxl-block ПОЖЕРТВОВАТЬ
 	// end top-nav

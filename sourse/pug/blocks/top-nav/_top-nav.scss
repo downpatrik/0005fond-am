@@ -2,8 +2,13 @@
 
 	z-index: 20;
 	padding-top: rem(20);
-	padding-left: rem(10);
-	padding-right: rem(10);
+
+	@include media-breakpoint-up(xxl) {
+
+		padding-left: rem(10);
+		padding-right: rem(10);
+	}
+
 	@include mt;
 	padding-bottom: 10px;
 	top: 0;
@@ -11,12 +16,31 @@
 	width: 100%;
 	position: absolute;
 
+	&__col {
+		@include media-breakpoint-up(xxl) {
+
+			width: rem(214);
+		}
+
+		width: calc(#{rem(40)} + 30px);
+	}
 
 	.nav {
 		list-style-type: none;
 		display: flex;
 		justify-content: center;
-		@include roww(15);
+
+		@include media-breakpoint-up(xxl) {
+
+			@include roww(15);
+		}
+
+		@include media-breakpoint-up(xl) {
+
+			@include roww(10);
+		}
+
+		@include roww(5);
 		margin-bottom: 0;
 		padding-top: rem(10);
 		padding-bottom: rem(2);
@@ -29,24 +53,14 @@
 		}
 
 		&--lg {
-			@include roww(16);
-			@extend .h4;
-			@extend .mono;
-			font-weight: 500;
 
-			.nav__item:nth-child(1) {
-				// display: none;
+			@include media-breakpoint-up(xl) {
+				@include roww(16);
 			}
+
+			@include roww(6);
 		}
 
-		&__link {
-			color: #ffffff;
-			text-decoration: none !important;
-
-			&:hover {
-				color: $primary;
-			}
-		}
 	}
 
 	&__link {
@@ -56,9 +70,6 @@
 
 	&__icon_wrap {}
 
-	&__col {
-		width: rem(214);
-	}
 
 	// 
 	@include media-breakpoint-up(xl) {}
@@ -90,11 +101,52 @@
 
 	@include media-breakpoint-down(lg) {}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(md) {
+		.row {
+			align-items: center;
+		}
+	}
 
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {}
+}
+
+.nav {
+	list-style-type: none;
+	margin-bottom: 0;
+
+	// font-weight: normal;
+
+	&__item {
+		display: block;
+	}
+
+	&--lg {
+
+		@include media-breakpoint-up(xl) {
+
+			font-size: $h4-font-size;
+		}
+
+
+		font-size: ($h4-font-size * .9);
+		@extend .mono;
+		font-weight: 500;
+
+		.nav__item:nth-child(1) {
+			// display: none;
+		}
+	}
+
+	&__link {
+		color: #ffffff;
+		text-decoration: none !important;
+
+		&:hover {
+			color: $primary;
+		}
+	}
 }
 
 .link-donate {
@@ -113,7 +165,12 @@
 		align-items: center;
 		justify-content: center;
 		background-color: $primary;
-		margin-right: rem(15);
+
+		@include media-breakpoint-up(xxl) {
+
+			margin-right: rem(15);
+		}
+
 		@include mt;
 
 		.icon {
