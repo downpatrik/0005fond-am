@@ -4,7 +4,8 @@ mixin video-item()
 			+e.play
 			img.res-i(src="img/@2x/video.jpg", alt="")
 		+e.caption  
-			p Благоукрашение Знамеского храма Новоспасского монатсыря
+			p
+				a(href="#") Благоукрашение Знамеского храма Новоспасского монатсыря
 			+e.foot
 				+e.date  13.08.19
 				+e.foot-item
@@ -24,6 +25,7 @@ mixin s-news()
 				.col
 					mixin item()
 						+b.news-item
+							.container
 							.row
 								.col-auto
 									+e.img-wrap--lg(href="#")
@@ -48,11 +50,12 @@ mixin s-news()
 						// /+b.news-item
 					+item()
 					+e.slider-wrap.d-lg-none
-						+e.slider--js.swiper-container
-							.swiper-wrapper
-								- for (var x = 0; x < 5; x++)
-									+e.slide.swiper-slide
-										+video-item()
+						+e.inner
+							+e.slider--js.swiper-container
+								.swiper-wrapper
+									- for (var x = 0; x < 5; x++)
+										+e.slide.swiper-slide
+											+video-item()
 					+item()
 					+item()
 				.col-auto.d-none.d-lg-block

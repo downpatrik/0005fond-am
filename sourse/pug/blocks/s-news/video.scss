@@ -113,6 +113,14 @@
 	&__caption {
 		padding: rem(20) rem(30);
 		padding-right: 0;
+
+		a {
+			text-decoration: none !important;
+
+			&:not(:hover) {
+				color: #ffffff;
+			}
+		}
 	}
 
 	@include media-breakpoint-up(xl) {}
