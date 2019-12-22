@@ -2,10 +2,11 @@
   position: fixed;
   background: #3C414F;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
-  z-index: 20;
-  padding-top: rem(13);
-  padding-bottom: rem(13);
   z-index: 200;
+  // z-index: 20;
+  // padding-top: rem(13);
+  // padding-bottom: rem(13);
+
 
   @include media-breakpoint-up(xxl) {
 
@@ -40,7 +41,24 @@
   .row {
     align-items: center;
   }
-
+&__logo{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  max-width: rem(136);
+  height: rem(68);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img{
+   width: rem(136);
+    position: relative;
+    // transform: translateY(-25%);
+    // max-width: 100%;
+  }
+}
   // 
   @include media-breakpoint-up(xl) {}
 
