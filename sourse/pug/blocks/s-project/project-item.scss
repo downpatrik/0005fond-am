@@ -3,6 +3,12 @@
   height: 100%;
   color: #ffffff;
 
+  @include media-breakpoint-up(sm) {
+    font-size: 1rem;
+  }
+
+  font-size: 1.1rem;
+
   &__slide {
     height: inherit;
   }
@@ -112,6 +118,7 @@
   &__place {
     color: rgba(255, 255, 255, 0.7);
     font-size: $small;
+    text-decoration: none !important;
 
     .icon {
       font-size: rem(15);
@@ -119,6 +126,14 @@
     }
 
     padding-bottom: rem(10);
+
+    &:hover {
+      color: #ffffff;
+
+      .icon {
+        color: #C5AA79;
+      }
+    }
   }
 
   &__title {
@@ -140,6 +155,9 @@
     font-weight: 500;
     line-height: 1.2;
 
+    a {
+      color: #ffffff;
+    }
   }
 
   &__price {
@@ -203,11 +221,18 @@
     max-width: rem(226);
     margin-left: auto;
     margin-right: auto;
+    // opacity: 0;
+    @include mt;
 
+  }
+
+  &:hover &__btn {
+    opacity: 1;
   }
 
   &__btn-wrap {
     display: none;
+    // display: block !important;
     padding-top: rem(30);
     padding-bottom: rem(5);
 
@@ -289,7 +314,7 @@
     @extend .btn;
     @extend .btn-sm;
     @extend .btn-outline-white;
-    width: rem(226);
+    width: rem(196);
     opacity: 0;
   }
 

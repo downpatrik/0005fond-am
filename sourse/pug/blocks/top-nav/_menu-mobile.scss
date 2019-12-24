@@ -129,7 +129,20 @@ $h: em(2);
 
 		.icon {
 			font-size: rem(12);
-			color: #FFF;
+			color: transparent;
+			stroke: #ffffff;
+			@include mt;
+
+			&:hover {
+
+				stroke: $primary;
+			}
+
+			&:focus {
+
+				stroke: #B9A073;
+			}
+
 		}
 
 		&.on {
@@ -161,6 +174,16 @@ $h: em(2);
 				color: #ffffff;
 			}
 
+			&:hover {
+
+				// stroke: $primary;
+				color: #C5AA79;
+			}
+
+			&:focus {
+
+				color: #B9A073 // stroke: #B9A073;
+			}
 
 			display: block;
 
@@ -175,6 +198,7 @@ $h: em(2);
 		position: fixed;
 		left: 0;
 		bottom: 0;
+		color: #ffffff !important;
 
 	}
 
@@ -192,6 +216,12 @@ $h: em(2);
 
 				color: rgba(255, 255, 255, 0.5);
 			}
+
+			&:focus {
+
+				color: #B9A073 // stroke: #B9A073;
+			}
+
 		}
 	}
 }

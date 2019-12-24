@@ -1,5 +1,6 @@
 // start .s-news
 .s-news {
+	line-height: 120%;
 
 	&__btn {
 		@extend .btn-outline-primary;
@@ -38,6 +39,7 @@
 			margin-right: auto;
 			max-width: rem(400);
 		}
+
 	}
 
 	@include media-breakpoint-up(xl) {}
@@ -74,7 +76,11 @@
 
 	@include media-breakpoint-down(sm) {}
 
-	@include media-breakpoint-down(xs) {}
+	@include media-breakpoint-down(xs) {
+		&__slide {
+			max-width: 280px;
+		}
+	}
 
 }
 

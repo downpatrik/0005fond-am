@@ -146,6 +146,10 @@
 		&:hover {
 			color: $primary;
 		}
+
+		&:focus {
+			color: #B9A073;
+		}
 	}
 }
 
@@ -180,6 +184,10 @@
 	}
 
 	&:hover {
+		color: #B9A073;
+	}
+
+	&:focus {
 		color: #B9A073;
 	}
 

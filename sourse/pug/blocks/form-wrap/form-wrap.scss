@@ -31,9 +31,10 @@
 			width: rem(226);
 		}
 
-		box-shadow: 0 8px $em-base rgba(109, 28, 47, 0.25);
-		background-color: #c4c4c4;
+		// #205f46 
 		margin-bottom: rem(20);
+		background: #C5AA79;
+		box-shadow: 0px 8px 16px rgba(125, 99, 52, 0.25);
 
 		&:hover {
 			color: #ffffff;
@@ -45,6 +46,13 @@
 			color: #ffffff;
 			background: #B9A073;
 			box-shadow: 0px 4px 8px rgba(125, 99, 52, 0.5);
+		}
+
+		&[disabled] {
+			box-shadow: 0 8px $em-base rgba(109, 28, 47, 0.25);
+			background-color: #c4c4c4;
+			opacity: 1;
+
 		}
 	}
 }

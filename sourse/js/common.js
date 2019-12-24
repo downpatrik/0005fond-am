@@ -164,13 +164,13 @@ function eventHandler() {
 
 	let mySwiper = new Swiper('.slider-auto-js', {
 		speed: 400,
-		loop: true,
+		// loop: true,
 		loopedSlides: 4,
 		slidesPerView: 1,
 		spaceBetween: 20,
 		breakpoints: {
 			576: {
-				spaceBetween: 30,
+				spaceBetween: 20,
 				slidesPerView: 'auto',
 				watchOverflow: true,
 				freeMode: true,
@@ -183,6 +183,7 @@ function eventHandler() {
 			},
 
 			1200: {
+				spaceBetween: 30,
 				slidesPerView: 'auto',
 				slidesPerView: 'auto',
 				watchOverflow: true,
@@ -286,12 +287,16 @@ function eventHandler() {
 		});
 	})
 	var mySwiper5 = new Swiper('.s-news__slider--js', {
-		slidesPerView: 1,
+		slidesPerView: 'auto',
 		spaceBetween: 20,
-		loop: true,
-		loopedSlides: 6,
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
 		breakpoints: {
 			576: {
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false,
 				slidesPerView: 2,
 
 			}

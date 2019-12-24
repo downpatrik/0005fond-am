@@ -1,6 +1,11 @@
 // start .s-news
 .news-item {
-	margin-bottom: rem(64);
+	@include media-breakpoint-up(xl) {
+
+		margin-bottom: rem(64);
+	}
+
+	margin-bottom: rem(40);
 
 	@include media-breakpoint-only(md) {
 		&:nth-child(4) {
@@ -19,6 +24,13 @@
 		width: rem(110);
 		position: relative;
 		box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.25);
+		@include mt;
+
+		&:hover {
+			box-shadow: 0px 8px 16px rgba(197, 170, 121, 0.5);
+
+		}
+
 		border-radius: 8px;
 		position: relative;
 		overflow: hidden;
@@ -36,13 +48,18 @@
 	&__small {
 		font-size: rem(11px);
 		letter-spacing: 0.15em;
-		color: rgba(80, 87, 105, 0.5);
 		margin-bottom: rem(10);
+
+		a {
+			color: rgba(80, 87, 105, 0.5);
+			@extend .link-hover;
+		}
 	}
 
 	&__title {
 
 		margin-bottom: rem(15);
+		line-height: 120%;
 
 		@include media-breakpoint-up(sm) {
 			margin-bottom: rem(25);
@@ -51,10 +68,11 @@
 		}
 
 		a {
-			&:not(:hover) {
+			@extend .link-hover;
 
-				color: #505769;
-			}
+			color: #505769;
+
+			&:not(:hover) {}
 
 			text-decoration: none !important;
 			// font-size: rem;
@@ -129,9 +147,13 @@
 
 	&__foot {
 		display: flex;
-		color: rgba(80, 87, 105, 0.5);
 		align-items: center;
 		font-size: $small;
+
+		a {
+			color: rgba(80, 87, 105, 0.5);
+			@extend .link-hover;
+		}
 	}
 
 	&__date {

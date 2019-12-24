@@ -57,7 +57,19 @@
 
 	@include media-breakpoint-down(md) {}
 
-	@include media-breakpoint-down(sm) {}
+	@include media-breakpoint-down(sm) {
+		img {
+			// max-height: calc(100% - 7rem);
+			max-width: 40%;
+		}
 
-	@include media-breakpoint-down(xs) {}
+	}
+
+	@include media-breakpoint-down(xs) {
+		img {
+			// max-height: calc(100% - 7rem);
+			max-width: 60%;
+		}
+
+	}
 }

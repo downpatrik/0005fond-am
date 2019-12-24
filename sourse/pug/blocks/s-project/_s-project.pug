@@ -7,7 +7,7 @@ mixin s-project()
 			+b.project-lg-wrap
 				+b.project-lg.bg-wrap
 					+pic("project-main-1","bg",'')(class="picture-bg")
-					div
+					+e.head
 						+e.label Основной проект фонда
 						+e.title
 							a(href="#") Новоспасский монастырь
@@ -22,7 +22,7 @@ mixin s-project()
 						+e.slide--lg.swiper-slide
 							+b.project-item.bg-wrap
 								+pic("projec-1",'bg','')(class="picture-bg")
-								+e.place
+								+e.place(href="#")
 									+icon('mark')
 									|  г. Клин
 								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
@@ -60,17 +60,18 @@ mixin s-project2()
 	// start s-project
 	+b.SECTION.s-project.section#s-project&attributes(attributes)
 		.container
-			div
-				+b.section-title.text-center
-					h2 реализованные проекты
+			
+			+b.section-title.text-center
+				h2 реализованные проекты
 			+b.project-lg-wrap
 				+b.project-lg--blue.bg-wrap
 					+pic("project-main-2","bg",'')(class="picture-bg")
 					//- +e.label Основной проект фонда
-					+e.title
-						a(href="#") Храм Покрова Пресвятой  Богородицы
-							| 
-							em в Ясеневе
+					+e.head
+						+e.title
+							a(href="#") Храм Покрова Пресвятой  Богородицы
+								| 
+								em в Ясеневе
 					+e.center
 						+e.play(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
 						//- +e.center-text Всем миром украсим храм для&nbsp;#[em &laquo;Bсецарицы&raquo;]
@@ -100,13 +101,15 @@ mixin s-project2()
 						+e.slide--sm.swiper-slide
 							+b.project-item--sm.bg-wrap
 								+pic("projec-2",'bg','')(class="picture-bg")
-								+e.place
+								+e.place(href="#")
+
 									+icon('mark')
 									|  г. Клин
-								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
-									br
-									em в Клину
-										= x
+								+e.title
+									a.link-hover(href="#") Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
+										br
+										em в Клину
+											= x
 
 								+e.foot-sm
 									+e.text-sm Приняло участие 

@@ -9,10 +9,10 @@
 
   a {
     text-decoration: none !important;
+    color: #ffffff;
+    @extend .link-hover;
 
-    &:not(:hover) {
-      color: #ffffff;
-    }
+    &:not(:hover) {}
   }
 
   a {

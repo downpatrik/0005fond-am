@@ -22,7 +22,11 @@
 
 	@include media-breakpoint-up(md) {}
 
-	@include media-breakpoint-up(sm) {}
+	@include media-breakpoint-up(sm) {
+		padding: rem(50) 0;
+	}
+
+	padding: rem(50) 0;
 
 	@include media-breakpoint-up(xs) {}
 

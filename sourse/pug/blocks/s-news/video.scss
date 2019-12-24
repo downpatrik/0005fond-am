@@ -36,9 +36,11 @@
 		box-shadow: 0 $em-base 32px rgba(80, 87, 105, 0.25);
 		@include block(36, 22);
 		position: relative;
+		@extend .link-hover;
+		color: #ffffff;
 
-		&:not(:hover) {
-			color: #ffffff;
+		&:hover {
+			box-shadow: 0px 16px 32px rgba(197, 170, 121, 0.25);
 		}
 
 		img {
@@ -116,14 +118,20 @@
 
 		a {
 			text-decoration: none !important;
+			@extend .link-hover;
 
-			&:not(:hover) {
-				color: #ffffff;
+			@include media-breakpoint-up(lg) {
+				color: #505769;
 			}
+
+			color: #ffffff;
+
+			&:not(:hover) {}
 		}
 	}
 
 	@include media-breakpoint-up(xl) {}
+
 
 	@include media-breakpoint-up(lg) {}
 
