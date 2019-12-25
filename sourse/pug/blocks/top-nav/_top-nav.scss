@@ -30,9 +30,14 @@
 		display: flex;
 		justify-content: center;
 
-		@include media-breakpoint-up(xxl) {
+		@media (min-width: 1440px) {
 
 			@include roww(15);
+		}
+
+		@include media-breakpoint-up(xxl) {
+
+			// @include roww(15);
 		}
 
 		@include media-breakpoint-up(xl) {
@@ -124,7 +129,7 @@
 
 	&--lg {
 
-		@include media-breakpoint-up(xl) {
+		@media (min-width: 1440px) {
 
 			font-size: $h4-font-size;
 		}

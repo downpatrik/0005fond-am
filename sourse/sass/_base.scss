@@ -28,7 +28,10 @@ html {
 		font-size: $em-base;
 	}
 
-	font-size: 14px;
+	@include media-breakpoint-up(sm) {
+		font-size: 14px;
+	}
+
 	// @include font-size(1rem);
 }
 
@@ -50,6 +53,7 @@ html {
 	margin-right: auto;
 	max-width: rem(800);
 	@extend .h2;
+	line-height: 1.2;
 
 	@include media-breakpoint-up(sm) {
 

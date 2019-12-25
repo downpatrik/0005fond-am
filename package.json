@@ -50,7 +50,7 @@
     "gulp-group-css-media-queries": "^1.2.2",
     "gijgo": "^1.9.13",
     "inputmask": "^5.0.1",
-    "ion-rangeslider": "^2.3.0",
+    "ion-rangeslider": "^2.3.1",
     "jquery": "^3.4.1",
     "object-fit-images": "^3.2.4",
     "picturefill": "^3.0.3",
