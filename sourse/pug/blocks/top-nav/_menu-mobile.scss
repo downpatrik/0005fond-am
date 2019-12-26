@@ -10,7 +10,17 @@ $h: em(2);
 	color: #ffffff;
 	z-index: 110;
 	cursor: pointer;
+
 	// color: $primary;
+	&:hover {
+
+		span,
+		span:after,
+		span:before {
+
+			background-color: #C5AA79
+		}
+	}
 
 	&.on {}
 
@@ -47,7 +57,7 @@ $h: em(2);
 		font-size: 35px;
 		width: 1em;
 		height: 1px;
-		background-color: currentColor;
+		background-color: #ffffff;
 		transition: all 0.3s;
 		backface-visibility: hidden;
 		border-radius: 6px;

@@ -38,10 +38,16 @@ html {
 .section {
 	@include bgs;
 
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-up(lg) {
 
 		padding-top: rem(70px);
 		padding-bottom: rem(40px);
+	}
+
+	@include media-breakpoint-up(sm) {
+
+		padding-top: rem(70px * .7);
+		padding-bottom: rem(40px * .7);
 	}
 
 	padding-top: rem(70px * .5);
@@ -55,14 +61,14 @@ html {
 	@extend .h2;
 	line-height: 1.2;
 
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-up(lg) {
 
 		padding-bottom: rem(43);
 	}
 
 	&__text {
 		font-size: rem(30);
-		letter-spacing: 0.1em;
+		// letter-spacing: 0.1em;
 		@extend .mono;
 		font-family: $mono2;
 		padding-top: rem(25);

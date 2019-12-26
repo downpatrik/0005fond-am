@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   @include block(1140, 700);
+  min-height: 280px;
 
   @include media-breakpoint-down(xs) {
     margin-left: -15px;
@@ -25,7 +26,7 @@
       padding: rem(30) rem(25) rem(20);
     }
 
-    padding: rem(30) rem(15) rem(20);
+    padding: rem(15) rem(15) rem(20);
   }
 
 
@@ -94,6 +95,7 @@
     line-height: 1.2;
     text-transform: uppercase;
     color: #ffffff;
+    letter-spacing: 0.1em;
 
     &:first-letter {
       font-size: 1.32em;
@@ -103,7 +105,7 @@
       padding: rem(1) rem(5);
       text-align: left;
       min-width: rem(20);
-      font-size: rem(10);
+      font-size: rem(7);
     }
 
     z-index: 4;
@@ -118,6 +120,7 @@
     position: relative;
     // @extend .h1;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
 
     @include media-breakpoint-up(xl) {
 
@@ -139,7 +142,7 @@
     min-height: 4em;
 
     em {
-      font-size: .8em;
+      font-size: .9em;
       text-transform: none;
       display: block;
       // display: inline-block;
@@ -170,9 +173,14 @@
     position: absolute;
     width: 100%;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(xl) {
 
       top: 25%;
+    }
+
+    @include media-breakpoint-up(md) {
+
+      top: 30%;
     }
 
     top: 20%;
@@ -262,13 +270,13 @@
     list-style-type: none;
     z-index: 10;
 
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(md) {
 
       max-width: rem(146 + 100);
       padding: rem(43) rem(50) rem(20);
     }
 
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       color: #ffffff;
       width: 100%;
       margin-left: auto;
@@ -293,7 +301,7 @@
   }
 
   li {
-    @include media-breakpoint-up(lg) {
+    @include media-breakpoint-up(md) {
       padding-left: 0;
       padding-right: 0;
       width: 100%;
@@ -309,12 +317,27 @@
     // letter-spacing: 0.32px;
     letter-spacing: 0.02em;
     line-height: 1;
-    margin-bottom: rem(50);
+
+    @include media-breakpoint-up(lg) {
+
+      margin-bottom: rem(50);
+    }
+
+    @include media-breakpoint-up(md) {
+
+      margin-bottom: rem(30);
+    }
+
+    @include media-breakpoint-down(xs) {
+      font-size: 13px;
+    }
 
     strong {
       color: $primary;
       @extend .mono;
-      font-size: $h2-font-size;
+      @extend h2;
+      // font-size: $h2-font-size;
+
       font-weight: 400;
       font-style: italic;
       line-height: 1;
@@ -324,7 +347,19 @@
   }
 
   position: relative;
-  margin-bottom: rem(60);
+
+  @include media-breakpoint-up(md) {
+
+    margin-bottom: rem(60);
+  }
+
+  margin-bottom: rem(35);
+
+  @include media-breakpoint-down(xs) {
+    ul+&__btn {
+      margin-top: rem(10);
+    }
+  }
 
   &__btn {
     color: #ffffff;

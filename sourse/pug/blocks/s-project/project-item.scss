@@ -26,8 +26,9 @@
     min-height: rem(510);
   }
 
-  min-height: rem(400);
+  min-height: rem(426);
   padding: rem(15);
+  padding-bottom: rem(22);
   // min-height: rem(335);
 
 
@@ -118,12 +119,18 @@
 
   &__place {
     color: rgba(255, 255, 255, 0.7);
-    font-size: $small;
+
+    @include media-breakpoint-up(sm) {
+
+      font-size: $small;
+    }
+
+    font-size: 11px;
     text-decoration: none !important;
 
     .icon {
-      font-size: rem(15);
-      margin-right: rem(10);
+      font-size: em(22);
+      margin-right: em(10);
     }
 
     padding-bottom: rem(10);
@@ -150,6 +157,7 @@
       font-size: rem(24);
     }
 
+    font-size: 21px;
     // @extend .h4;
     // margin-bottom: 0;
     @extend .mono;
@@ -294,12 +302,25 @@
     margin-top: auto;
   }
 
+  &__text-sm {
+    @include media-breakpoint-down(xs) {
+      font-size: 11px;
+    }
+  }
+
+
   &__user-count {
     display: flex;
     align-items: center;
     font-style: italic;
     font-weight: 500;
-    font-size: rem(38);
+
+    @include media-breakpoint-up(sm) {
+
+      font-size: rem(38);
+    }
+
+    font-size: rem(21);
     @extend .mono;
     line-height: 1;
 
@@ -314,9 +335,33 @@
   &__btn-more {
     @extend .btn;
     @extend .btn-sm;
-    @extend .btn-outline-white;
+    // @extend .btn-outline-white;
+    color: #ffffff;
     width: rem(196);
     opacity: 0;
+
+    // @include media-breakpoint-up(md) {
+    background-color: transparent !important;
+    border-color: #ffffff;
+    // display: block;
+
+    &:hover {
+      background-color: #FFFFFF !important;
+      /* Тень видео */
+      box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.25);
+      color: #C5AA79;
+    }
+
+    &:focus,
+    &:not(:disabled):not(.disabled):active:focus {
+      color: #FFFFFF;
+      background-color: #B9A073 !important;
+      border-color: #B9A073 !important;
+      box-shadow: 0px 4px 8px rgba(197, 170, 121, 0.5) !important;
+    }
+
+    // }
+
   }
 
   &:hover &__btn-more {

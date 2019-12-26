@@ -113,7 +113,13 @@
 	}
 
 	&__caption {
-		padding: rem(20) rem(30);
+		@include media-breakpoint-up(xl) {
+
+			padding: rem(20) rem(30);
+			padding-right: 0;
+		}
+
+		padding: rem(20) rem(20);
 		padding-right: 0;
 
 		a {

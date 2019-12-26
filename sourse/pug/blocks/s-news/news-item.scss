@@ -119,6 +119,11 @@
 		}
 	}
 
+	&__foot {
+
+		color: rgba(60, 65, 79, 0.5);
+	}
+
 	&__foot-item {
 		padding-left: rem(15);
 		padding-right: rem(15);
@@ -126,6 +131,7 @@
 		align-items: center;
 		cursor: pointer;
 		position: relative;
+		color: rgba(60, 65, 79, 0.5);
 
 		&:not(:last-child)::after {
 			content: '';

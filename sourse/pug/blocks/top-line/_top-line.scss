@@ -23,10 +23,21 @@
   // position: absolute;
   position: fixed;
   top: 0;
-  transform: translateY(-100%);
+  transform: translateY(-140%);
 
-  &.fixed {
-    transform: translateY(0);
+  @include media-breakpoint-up(xl) {
+
+    &.fixed {
+      transform: translateY(0);
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+
+    &.fixed-mob {
+      transform: translateY(0);
+
+    }
   }
 
   &__col {
@@ -41,24 +52,27 @@
   .row {
     align-items: center;
   }
-&__logo{
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  overflow: hidden;
-  max-width: rem(136);
-  height: rem(68);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img{
-   width: rem(136);
+
+  &__logo {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     position: relative;
-    // transform: translateY(-25%);
-    // max-width: 100%;
+    overflow: hidden;
+    max-width: rem(136);
+    height: rem(68);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: rem(136);
+      position: relative;
+      // transform: translateY(-25%);
+      // max-width: 100%;
+    }
   }
-}
+
   // 
   @include media-breakpoint-up(xl) {}
 
@@ -93,6 +107,5 @@
 
 
 
-  @include media-breakpoint-down(xs) {
-  }
+  @include media-breakpoint-down(xs) {}
 }

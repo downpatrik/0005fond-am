@@ -88,7 +88,7 @@ mixin s-project2()
 					li
 						strong 5
 						| уникальных архитектурных  проектов
-					li
+					li.d-none.d-md-block
 						strong 1 000 000
 						| участников
 
@@ -118,7 +118,7 @@ mixin s-project2()
 											+e.user-count
 												+icon("user")
 												| 5 000
-											| человек 
+											+e.text-sm  человек 
 										.col-auto.d-none.d-md-block
 											+e.btn-more(href="#") ПОДРОБНЕЕ
 				+arrow()

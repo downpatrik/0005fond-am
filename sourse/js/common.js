@@ -117,7 +117,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	// $(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -138,6 +138,19 @@ function eventHandler() {
 			} else {
 				$('.top-line  ').removeClass('fixed');
 			}
+
+			// if (document.body.scrollTop === 0) $('.top-line').addClass('fixed-mob');
+			// else $('.top-line').removeClass('fixed-mob');
+		});
+		var lastScrollTop = 0;
+		$(window).scroll(function (event) {
+			var st = $(this).scrollTop();
+			if (st > lastScrollTop) {
+				$('.top-line  ').removeClass('fixed-mob');
+			} else {
+				$('.top-line  ').addClass('fixed-mob');
+			}
+			lastScrollTop = st;
 		});
 		// конец добавил
 		// 	if (window.matchMedia("(min-width: 992px)").matches) {
@@ -249,15 +262,27 @@ function eventHandler() {
 		}
 	});
 	var mySwiper3 = new Swiper('.s-project__slider--3-js', {
-		slidesPerView: 1,
+		slidesPerView: 'auto',
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
 		spaceBetween: 20,
-		loop: true,
 		loopedSlides: 6,
 		breakpoints: {
+			// 576: {
+			// 	slidesPerView: 1,
+
+			// },
+
 			991: {
+				loop: true,
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false,
 				slidesPerView: 2,
 
 			},
+
 
 			1200: {
 				slidesPerView: 2,

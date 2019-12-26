@@ -143,21 +143,28 @@
 
 	@include media-breakpoint-down(md) {
 		&__container-sm {
-			max-width: rem(600px);
+			// max-width: 450px;
 		}
 
+		&__slide--sm {
+			max-width: 440px;
+		}
 	}
 
 	@include media-breakpoint-down(sm) {
 		&__container-sm {
-			max-width: rem(440px);
+			// max-width: rem(440px);
 		}
 
 	}
 
 	@include media-breakpoint-down(xs) {
 		&__container-sm {
-			max-width: rem(360px);
+			// max-width: rem(340px);
+		}
+
+		&__slide--sm {
+			max-width: 310px;
 		}
 	}
 
