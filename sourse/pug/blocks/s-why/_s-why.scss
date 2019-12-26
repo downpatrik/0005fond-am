@@ -3,7 +3,10 @@
 	padding-bottom: 0 !important;
 
 	.section-title {
-		padding-bottom: rem(60);
+		@include media-breakpoint-up(sm) {
+
+			padding-bottom: rem(60);
+		}
 	}
 
 	&__slide {

@@ -58,17 +58,6 @@
     box-shadow: 0px 16px 32px rgba(80, 87, 105, 0.3);
   }
 
-  // @include media-breakpoint-up(xl) {
-
-  //   height: rem(700);
-  // }
-
-  // @include media-breakpoint-up(sm) {
-
-  //   height: rem(430);
-  // }
-
-  // height: rem(370);
   z-index: 2;
 
 
@@ -124,14 +113,18 @@
 
     @include media-breakpoint-up(xl) {
 
-      font-size: rem(36);
+      font-size: rem(48);
     }
 
-    @include rfs(rem(28));
+    @include rfs(rem(30));
 
     @include media-breakpoint-down(xs) {
-      font-size: rem(18);
+      // font-size: rem(18);
+      font-size: 21px;
+      letter-spacing: normal;
     }
+
+    font-size: 211px;
 
     @extend .mono;
     font-family: $mono2;
@@ -142,14 +135,19 @@
     min-height: 4em;
 
     em {
-      font-size: .9em;
+      @include media-breakpoint-up(sm) {
+
+        font-size: .9em;
+      }
+
+      letter-spacing: normal;
       text-transform: none;
       display: block;
       // display: inline-block;
     }
 
     &:first-letter {
-      font-size: 1.4em;
+      // font-size: 1.4em;
     }
 
     a {

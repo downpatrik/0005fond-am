@@ -66,15 +66,22 @@ html {
 		padding-bottom: rem(43);
 	}
 
+	padding-bottom: rem(25);
+
 	&__text {
-		font-size: rem(30);
+		@include media-breakpoint-up(sm) {
+
+			font-size: rem(30);
+			padding-top: rem(25);
+		}
+
+		// padding-top: rem(10);
+		font-size: rem(21);
 		// letter-spacing: 0.1em;
 		@extend .mono;
 		font-family: $mono2;
-		padding-top: rem(25);
 	}
 
-	padding-bottom: rem(15);
 
 
 	h2 {
