@@ -285,6 +285,10 @@ function eventHandler() {
 
 
 			1200: {
+				loop: true,
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false,
 				slidesPerView: 2,
 				spaceBetween: 30,
 				slidesOffsetBefore: -80,
