@@ -11,7 +11,7 @@ include ../blocks/s-why/_s-why.pug
 include ../blocks/s-logo/_s-logo.pug
 
 block variables
-	- let  mainPage= null
+	- let  mainPage= 'main-page'
 block title
 	- let  title= 'Главная'
 	title= title
@@ -21,7 +21,7 @@ block pagecontent
 	+top-line()
 	+header()
 		+top-nav()
-	+header-block()
+		+header-block()
 	+s-cards
 	+s-project
 	+s-project2

@@ -117,7 +117,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/02.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -335,6 +335,15 @@ function eventHandler() {
 	$(".project-item").hover(function () {
 		$(this).find(".project-item__btn-wrap").slideToggle(150)
 	})
+ 
+
+	$(".custom-select").chosen({
+		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
+	});
+
+	// $('.custom-select').select2({
+	// 	theme: 'bootstrap4',
+	// });
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

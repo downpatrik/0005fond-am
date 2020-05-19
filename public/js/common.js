@@ -100,7 +100,7 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _, _ref;
+	var _, _Swiper;
 
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
@@ -114,7 +114,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/02.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -183,7 +183,7 @@ function eventHandler() {
 			}, _defineProperty(_, "slidesPerView", 'auto'), _defineProperty(_, "watchOverflow", true), _defineProperty(_, "freeMode", true), _defineProperty(_, "freeModeMomentum", true), _defineProperty(_, "loop", false), _)
 		}
 	});
-	var mySwiperMob = new Swiper('.slider-auto-mob-js', (_ref = {
+	var mySwiperMob = new Swiper('.slider-auto-mob-js', (_Swiper = {
 		speed: 400,
 		loop: true,
 		loopedSlides: 4,
@@ -192,11 +192,11 @@ function eventHandler() {
 		watchOverflow: true,
 		freeMode: true,
 		freeModeMomentum: true
-	}, _defineProperty(_ref, "loop", false), _defineProperty(_ref, "breakpoints", {
+	}, _defineProperty(_Swiper, "loop", false), _defineProperty(_Swiper, "breakpoints", {
 		576: {
 			spaceBetween: 30
 		}
-	}), _ref));
+	}), _Swiper));
 	var mySwiper2 = new Swiper('.s-project__slider--js', {
 		// effect: 'coverflow',
 		// grabCursor: true,
@@ -290,6 +290,11 @@ function eventHandler() {
 	$(".project-item").hover(function () {
 		$(this).find(".project-item__btn-wrap").slideToggle(150);
 	});
+	$(".custom-select").chosen({
+		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
+	}); // $('.custom-select').select2({
+	// 	theme: 'bootstrap4',
+	// });
 }
 
 ;

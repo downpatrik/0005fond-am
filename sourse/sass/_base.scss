@@ -661,3 +661,34 @@ datalist {
 		color: #B9A073;
 	}
 }
+
+
+.page-head{
+	text-align: center;
+	 @include media-breakpoint-up(md) {
+		 --ptH: #{rem(60)};
+		 --pbH: #{rem(40)};
+		}
+		--ptH: #{rem(40)};
+		--pbH: #{rem(20)};
+	padding-top: var(--ptH);
+	padding-bottom: var(--pbH);
+	h1{
+		&::before{
+			content: url(../img/svg/title.svg);
+			display: block;
+			text-align: center;
+			margin-bottom: rem(5);
+		}
+		@extend h2;
+			@extend .mono;
+			font-family: $mono2;
+			letter-spacing: 0.1em;
+	}
+}
+
+.s-continue-wrapper{
+	margin-left: auto;
+	margin-right: auto;
+	max-width: rem(555 + 30);
+}

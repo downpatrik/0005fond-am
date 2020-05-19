@@ -3,15 +3,18 @@ mixin top-line()
 	+b.top-line.block-with-lazy
 		.container-fluid
 			.row
-				+e.col.col-auto
+				+e.col--left.col-auto
 					+b.toggle-menu-mobile--js
 						span
 				.col 
 					+e.logo(href="#")
-						img.res-i(src="img/svg/logo.svg", alt="")
-				+e.col.col-auto
+						img.res-i(src="img/svg/logo-top.svg", alt="")
+				+e.col.col-auto.d-none.d-sm-block
+					+soc
+				+e.col.col-auto.text-right
 					+b.link-donate(href="#")
-						+e.icon-wrap
+						+e.icon-wrap.d-xxl-none
 							+icon('donate')
 						.d-none.d-xxl-block ПОЖЕРТВОВАТЬ
+					
 	// end .top-line

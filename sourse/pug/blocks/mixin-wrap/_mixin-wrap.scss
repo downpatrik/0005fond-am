@@ -1,11 +1,19 @@
  
 	  
 .soc{
-	margin: 0 rem(-5px);
+	  @include media-breakpoint-up(md) {
+
+			margin: 0 rem(-15px);
+		} 
+		margin: 0 rem(-10px);
 	display: flex;
 	&__item{
 		text-decoration: none !important;
-		margin: 0 rem(5px);
+		  @include media-breakpoint-up(md) {
+
+				margin: 0 rem(15px);
+			} 
+			margin: 0 rem(10px);
 		vertical-align: middle;
 		@include mt;
 		display: block;
@@ -16,7 +24,15 @@
 		
 	}
 	.icon{
-	font-size: rem(30);
+	font-size: rem(22);
+	color: #ffffff;
+	&-twitter{
+		font-size: rem(18);
+		
+	}
+	&-vk{
+		font-size: rem(16);
+	}
 	}
 	 
 

@@ -160,14 +160,14 @@
 
 .link-donate {
 	display: inline-flex;
-	color: #ffffff;
+	color: $primary;
 	font-size: rem(13);
 	letter-spacing: rem(1.95px);
 	align-items: center;
 	text-decoration: none !important;
-
+	margin-left: auto;
 	&__icon-wrap {
-		border-radius: 50%;
+		border-radius: 8px;
 		width: rem(40);
 		height: rem(40);
 		display: flex;

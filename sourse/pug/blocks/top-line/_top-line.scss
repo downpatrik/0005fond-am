@@ -1,8 +1,19 @@
+ .main-page .top-line {
+  transform: translateY(-140%);
+  @include media-breakpoint-up(xl) {
+
+    &.fixed {
+      transform: translateY(0);
+    }
+  }
+}
 .top-line {
   position: fixed;
   background: #3C414F;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
   z-index: 200;
+  padding-top: rem(4);
+  padding-bottom: rem(4);
   // z-index: 20;
   // padding-top: rem(13);
   // padding-bottom: rem(13);
@@ -23,14 +34,8 @@
   // position: absolute;
   position: fixed;
   top: 0;
-  transform: translateY(-140%);
+  
 
-  @include media-breakpoint-up(xl) {
-
-    &.fixed {
-      transform: translateY(0);
-    }
-  }
 
   @include media-breakpoint-down(lg) {
 
@@ -42,11 +47,20 @@
 
   &__col {
     @include media-breakpoint-up(xxl) {
-
-      width: rem(214);
+      --w: #{rem(205 + 160)};
     }
-
-    width: calc(#{rem(40)} + 30px);
+        @include media-breakpoint-up(md) {
+          
+          --w: calc(#{rem(205 + 70)} + 30px);
+        }
+              @include media-breakpoint-up(sm) {
+        --w: calc(#{rem(220)} + 30px);
+              }
+  //  width: var(--w);
+   &--left{
+     
+     width: var(--w);
+   }
   }
 
   .row {
@@ -55,18 +69,9 @@
 
   &__logo {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    overflow: hidden;
-    max-width: rem(136);
-    height: rem(68);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    display: block;
     img {
-      width: rem(136);
+      // width: rem(136);
       position: relative;
       // transform: translateY(-25%);
       // max-width: 100%;

@@ -70,3 +70,7 @@ mixin polite()
 	+e.polite
 		+in-c()
 			+e.SMALL.text  Я согласен на  #[a(href="#") обработку персональных данных]
+mixin input-btn(t, name, cl)
+	+b.LABEL.input-btn(class= cl)
+		input(type="radio" name= name)
+		+e.title= t
