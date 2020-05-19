@@ -1,5 +1,5 @@
 .header{
-  min-height: 70px;
+  min-height: rem(65);
 	
   // 
   @include media-breakpoint-up(xl) {}

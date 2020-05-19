@@ -341,6 +341,8 @@ function eventHandler() {
 		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
 	});
 
+	
+
 	// $('.custom-select').select2({
 	// 	theme: 'bootstrap4',
 	// });
