@@ -32,8 +32,7 @@ block pagecontent
 							span.option-img-wrap
 								img(src='img/svg/logo-color.svg')
 							span На уставные цели фонда
-			+e.group
-				+e.group-title Частота пожертвования
+			+e.group 
 				.row
 					.col-sm-6
 						+e.btn.btn.btn-block(href="#") Со счёта мобильного
@@ -42,14 +41,16 @@ block pagecontent
 						+e.btn.btn.btn-block.active(href="#") СМС-пожертвование
 
 			+e.group
-				.h4 Отправьте СМС-сообщение на&nbsp;номер #[span.text-primary 3434]&nbsp;c текстом &laquo; #[span.text-primary Десятина]&raquo;, через пробел, цифрами&sup1; укажите любую&sup2; сумму, которую хотите перечислить.
+				.h4.mono Отправьте СМС-сообщение на&nbsp;номер #[span.text-primary 3434]&nbsp;c текстом &laquo; #[span.text-primary Десятина]&raquo;, через пробел, цифрами&sup1; укажите любую&sup2; сумму, которую хотите перечислить.
 			+e.group
 				.text-center.mb-4.border-bottom
 					img.res-i(src="img/@2x/phone_help_view_v2.png", alt="")
-			
-				p #[sup 1] В случае если число будет указано прописью или сообщение будет содержать только текст, суммой пожертвования будет автоматически считаться 100 рублей.
-				p #[sup 2] Допустимый размер пожертвования от&nbsp;10&nbsp;до&nbsp;15&nbsp;000&nbsp;рублей. Комиссия  с&nbsp;абонента&nbsp;0%.
+				.pt-3
+					p.sup-wrap #[sup 1] В случае если число будет указано прописью или сообщение будет содержать только текст, суммой пожертвования будет автоматически считаться 100 рублей.
+					p.sup-wrap #[sup 2] Допустимый размер пожертвования от&nbsp;10&nbsp;до&nbsp;15&nbsp;000&nbsp;рублей. Комиссия  с&nbsp;абонента&nbsp;0%.
 				.row.small
-					.col-auto Ограничения операторов 
-					.col-auto Оферта Мегафон
+					.col-auto
+						a(href="#").hover-link Ограничения операторов 
+					.col-auto
+						a(href="#").hover-link Оферта Мегафон
 	+footer()

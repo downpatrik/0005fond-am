@@ -74,7 +74,10 @@
 								<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
 								</div>
 							</div>
-							<div class="col"> <a class="top-line__logo" href="#"><img class="res-i" src="img/svg/logo-top.svg" alt=""/></a>
+							<div class="col text-center"><a class="top-line__logo" href="#">
+								<svg class="icon icon-logo-top ">
+									<use xlink:href="img/svg/sprite.svg#logo-top"></use>
+								</svg></a>
 							</div>
 							<div class="top-line__col col-auto d-none d-sm-block">
 								<div class="soc"><a class="soc__item" href="№" target="_blank">
@@ -111,60 +114,62 @@
 			<!-- start s-continue-->
 			<div class="s-continue" id="s-continue">
 				<div class="container">
-					<div class="s-continue__group">
-						<div class="s-continue__group-title">Цель сбора 
+					<div class="s-continue-wrapper">
+						<div class="s-continue__group">
+							<div class="s-continue__group-title">Цель сбора 
+							</div>
+							<div class="s-continue__select-wrap">
+								<select class="custom-select">
+										<option value="Уставные цели фонда" data-img-src="img/svg/logo-color.svg">Уставные цели фонда</option>
+									<optgroup label="Проекты фонда">
+											<option value="Новоспасский монастырь" data-img-src="img/@1x/video.jpg">Новоспасский монастырь</option>
+											<option value="Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл." data-img-src="img/@1x/video.jpg">Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл.</option>
+											<option value="Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл." data-img-src="img/@1x/video.jpg">Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл.</option>
+											<option value="Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл." data-img-src="img/@1x/video.jpg">Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл.</option>
+											<option value="Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл." data-img-src="img/@1x/video.jpg">Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл.</option>
+											<option value="Новоспасский монастырь" data-img-src="img/@1x/video.jpg">Новоспасский монастырь</option>
+											<option value="Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл." data-img-src="img/@1x/video.jpg">Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл.</option>
+											<option value="Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл." data-img-src="img/@1x/video.jpg">Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл.</option>
+									</optgroup>
+								</select>
+							</div>
 						</div>
-						<div class="s-continue__select-wrap">
-							<select class="custom-select">
-									<option value="Уставные цели фонда" data-img-src="img/svg/logo-color.svg">Уставные цели фонда</option>
-								<optgroup label="Проекты фонда">
-										<option value="Новоспасский монастырь" data-img-src="img/@1x/video.jpg">Новоспасский монастырь</option>
-										<option value="Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл." data-img-src="img/@1x/video.jpg">Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл.</option>
-										<option value="Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл." data-img-src="img/@1x/video.jpg">Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл.</option>
-										<option value="Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл." data-img-src="img/@1x/video.jpg">Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл.</option>
-										<option value="Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл." data-img-src="img/@1x/video.jpg">Храма свт. Николая Чудотворца в селе Мужиново, Брянская обл.</option>
-										<option value="Новоспасский монастырь" data-img-src="img/@1x/video.jpg">Новоспасский монастырь</option>
-										<option value="Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл." data-img-src="img/@1x/video.jpg">Храм равноапостольного князя Владимира, п. Станционный-Полевской, Свердловская обл.</option>
-										<option value="Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл." data-img-src="img/@1x/video.jpg">Молитвенный дом Архангела Михаила, с. Каменный Брод, Пензенская обл.</option>
-								</optgroup>
-							</select>
+						<div class="s-continue__group">
+							<div class="s-continue__group-title">Способ пожертвования
+							</div>
+							<label class="item-method">
+								<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap">
+								<svg class="icon icon-s-why-1 ">
+									<use xlink:href="img/svg/sprite.svg#s-why-1"></use>
+								</svg></span><span class="item-method__caption"><span class="item-method__title">Банковской картой</span><span class="item-method__text">Пожертвование с банковской карты</span><img src="img/@2x/bank_icons.png" alt=""/></span></span>
+							</label>
+							<label class="item-method">
+								<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap">
+								<svg class="icon icon-s-why-2 ">
+									<use xlink:href="img/svg/sprite.svg#s-why-2"></use>
+								</svg></span><span class="item-method__caption"><span class="item-method__title">СМС-Пожертвование </span><span class="item-method__text">Отправить сообщение или перевести со счёта</span><img src="img/@2x/phone_icons.png" alt=""/></span></span>
+							</label>
+							<label class="item-method">
+								<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap">
+								<svg class="icon icon-doc ">
+									<use xlink:href="img/svg/sprite.svg#doc"></use>
+								</svg></span><span class="item-method__caption"><span class="item-method__title">по Квитанции</span><span class="item-method__text">Квитанция для оплаты в банке</span></span></span>
+							</label>
+							<label class="item-method">
+								<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap"><img src="img/@2x/qiwi_sign_rgb.png" alt=""/></span><span class="item-method__caption"><span class="item-method__title">с QIWI кошелька</span><span class="item-method__text">Пожертвование с помощью банковской карты или  QIWI-кошелька</span></span></span>
+							</label>
+							<label class="item-method">
+								<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap"><img src="img/@2x/paypal.png" alt=""/></span><span class="item-method__caption"><span class="item-method__title">со счёта paypal</span><span class="item-method__text">Перевод со счёта Paypal</span></span></span>
+							</label>
+							<label class="item-method">
+								<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap"> 
+								<svg class="icon icon-s-why-3 ">
+									<use xlink:href="img/svg/sprite.svg#s-why-3"></use>
+								</svg></span><span class="item-method__caption"><span class="item-method__title">НАЛИЧНЫМИ</span><span class="item-method__text">Адреса инфо-стоек фонда в Москве</span></span></span>
+							</label>
+							<p class="pt-3">Если ни&nbsp;один из&nbsp;перечисленных способов оказания помощи вам не&nbsp;подходит, получить необходимые банковские реквизиты и&nbsp;ответы на&nbsp;все интересующие вас вопросы можно связавшись с&nbsp;нами по&nbsp;телефону или электронной почте.</p>
+							<p>  Телефон.: <a class="text-body" href="tel:8800 250-75-25">8&nbsp;800 250-75-25</a> (звонок по&nbsp;России бесплатный)<br/>Тел./факс: <a class="text-body" href="tel:8495 926-35-63">8&nbsp;495 926-35-63</a><br/>e-mail: <a class="text-body" href="mailto:rusfond@rusfond.ru">rusfond@rusfond.ru</a></p>
 						</div>
-					</div>
-					<div class="s-continue__group">
-						<div class="s-continue__group-title">Способ пожертвования
-						</div>
-						<label class="item-method">
-							<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap">
-							<svg class="icon icon-s-why-1 ">
-								<use xlink:href="img/svg/sprite.svg#s-why-1"></use>
-							</svg></span><span class="item-method__caption"><span class="item-method__title">Банковской картой</span><span class="item-method__text">Пожертвование с банковской карты</span><img src="img/@2x/bank_icons.png" alt=""/></span></span>
-						</label>
-						<label class="item-method">
-							<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap">
-							<svg class="icon icon-s-why-2 ">
-								<use xlink:href="img/svg/sprite.svg#s-why-2"></use>
-							</svg></span><span class="item-method__caption"><span class="item-method__title">СМС-Пожертвование </span><span class="item-method__text">Отправить сообщение или перевести со счёта</span><img src="img/@2x/phone_icons.png" alt=""/></span></span>
-						</label>
-						<label class="item-method">
-							<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap">
-							<svg class="icon icon-doc ">
-								<use xlink:href="img/svg/sprite.svg#doc"></use>
-							</svg></span><span class="item-method__caption"><span class="item-method__title">по Квитанции</span><span class="item-method__text">Квитанция для оплаты в банке</span></span></span>
-						</label>
-						<label class="item-method">
-							<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap"><img src="img/@2x/qiwi_sign_rgb.png" alt=""/></span><span class="item-method__caption"><span class="item-method__title">с QIWI кошелька</span><span class="item-method__text">Пожертвование с помощью банковской карты или  QIWI-кошелька</span></span></span>
-						</label>
-						<label class="item-method">
-							<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap"><img src="img/@2x/paypal.png" alt=""/></span><span class="item-method__caption"><span class="item-method__title">со счёта paypal</span><span class="item-method__text">Перевод со счёта Paypal</span></span></span>
-						</label>
-						<label class="item-method">
-							<input type="radio" name="meth"/><span class="item-method__inner"><span class="item-method__icon-wrap"> 
-							<svg class="icon icon-s-why-3 ">
-								<use xlink:href="img/svg/sprite.svg#s-why-3"></use>
-							</svg></span><span class="item-method__caption"><span class="item-method__title">НАЛИЧНЫМИ</span><span class="item-method__text">Адреса инфо-стоек фонда в Москве</span></span></span>
-						</label>
-						<p>Если ни&nbsp;один из&nbsp;перечисленных способов оказания помощи вам не&nbsp;подходит, получить необходимые банковские реквизиты и&nbsp;ответы на&nbsp;все интересующие вас вопросы можно связавшись с&nbsp;нами по&nbsp;телефону или электронной почте.</p>
-						<p>  Телефон.: <a class="text-body" href="tel:8800 250-75-25">8&nbsp;800 250-75-25</a> (звонок по&nbsp;России бесплатный)<br/>Тел./факс: <a class="text-body" href="tel:8495 926-35-63">8&nbsp;495 926-35-63</a><br/>e-mail: <a class="text-body" href="mailto:rusfond@rusfond.ru">rusfond@rusfond.ru</a></p>
 					</div>
 				</div>
 			</div>

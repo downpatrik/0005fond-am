@@ -161,7 +161,7 @@
 .link-donate {
 	display: inline-flex;
 	color: $primary;
-	font-size: rem(13);
+	// font-size: rem(13);
 	letter-spacing: rem(1.95px);
 	align-items: center;
 	text-decoration: none !important;
@@ -173,7 +173,11 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: $primary;
+		border:1px solid $primary;
+		&:hover{
+
+			background-color: $primary;
+		}
 
 		@include media-breakpoint-up(xxl) {
 

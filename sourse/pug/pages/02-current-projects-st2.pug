@@ -35,13 +35,13 @@ block pagecontent
 			+e.group
 				+e.group-title Частота пожертвования
 				.row.no-gutters
-					+input-btn('Разовое','ch','col-sm-6') 
+					+input-btn('Разовое','ch','col-sm-6')(checked)
 					+input-btn('Ежемесячное','ch','col-sm-6')
-			+e.group
+			+e.group--other-border
 				+e.group-title Сумма пожертвования
 				.row.no-gutters
 					+input-btn('300 ₽','rub','col-sm-4') 
-					+input-btn('500 ₽','rub','col-sm-4') 
+					+input-btn('500 ₽','rub','col-sm-4')(checked) 
 					+input-btn('1 000 ₽','rub','col-sm-4')
 					
 				+b.form-wrap
@@ -51,12 +51,12 @@ block pagecontent
 				+e.group-title Контактная информация
 				+b.form-wrap
 					+input('Телефон','tel')
-					+input('Эл. почта','email')
+					+input('Эл. почта','email')(class="border-danger")
 					+input('Адрес доставки')
-					+in-c()
+					+in-c()(checked)
 						+e.SMALL.text Я хочу получать информацию о деятельности фонда на указанный адрес эл. почты
 
-					+in-c()
+					+in-c()(checked)
 						+e.SMALL.text Осуществляя пожертвование я принимаю условия #[a(href="#") договора-оферты]
 					.text-center.pt-2
 						+e.BUTTON.btn.btn-success(type="submit") ПОЖЕРТВОВАТЬ

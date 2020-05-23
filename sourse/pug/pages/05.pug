@@ -24,9 +24,9 @@ block pagecontent
 	+page-head()
 		.d-none.d-sm-block
 			img(src="img/svg/logo-lg-without-text.svg", alt="")
-			br
+			.pt-3
 			img(src="img/svg/text.svg", alt="")
-		.d-sm-none
+		.d-sm-none.pb-2
 			img.mb-1(src="img/svg/logo-text.svg", alt="")
 		.mono.h5 Строим и благоурашаем храмы с 2010 года
 	+s-continue
@@ -35,7 +35,7 @@ block pagecontent
 				+e.group-title.text-danger
 					img(src="img/svg/danger.svg", alt="").mr-2
 					br.d-sm-none
-					| К сожалению, Ваше пожертвоание не прошло.
+					| К сожалению, Ваше&nbsp;пожертвоание не&nbsp;прошло.
 				+b.form-wrap.text-center.mb-3
 					+e.BUTTON.btn.btn-success(type="submit") повторить
 				p В случае если средства были списаны со счёта Вашей банковской карты, обязательно свяжитесь с нами или оставьте свои контактыне данные и мы сами свяжемся с Вами.

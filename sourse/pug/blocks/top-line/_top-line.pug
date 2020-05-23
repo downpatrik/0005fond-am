@@ -6,9 +6,11 @@ mixin top-line()
 				+e.col--left.col-auto
 					+b.toggle-menu-mobile--js
 						span
-				.col 
+				.col.text-center
 					+e.logo(href="#")
-						img.res-i(src="img/svg/logo-top.svg", alt="")
+						
+						+icon('logo-top')
+						//- img.res-i(src="img/svg/logo-top.svg", alt="")
 				+e.col.col-auto.d-none.d-sm-block
 					+soc
 				+e.col.col-auto.text-right

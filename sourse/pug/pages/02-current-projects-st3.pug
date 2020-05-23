@@ -32,23 +32,16 @@ block pagecontent
 							span.option-img-wrap
 								img(src='img/svg/logo-color.svg')
 							span СМС-пожертвование
-			+e.group
-				+e.group-title Частота пожертвования
-				.row.no-gutters
-					+input-btn('Разовое','ch','col-sm-6') 
-					+input-btn('Ежемесячное','ch','col-sm-6')
-			+e.group
-				+e.group-title Сумма пожертвования
-				.row.no-gutters
-					+input-btn('300 ₽','rub','col-sm-4') 
-					+input-btn('500 ₽','rub','col-sm-4') 
-					+input-btn('1 000 ₽','rub','col-sm-4')
-					
-				+b.form-wrap
-					+input('Другая сумма')
+			+e.group 
+				.row
+					.col-sm-6
+						+e.btn.btn.btn-block.active(href="#") Со счёта мобильного
+						
+					.col-sm-6
+						+e.btn.btn.btn-block(href="#") СМС-пожертвование
 
 			+e.group
 				.text-center
 					img.res-i(src="img/@2x/phone.jpg", alt="")
-				p Отправить пожертвование можно со&nbsp;счета мобильного телефона оператора&nbsp;&mdash; &laquo;Мегафон&raquo;, &laquo;Билайн&raquo;, МТС или Tele2.
+				p.pt-3 Отправить пожертвование можно со&nbsp;счета мобильного телефона оператора&nbsp;&mdash; &laquo;Мегафон&raquo;, &laquo;Билайн&raquo;, МТС или Tele2.
 	+footer()

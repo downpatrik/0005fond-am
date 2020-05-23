@@ -11,7 +11,7 @@
   position: fixed;
   background: #3C414F;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
-  z-index: 200;
+  z-index: 800;
   padding-top: rem(4);
   padding-bottom: rem(4);
   // z-index: 20;
@@ -47,14 +47,14 @@
 
   &__col {
     @include media-breakpoint-up(xxl) {
-      --w: #{rem(205 + 160)};
+      --w: #{rem(205 + 160 + 60 + 30)};
     }
         @include media-breakpoint-up(md) {
           
-          --w: calc(#{rem(205 + 70)} + 30px);
+          --w: calc(#{rem(205 + 35)} + 30px);
         }
               @include media-breakpoint-up(sm) {
-        --w: calc(#{rem(220)} + 30px);
+        --w: calc(#{rem(220)} + 25px);
               }
   //  width: var(--w);
    &--left{
@@ -69,7 +69,15 @@
 
   &__logo {
     text-align: center;
-    display: block;
+    // display: block;
+    display: inline-block;
+    color: #ffffff;
+    &:hover{
+      color: #C5AA79;
+    }
+    .icon{
+      font-size: rem(53);
+    }
     img {
       // width: rem(136);
       position: relative;
@@ -79,7 +87,11 @@
   }
 
   // 
-  @include media-breakpoint-up(xl) {}
+  @include media-breakpoint-up(xxl) {
+    .soc{
+      margin-right: rem(60);
+    }
+  }
 
   @include media-breakpoint-up(lg) {}
 

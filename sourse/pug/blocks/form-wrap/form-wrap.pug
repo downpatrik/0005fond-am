@@ -72,5 +72,5 @@ mixin polite()
 			+e.SMALL.text  Я согласен на  #[a(href="#") обработку персональных данных]
 mixin input-btn(t, name, cl)
 	+b.LABEL.input-btn(class= cl)
-		input(type="radio" name= name)
+		input(type="radio" name= name)&attributes(attributes)
 		+e.title= t
