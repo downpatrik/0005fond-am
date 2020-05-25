@@ -32,12 +32,12 @@ block pagecontent
 							img(src='img/@1x/video.jpg')
 						span На храм равноапостольного князя Владимира,  п. Станционный-Полевской, Свердловская обл.
 		+e.title-main Адреса информационных стоек
-		+e.mark 
+		+e.mark--mark.scroll-link(href='#map-block')
 			+icon("mark")
 			| Смотреть на карте
 		.row
 			mixin addr(t,p)
-				+e.col.col-lg-4.col-sm-6
+				+e.col--map.col-lg-4.col-sm-6.scroll-link(href='#map-block')
 					+e.col-title!= t
 					+e.col-text!= p
 			+addr("м.&nbsp;Биберево",'&laquo;Виктория ул. Коненкова, дом&nbsp;3')
@@ -59,6 +59,25 @@ block pagecontent
 			+addr("м.&nbsp;Пролетарская",'Новоспасский монастырь Крестьянская пл., 10')
 			+addr("м.&nbsp;Юго-Западная",'&laquo;Виктория ул. Академика Анохина, д.2&nbsp;корп. 1б')
 			+addr("м.&nbsp;Каховская",'&laquo;Виктория  Севастопольский пр-т, д.&nbsp;28, стр.&nbsp;2')
-		+e.map-wrap
-			img.res-i(src="img/@2x/map.jpg", alt="")
+		+e.map-wrap#map-block
+			+b.info-block.active
+
+				+e.head 
+					.strong ТРЦ «Европейский»
+					.info-block-close
+				+e.img-wrap
+					img.res-i(src="img/@2x/742453a2d7c4228c88263a7eaae3c42a.jpg", alt="")
+				+e.body
+					.strong м. Киевская
+					p пл. Киевского вокзала, стр. 2 <br> 0 этаж, возле эскалатора
+					.small Время работы: 10:00-22:00
+
+					.small По вопросам работы точки обращаться по телефонам: 
+						a(href="tel:+7(495)422-25-88").tdn.text-white +7 (495) 422-25-88 
+						|, 
+						a(href="tel:+7(926)935-93-24").tdn.text-white +7 (926) 935-93-24 
+					.small
+						a(href="www.europe-tc.ru").tdn www.europe-tc.ru
+
+			img.map-img.res-i(src="img/@2x/map.jpg", alt="")
 	+footer()

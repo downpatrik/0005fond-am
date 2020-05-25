@@ -141,6 +141,11 @@
 		 }
 		 &__mark{
 			 text-align: center;
+			 display: block;
+			 text-decoration: none !important;
+			 &:not(:hover){
+				 color: $body-color;
+			 }
 			 margin-bottom: rem(60);
 			 .icon{
 				 color: #aa3f59;
@@ -148,12 +153,19 @@
 				 margin-right: rem(9);
 			 }
 		 }
-
+		 .map-img{
+			 height: 100%;
+		 }
 		 &__map-wrap{
 			 margin-left: auto;
 			 margin-right: auto;
 			 position: relative;
-			 overflow: hidden;
+			 //  overflow: hidden;
+			 @include media-breakpoint-up(md) {
+
+				 min-height: rem(550);
+				}
+				height: 640px;
 			 border-radius: 8px;
 			}
 					 @include media-breakpoint-up(sm) {
@@ -161,6 +173,13 @@
 						 padding-bottom: rem(120);
 						}
 						padding-bottom: rem(90);
+		&__col--map{
+			display: block;
+			text-decoration: none !important;
+			&:not(:hover){
+				color: $body-color;
+			}
+		}
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}
 	@include media-breakpoint-up(md) {}
@@ -489,4 +508,46 @@
 
 .chosen-container .chosen-drop{
 	z-index: 800;
+}
+
+.info-block{
+	left: 0;
+	top: 0;
+	background: #3C414F;
+	position: absolute;
+	@include media-breakpoint-up(md) {
+		
+		min-height: 100%;
+		border-radius: 8px 0px 0px 8px;
+		width: rem(360);
+		height: rem(550);
+	}
+	min-height: rem(550);
+	border-radius: 8px ;
+		width: 100%;
+	color: #ffffff;
+	display: none;
+	z-index: 200;
+	&.active{
+		// display: none;
+		display: block;
+	}
+	&__head,
+	&__body{
+		padding: rem(20) rem(30);
+		position: relative;
+	}
+	.small{
+		font-size: rem(13);
+		margin-bottom: 1rem;
+	}
+}
+.info-block-close{
+	position: absolute;
+	top: rem(18);
+	right: rem(20);
+	cursor: pointer;
+	&::before{
+		content: url(../img/svg/close.svg);
+	}
 }

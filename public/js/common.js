@@ -154,7 +154,7 @@ function eventHandler() {
 
 	$(" .top-nav li a, .scroll-link").click(function () {
 		var elementClick = $(this).attr("href");
-		var destination = $(elementClick).offset().top;
+		var destination = $(elementClick).offset().top - 80;
 		$('html, body').animate({
 			scrollTop: destination
 		}, 1100);
@@ -292,6 +292,12 @@ function eventHandler() {
 	});
 	$(".custom-select").chosen({
 		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
+	});
+	$(".s-continue__col--map").click(function () {
+		$(".info-block").show();
+	});
+	$(".info-block-close").click(function () {
+		$(".info-block").toggle();
 	}); // $('.custom-select').select2({
 	// 	theme: 'bootstrap4',
 	// });

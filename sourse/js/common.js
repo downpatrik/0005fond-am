@@ -168,7 +168,7 @@ function eventHandler() {
 	// листалка по стр
 	$(" .top-nav li a, .scroll-link").click(function () {
 		const elementClick = $(this).attr("href");
-		const destination = $(elementClick).offset().top;
+		const destination = $(elementClick).offset().top - 80;
 
 		$('html, body').animate({ scrollTop: destination }, 1100);
 
@@ -341,8 +341,12 @@ function eventHandler() {
 		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
 	});
 
-	
-
+	$(".s-continue__col--map").click(function () {
+		$(".info-block").show();
+	})
+	$(".info-block-close").click(function () {
+		$(".info-block").toggle();
+	})
 	// $('.custom-select').select2({
 	// 	theme: 'bootstrap4',
 	// });
