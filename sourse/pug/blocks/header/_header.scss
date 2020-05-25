@@ -1,5 +1,9 @@
 .header{
-  min-height: rem(65);
+  @include media-breakpoint-up(sm) {
+
+    min-height: rem(65);
+  }
+  min-height: rem(60);
 	
   // 
   @include media-breakpoint-up(xl) {}
