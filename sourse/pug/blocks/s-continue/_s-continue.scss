@@ -164,8 +164,9 @@
 			 @include media-breakpoint-up(md) {
 
 				 min-height: rem(550);
+				 height: auto;
 				}
-				height: 640px;
+				height:700px;
 			 border-radius: 8px;
 			}
 					 @include media-breakpoint-up(sm) {
@@ -515,6 +516,13 @@
 	top: 0;
 	background: #3C414F;
 	position: absolute;
+	p,
+	.strong{
+			@include media-breakpoint-up(md){
+
+				font-size: rem(21);
+			}
+	}
 	@include media-breakpoint-up(md) {
 		
 		min-height: 100%;
@@ -534,7 +542,7 @@
 	}
 	&__head,
 	&__body{
-		padding: rem(20) rem(30);
+		padding: rem(15) rem(30);
 		position: relative;
 	}
 	.small{
