@@ -1,30 +1,89 @@
 .header-block {
 	// display: block;
-	display: table;
-	background-color: #93344A;
-	width: 100%;
+	
+	margin-left: auto;
+	margin-right: auto;
+		@include media-breakpoint-up(sm) {
+			background: none;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+		padding-bottom: rem(60);
+		padding-top: 60px;
+		background-color: #AA3F59;
+		@include media-breakpoint-up(md) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	&__slider{
 
-	@include media-breakpoint-up(lg) {
+		max-width: 1300px;
+		
+		@include media-breakpoint-up(sm) {
+		margin-top: rem(60);
+		}
+		margin-bottom: rem(40);
+			@include media-breakpoint-up(md) {
 
-		background-image: url(../img/@2x/header-bg.jpg);
+				
+				border-radius: 8px;
+			}
+		@include media-breakpoint-up(lg) {
+			margin-top: rem(145);
+			
+			
+		}
+		overflow: hidden;
+		position: relative;
+		background-color: #AA3F59;
+			@include media-breakpoint-up(sm) {
+
+				box-shadow: 0px 16px 32px rgba(154, 41, 68, 0.3);
+			}
+		@include bgs;
 	}
-
-	@include bgs;
-	min-height: 100vh;
-	height: 100vh;
+	// height: 100vh;
+	// min-height: 100vh;
 
 	img {
+	
 		max-height: calc(100vh - #{rem(95 + 20)});
 	}
+ &__slide{
+	 padding-left: 15px;
+	 padding-right: 15px;
+	 	@include media-breakpoint-up(lg) {
 
-	&__logo {
-		display: table-cell;
-		vertical-align: middle;
+			 min-height: rem(598);
+			}
+			min-height: rem(458);
+	// display: block;
+	display: flex;
+ }
+ .logo-img{ 
+	 	@include media-breakpoint-up(sm) {
 
+			 margin-bottom: rem(30);
+			}
+			margin-bottom: rem(15);
+ }
+ 
+&__logo {
+		max-width: 220px;
+		margin-left: auto;
+		margin-right: auto;
+
+	width: 100%;
 		@include media-breakpoint-up(sm) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			min-height: 100%;
+			padding-top: rem(15);
+			padding-bottom: rem(40);
+			max-width: 100%;
 
-			padding-top: rem(95);
-			padding-bottom: rem(20);
 		}
 
 		padding-top: rem(20);
@@ -32,6 +91,23 @@
 
 	}
 
+	&__text {
+		color: #ffffff;
+		@extend .mono;
+			@include media-breakpoint-up(sm){
+
+				font-size: rem(24);
+				max-width: none;
+			}
+		
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 18px;
+		//  @extend .mono;
+	}
+	&__swiper-pagintation{
+		
+	}
 	// 
 	@include media-breakpoint-up(xl) {}
 
@@ -64,10 +140,13 @@
 
 	@include media-breakpoint-down(md) {}
 
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(xs) {
+		&__slide{
+			background-image: none !important;
+		}
 		img {
 			// max-height: calc(100% - 7rem);
-			max-width: 40%;
+		 
 		}
 
 	}
@@ -75,7 +154,7 @@
 	@include media-breakpoint-down(xs) {
 		img {
 			// max-height: calc(100% - 7rem);
-			max-width: 60%;
+		 
 		}
 
 	}

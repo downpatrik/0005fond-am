@@ -1,6 +1,8 @@
 mixin s-cards()
 	// start s-cards
 	+b.s-cards.section#s-cards&attributes(attributes)
+		.section-title.text-center.d-sm-none
+			h2 Записки и сертификаты
 		.container
 			+e.slider.slider-auto-js.swiper-container
 				.swiper-wrapper
@@ -22,5 +24,9 @@ mixin s-cards()
 					
 					+slide("4")
 						+e.DIV.text Внесите пожертвование  к&nbsp;празднику свт. Николая Чудотворца
-			+e.btn.btn-more(href="#") ВСЕ ПРОЕКТЫ
+					+slide("4")
+						+e.DIV.text Внесите пожертвование  к&nbsp;празднику свт. Николая Чудотворца
+			.d-none.d-xl-block
+				+arrow()
+			//- +e.btn.btn-more(href="#") ВСЕ ПРОЕКТЫ
 	// end s-cards

@@ -1,19 +1,21 @@
 mixin s-project()
 	// start s-project
-	+b.SECTION.s-project.section&attributes(attributes)
+	+b.SECTION.s-project--first.section&attributes(attributes)
+		+e.head
+			.container
+				+b.section-title.text-center
+					h2 Текущие проекты
 		.container
-			+b.section-title.text-center
-				h2 Текущие проекты
 			+b.project-lg-wrap
 				+b.project-lg.bg-wrap
-					+pic("project-main-1","bg",'')(class="picture-bg")
+					+pic("project-main-1","bg",'','')(class="picture-bg")
 					+e.head
 						+e.label Основной проект фонда
 						+e.title
 							a(href="#") Новоспасский монастырь
 					+e.center
 						+e.play(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
-						+e.center-text Всем миром украсим храм для&nbsp;#[em &laquo;Bсецарицы&raquo;]
+						+e.center-text Всем миром украсим храм для&nbsp; &laquo;Bсецарицы&raquo;
 				+e.btn.btn-more(href="#") ПОДРОБНЕЕ
 		+e.container.container
 			+e.slider--js.swiper-container
@@ -22,24 +24,27 @@ mixin s-project()
 						+e.slide--lg.swiper-slide
 							+b.project-item.bg-wrap
 								+pic("projec-1",'bg','')(class="picture-bg")
-								+e.place(href="#")
-									+icon('mark')
-									|  г. Клин
-								+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
-									br
-									em в Клину
-										= x
+								.project-item__hidden.active.mb-auto
+									+e.place(href="#")
+										+icon('mark')
+										|  г. Клин
+									+e.title Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
+										br
+										em в Клину
+											= x
 								+e.text Требуется роспись стен
+								.project-item__hidden.mb-auto
+									p Примем участие в обустройстве Никольской церкви села Мужиново! Создание колоколов издревле считалось особо богоугодным делом. Колокольный звон называют молитвой в бронзе. Верующий человек, услышав его, непременно вспомнит о Боге, перекрестится. 
 								+e.price
 									.row
 										.col-6
-											+e.price-title Требуется
-											+e.number 500 000 000
-										
-										.col-6
 											+e.price-title Собрано
-											+e.number 399 050 860
-								+e.btn-wrap
+											+e.number 399 050 860 Р
+										.col-6
+											+e.price-title Требуется
+											+e.number 500 000 000 Р
+										
+								+e.btn-wrap.project-item__hidden
 									+e.btn.btn-sm(href="#") ПОМОЧЬ ХРАМУ
 								+e.foot
 									+e.foot-item
@@ -58,69 +63,83 @@ mixin s-project()
 
 mixin s-project2()
 	// start s-project
-	+b.SECTION.s-project.section#s-project&attributes(attributes)
+	+b.SECTION.s-project--cases.section#s-project&attributes(attributes)
 		.container
 			
 			+b.section-title.text-center
 				h2 реализованные проекты
 			+b.project-lg-wrap
-				+b.project-lg--blue.bg-wrap
+				+b.project-lg.bg-wrap
 					+pic("project-main-2","bg",'')(class="picture-bg")
 					//- +e.label Основной проект фонда
 					+e.head
+						+e.label Основной проект фонда
 						+e.title
 							a(href="#") Храм Покрова Пресвятой  Богородицы
 								| 
 								em в Ясеневе
 					+e.center
 						+e.play(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
-						//- +e.center-text Всем миром украсим храм для&nbsp;#[em &laquo;Bсецарицы&raquo;]
-				ul
-					li
-						strong 5 лет 
-
-						| строительства
-					
-					li
-						strong 5 в мире 
-
-						| по объёму  мозаики
-					li
-						strong 5
-						| уникальных архитектурных  проектов
-					li.d-none.d-md-block
-						strong 1 000 000
-						| участников
+						+e.center-text Древняя Византия под московским небом
+					+e.slider--mob.--mob-js.swiper-container.d-sm-none
+						.swiper-wrapper
+							mixin sl(x,t)
+								+e.slide-mob.swiper-slide 
+										+e.img-wrap-mob
+											img(src=`img/@2x/artical-${x}.jpg`, alt="")
+										+e.title-mob= t
+							+sl("1",'Византийская  мозаика')
+							+sl("2",'Икона  Святой Земли')
+							+sl("1",'Византийская  мозаика')
+							+sl("2",'Икона  Святой Земли')
 
 
 				+e.btn.btn-more(href="#") ПОДРОБНЕЕ
 		+e.container-sm.container
-			+e.slider--3-js.swiper-container
+			+e.slider--3-js.--cases.swiper-container
 				.swiper-wrapper
 					- for (var x = 1; x < 7; x++)
 						+e.slide--sm.swiper-slide
 							+b.project-item--sm.bg-wrap
-								+pic("projec-2",'bg','')(class="picture-bg")
-								+e.place(href="#")
+								+pic("projec-2",'bg','','')(class="picture-bg")
+								.project-item__hidden.active.mb-auto
+									+e.place(href="#")
 
-									+icon('mark')
-									|  г. Клин
-								+e.title
-									a.link-hover(href="#") Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
-										br
-										em в Клину
-											= x
-
-								+e.foot-sm
-									+e.text-sm Приняло участие 
-									.row
-										.col
-											+e.user-count
-												+icon("user")
-												| 5 000
-											+e.text-sm  человек 
-										.col-auto.d-none.d-md-block
-											+e.btn-more(href="#") ПОДРОБНЕЕ
+										+icon('mark')
+										|  г. Клин
+									+e.title
+										a.link-hover(href="#") Храм в&nbsp;честь свт. Тихона Патриарха Всероссийского
+											br
+											em в Клину
+												= x
+								+e.text
+									img(src="img/svg/success.svg", alt="")
+									| Украшены стены храма
+								.project-item__hidden
+									
+									p Примем участие в обустройстве Никольской церкви села Мужиново! Создание колоколов издревле считалось особо богоугодным делом. Колокольный звон называют молитвой в бронзе. Верующий человек, услышав его, непременно вспомнит о Боге, перекрестится. 
+									+e.foot-sm
+										+e.btn-more(href="#") ПОДРОБНЕЕ
+								.project-item__hidden.active
+									+e.foot--sm.justify-content-start
+										+e.foot-item
+											+icon("eye")
+											| 45
+										
+										+e.foot-item
+											+icon("donate")
+											| 133
+										+e.foot-item
+											+icon("share")
+											| 18
+									//- +e.text-sm Приняло участие 
+									//- .row
+									//- 	.col
+									//- 		+e.user-count
+									//- 			+icon("user")
+									//- 			| 5 000
+									//- 		+e.text-sm  человек 
+									//- 	.col-auto.d-none.d-md-block
 				+arrow()
 			+e.btn.btn-more(href="#") ВСЕ ПРОЕКТЫ
 	// end s-project

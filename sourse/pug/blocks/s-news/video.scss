@@ -1,11 +1,48 @@
 // start .s-news
 .video-item {
+	&--artical{
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+		color: $body-color !important;
+		text-decoration: none 	!important;
+		background: linear-gradient(0deg, #FFFFFF, #FFFFFF),
+		linear-gradient(0deg, #505769, #505769),
+		linear-gradient(104.64deg, #46498F 2.73%, #AA3F59 100%);
+		box-shadow: 0px 8px 16px rgba(197, 170, 121, 0.15);
+		&:hover{
+			background: #FFFFFF ;
+			box-shadow: 0px 8px 16px rgba(197, 170, 121, 0.15);
+			color: $primary !important;
+			.video-item__btn{
+				opacity: 1;
+			}
+			.video-item__foot{
+				opacity: 0;
+			}
+		} 
+		border-radius: 8px;
+		margin-bottom: 0;
+		&:hover{
+			
+		}
+	}
 	margin-bottom: rem(20);
 
 	@include media-breakpoint-down(lg) {
 		color: #ffffff;
 	}
+	&__top-title{
+		font-size: 11px;
+		line-height: 100%;
+		/* identical to box height, or 11px */
 
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+
+		color: rgba(80, 87, 105, 0.5);
+		margin-bottom: rem(10);
+	}
 	&__play {
 		@include a-cent;
 		width: rem(51px);
@@ -38,11 +75,11 @@
 		position: relative;
 		@extend .link-hover;
 		color: #ffffff;
-
+		
 		&:hover {
 			box-shadow: 0px 16px 32px rgba(197, 170, 121, 0.25);
 		}
-
+		
 		img {
 			// @extend .object-fit-js;
 			position: absolute;
@@ -52,9 +89,25 @@
 			width: 100%;
 			height: 100%;
 		}
-	}
+		&--artical {
+			border-radius: 8px 8px 0 0;
+			box-shadow: none;
+				&::before{
+					display: none;
+				}
+				height: rem(222);
+				img{
+					opacity: 1;
+					box-shadow: none;
 
+				}
+			}
+	}
+	&__foot{
+		@include mt;
+	}
 	&__foot-item {
+		margin-top: auto;
 		padding-left: rem(15);
 		padding-right: rem(15);
 		display: inline-flex;
@@ -63,15 +116,15 @@
 		position: relative;
 
 
-		&:not(:last-child)::after {
-			content: '';
-			position: absolute;
-			@include a-cent(y);
-			right: 0;
-			width: 1px;
-			height: rem(20px);
-			background-color: currentColor;
-		}
+		// &:not(:last-child)::after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	@include a-cent(y);
+		// 	right: 0;
+		// 	width: 1px;
+		// 	height: rem(20px);
+		// 	background-color: currentColor;
+		// }
 
 		.icon {
 			margin-right: rem(4);
@@ -113,6 +166,8 @@
 	}
 
 	&__caption {
+		flex-grow: 1;
+		
 		@include media-breakpoint-up(xl) {
 
 			padding: rem(20) rem(30);
@@ -121,7 +176,17 @@
 
 		padding: rem(20) rem(20);
 		padding-right: 0;
-
+		&--artical {
+			display: flex;
+			flex-direction: column;
+				@include media-breakpoint-up(xl){
+					padding-right: rem(20);
+				}
+			padding: rem(15) rem(20) rem(20);
+			p {
+				padding-bottom: rem(25);
+			}
+		}
 		a {
 			text-decoration: none !important;
 			@extend .link-hover;
@@ -135,7 +200,22 @@
 			&:not(:hover) {}
 		}
 	}
-
+	&__btn{
+		// opacity: 0;
+		@extend .btn;
+		@extend .btn-sm;
+		@extend .btn-outline-primary;
+		width: rem(100);
+		font-size: rem(13);
+		position: absolute;
+		left: rem(20);
+		opacity: 0;
+		bottom: rem(16);
+			@include mt;
+		&:hover{
+			color: #ffffff !important	;
+		}
+	}
 	@include media-breakpoint-up(xl) {}
 
 

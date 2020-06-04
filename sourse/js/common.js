@@ -117,7 +117,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/03.jpg);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -175,12 +175,16 @@ function eventHandler() {
 		return false;
 	});
 
-	let mySwiper = new Swiper('.slider-auto-js', {
+	let mySwiperC = new Swiper('.slider-auto-js', {
 		speed: 400,
 		// loop: true,
 		loopedSlides: 4,
 		slidesPerView: 1,
 		spaceBetween: 20,
+		navigation: {
+			nextEl: '.s-cards .swiper-button-next',
+			prevEl: '.s-cards .swiper-button-prev',
+		}, 
 		breakpoints: {
 			576: {
 				spaceBetween: 20,
@@ -205,6 +209,7 @@ function eventHandler() {
 				// slidesPerView: 4,
 				// spaceBetween: 40
 				loop: false,
+				
 			},
 
 		}
@@ -219,8 +224,13 @@ function eventHandler() {
 		freeMode: true,
 		freeModeMomentum: true,
 		loop: false,
+		navigation: {
+			nextEl: $(this).find('.swiper-button-next'),
+			prevEl: $(this).find('.swiper-button-prev'),
+		},
 		breakpoints: {
 			576: {
+				watchOverflow: true,
 				spaceBetween: 30,
 			},
 		}
@@ -268,11 +278,13 @@ function eventHandler() {
 		freeModeMomentum: true,
 		spaceBetween: 20,
 		loopedSlides: 6,
+		loop: false,
 		breakpoints: {
-			// 576: {
-			// 	slidesPerView: 1,
+			576: {
+				// slidesPerView: 1,
 
-			// },
+				loop: true,
+			},
 
 			991: {
 				loop: true,
@@ -301,8 +313,46 @@ function eventHandler() {
 
 		}
 	});
+	
+	var mySwiperMob2222 = new Swiper('.project-lg__slider--mob-js', {
+		slidesPerView: 'auto',
+		// loop: true,
+		speed: 400,
+		spaceBetween: 20,
+		loopedSlides: 4,
+		watchOverflow: true,
+		freeMode: true,
+		// freeModeMomentum: true,
+	});
+
+
 	$(".section").each(function () {
 
+		let mySwiperRew = new Swiper($(this).find('.slider-rew-js'), {
+			speed: 400,
+			loop: true,
+			loopedSlides: 4,
+			slidesPerView: 'auto',
+			spaceBetween: 20,
+			watchOverflow: true,
+			freeMode: true,
+			freeModeMomentum: true,
+			navigation: {
+				nextEl: $(this).find('.swiper-button-next'),
+				prevEl: $(this).find('.swiper-button-prev'),
+			},
+			breakpoints: {
+				992: {
+					
+					slidesPerView: 3,
+					watchOverflow: false,
+					freeMode: false,
+					freeModeMomentum: false, 
+				}
+			}
+		});
+ 
+	
 		let mySwiper4 = new Swiper($(this).find('.slider-js'), {
 			speed: 400,
 			loop: true,
@@ -315,6 +365,7 @@ function eventHandler() {
 			},
 		});
 	})
+
 	var mySwiper5 = new Swiper('.s-news__slider--js', {
 		slidesPerView: 'auto',
 		spaceBetween: 20,
@@ -333,9 +384,23 @@ function eventHandler() {
 	});
 
 	$(".project-item").hover(function () {
-		$(this).find(".project-item__btn-wrap").slideToggle(150)
+		$(this).find(".project-item__hidden").slideToggle(150)
 	})
  
+
+	var headerSwiper3 = new Swiper('.header-block__slider--js', {
+		slidesPerView: 1,
+		watchOverflow: true, 
+		spaceBetween: 0,
+		loop: true,
+		pagination: {
+			el: '.header-block__swiper-pagination',
+			type: 'bullets',
+			clickable: true
+		},
+ 
+	});
+
 
 	$(".custom-select").chosen({
 		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '

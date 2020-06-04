@@ -6,8 +6,19 @@ mixin s-logo()
 				.swiper-wrapper
 					mixin slide(i, t,p)
 						+e.slide.swiper-slide 
-							img.res-i(src=`img/@2x/logo-${i}.png`, alt="")
+							+e.item
+								+e.img-wrap
+									img.res-i(src=`img/@2x/logo-${i}.png`, alt="")
+								div
+									+e.title= t
+									+e.text= p
 						// /+e.DIV.slide.swiper-slide
-					- for (var x = 1; x < 7; x++)
-						+slide(x)
+					+slide('1','Троице-сергиева лавра','г. Сергиев-посад')
+					+slide('2','Храм преподобного сергия радонежского','г. Ставрополь')
+					+slide('3','Храм сергия радонежского','г. Ставрополь')
+				 
+					+slide('1','Троице-сергиева лавра','г. Сергиев-посад')
+					//- +slide('2','Храм преподобного сергия радонежского','г. Ставрополь')
+					//- +slide('3','Храм сергия радонежского','г. Ставрополь')
+				 
 	// end s-logo

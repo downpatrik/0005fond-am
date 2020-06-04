@@ -1,15 +1,19 @@
 // start .s-news
 .s-news {
 	line-height: 120%;
-
+			&__slide {
+				max-width: rem(262);
+				height: initial;
+			}
 	&__btn {
 		@extend .btn-outline-primary;
 		background-color: #ffffff !important;
 
 		@include media-breakpoint-up(xl) {
 
-			margin-top: rem(30);
+			margin-top: rem(50);
 		}
+		margin-top: rem(30);
 
 		// margin-top: rem(10);
 	}

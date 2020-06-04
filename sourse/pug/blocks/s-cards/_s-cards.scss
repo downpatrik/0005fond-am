@@ -1,8 +1,17 @@
 // start .s-cards
 .s-cards {
-	padding-top: rem(80);
-	padding-bottom: rem(43);
-
+	// padding-top: rem(80);
+	// padding-bottom: rem(43);
+	position: relative;
+	z-index: 10;
+	.container{
+		position: relative;
+	}
+	@include media-breakpoint-up(xl) {
+		&__slider {
+			overflow: hidden;
+		}
+	}
 	&__slide {
 		font-weight: bold;
 
@@ -23,6 +32,7 @@
 		text-align: center;
 
 		// @extend .h5;
+		
 		@include media-breakpoint-up(xl) {
 
 			font-size: $h5-font-size;
@@ -34,19 +44,28 @@
 	}
 
 	&__img-wrap {
+		order: 2;
 		@include media-breakpoint-up(xl) {
 
 			margin-bottom: rem(32);
 		}
+	@include media-breakpoint-up(sm) {
 
 		margin-bottom: rem(32 / 2);
+	}
+	@include media-breakpoint-up(sm) {
+
 		@include block();
+	}
 		position: relative;
 
 		img {
-			@include a-cent;
-			max-height: 100%;
-			max-width: 100%;
+			@include media-breakpoint-up(sm) {
+
+				@include a-cent;
+				max-height: 100%;
+				max-width: 100%;
+			}
 		}
 	}
 
@@ -63,14 +82,15 @@
 	}
 
 	&__item {
-		display: block;
 		text-decoration: none !important;
 		color: $body-color;
 		border-radius: 8px;
 		@include mt;
 		@extend .link-hover;
-
+		display: flex;
+		flex-direction: column;
 		@include media-breakpoint-up(sm) {
+			display: block;
 
 			&:hover {
 				background: #3C414F;
@@ -134,8 +154,34 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {
+		padding-bottom: 0;
+		h2{
+			color: rgba(255, 255, 255, 0.5);
+		}
+		background: #3C414F;
 		.container {
 			max-width: rem(260px);
+		}
+		&__item{
+			color: #ffffff;
+			
+		}
+		&__text{
+
+			font-weight: normal;
+			margin-bottom: 20px;
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 230px;
+			min-height: 3.5em;
+		}
+		&__slide{
+			align-self: flex-end;
+			margin-bottom: 0;
+			padding-bottom: 0;
+		img{
+			max-height: 220px;
+		}
 		}
 	}
 

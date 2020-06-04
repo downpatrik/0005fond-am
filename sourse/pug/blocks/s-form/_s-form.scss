@@ -7,6 +7,7 @@
 		@include media-breakpoint-up(lg) {
 
 			padding: rem(30);
+			padding-bottom: rem(10);
 		}
 
 		@include media-breakpoint-up(md) {
@@ -76,7 +77,7 @@
 		&__col {
 			@include media-breakpoint-up(xl) {
 
-				width: rem(220 + 100);
+				width: rem(220 + 120);
 			}
 		}
 
@@ -84,12 +85,18 @@
 			color: #ffffff;
 			// margin-bottom: rem(10);
 		}
+		&__btn{
+			width: rem(226);
+		}
 	}
 
 	//
 	@include media-breakpoint-up(xl) {}
 
-	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(lg) {
+				padding-top: rem(60);
+				padding-bottom: rem(20);
+	}
 
 	@include media-breakpoint-up(md) {}
 

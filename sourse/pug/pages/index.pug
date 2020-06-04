@@ -9,6 +9,7 @@ include ../blocks/s-rews/_s-rews.pug
 include ../blocks/s-news/_s-news.pug
 include ../blocks/s-why/_s-why.pug
 include ../blocks/s-logo/_s-logo.pug
+include ../blocks/sMobileBlock/_sMobileBlock.pug
 
 block variables
 	- let  mainPage= 'main-page'
@@ -20,14 +21,16 @@ block pagecontent
 	+mob-mnu()
 	+top-line()
 	+header()
-		+top-nav()
+		//- +top-nav()
 		+header-block()
-	+s-cards
-	+s-project
+		+sMobileBlock
+	.d-flex.flex-column.z-6
+		+s-project
+		+s-cards()(class='order-sm-first')
 	+s-project2
+	+s-form()
 	+s-rews
 	+s-news
-	+s-form()
 	+s-why
 	+s-logo 
 	+footer()

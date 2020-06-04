@@ -29,9 +29,11 @@ mixin top-nav()
 					.d-none.d-xl-block
 						+mnu2()
 						+mnu0()
-				+e.col.col-auto
+				.col-auto.d-none.d-sm-block
+					+soc
+				.col-auto
 					+b.link-donate(href="#")
-						+e.icon-wrap
+						+e.icon-wrap.d-xxxl-none
 							+icon('donate')
-						.d-none.d-xxl-block ПОЖЕРТВОВАТЬ
+						.d-none.d-xxxl-block ПОЖЕРТВОВАТЬ
 	// end top-nav

@@ -1,5 +1,14 @@
  .main-page .top-line {
-  transform: translateY(-140%);
+  // transform: translateY(-140%);
+  @include media-breakpoint-down(xs) {
+    &:not(.fixed){
+      background: none;
+      box-shadow: none;
+      .top-line__logo{
+        opacity: 0;
+      }
+    }
+  }
   @include media-breakpoint-up(xl) {
 
     &.fixed {

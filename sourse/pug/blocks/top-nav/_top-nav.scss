@@ -14,15 +14,23 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	position: absolute;
+	// position: absolute;
 
 	&__col {
-		@include media-breakpoint-up(xxl) {
+		@media (min-width: 1900px) {
 
-			width: rem(214);
+			width: rem(384  );
+		}
+			@include media-breakpoint-up(xxxl) {
+
+			width: rem(384 + 30);
+		}
+			@include media-breakpoint-up(xxl) {
+
+			width: rem(254 + 30);
 		}
 
-		width: calc(#{rem(40)} + 30px);
+		width: calc(#{rem(200)} + 30px);
 	}
 
 	.nav {
@@ -115,6 +123,31 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {}
+	.link-donate{
+		@extend .text-body;
+		&__icon-wrap{
+			position: relative;
+			top: rem(-6);
+		}
+	}
+	.soc {
+		@media (min-width: 1900px) {
+
+			margin-right: rem(30);
+		}
+		a{
+			color: $body-color;
+			text-decoration: none !important;
+
+			&:hover {
+				color: $primary;
+			}
+
+			&:focus {
+				color: #B9A073;
+			}
+	}
+}
 }
 
 .nav {
@@ -145,7 +178,7 @@
 	}
 
 	&__link {
-		color: #ffffff;
+		color: $body-color;
 		text-decoration: none !important;
 
 		&:hover {
