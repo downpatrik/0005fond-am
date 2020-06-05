@@ -158,10 +158,25 @@
 
 	&__item {
 		display: block;
+		&--has-children{
+			position: relative;
+			&::after{
+				content: '';
+				position: absolute;
+				right: 0;
+				background-image: url(../img/svg/chevron-right.svg);
+				width: rem(10 * 2);
+				height: rem(5* 2);
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				top: em(8);
+			}
+		}
 	}
 
 	&--lg {
-
+		
 		@media (min-width: 1440px) {
 
 			font-size: $h4-font-size;
@@ -171,7 +186,9 @@
 		font-size: ($h4-font-size * .9);
 		@extend .mono;
 		font-weight: 500;
-
+		.menu-mobile__inner{
+			font-size: 1rem;
+		}
 		.nav__item:nth-child(1) {
 			// display: none;
 		}

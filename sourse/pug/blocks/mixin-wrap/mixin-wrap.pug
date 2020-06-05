@@ -144,6 +144,7 @@ mixin mnu()
 	+b.UL.nav--lg(itemscope itemtype="http://schema.org/SiteNavigationElement")
 		each linkPatch, linkName in nav
 			+e.LI.item( itemprop="item" ): +e.A.link(href= linkPatch  itemprop="url")= linkName
+			
 //- /menu
 mixin mnu0()
 	-

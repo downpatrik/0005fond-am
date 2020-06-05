@@ -1,7 +1,9 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
+	btnToggleMenuMobileInner: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--inner-js")),
 	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobileSub: [].slice.call(document.querySelectorAll(".menu-mobile-sub--js")),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	body: document.querySelector("body"),
 
@@ -40,12 +42,19 @@ const JSCCommon = {
 					element.classList.toggle("on");
 				});
 				_this.menuMobile.classList.toggle("active");
+				_this.menuMobileSub.forEach(function (element) {
+					element.classList.remove("active");
+				});
+
 				_this.body.classList.toggle("fixed");
 
 				return false;
 			});
 		});
 	},
+	
+ 
+
 
 	closeMenu() {
 		let _this = this;
@@ -55,7 +64,9 @@ const JSCCommon = {
 		});
 		_this.menuMobile.classList.remove("active");
 		_this.body.classList.remove("fixed");
-
+		_this.menuMobileSub.forEach(function (element) {
+			element.classList.remove("active");
+		});
 	},
 
 	mobileMenu() {
@@ -63,13 +74,13 @@ const JSCCommon = {
 		let _this = this;
 
 		_this.toggleMenu();
-		_this.menuMobileLink.forEach(function (element) {
-			element.addEventListener('click', function (e) {
-				console.log(element);
-				_this.closeMenu();
+		// _this.menuMobileLink.forEach(function (element) {
+		// 	element.addEventListener('click', function (e) {
+		// 		console.log(element);
+		// 		_this.closeMenu();
 
-			});
-		})
+		// 	});
+		// })
 		document.addEventListener('mouseup', function (event) {
 			let container = event.target.closest(".menu-mobile--js.active"); // (1)
 			if (!container) {
@@ -415,6 +426,17 @@ function eventHandler() {
 	// $('.custom-select').select2({
 	// 	theme: 'bootstrap4',
 	// });
+
+	$(".nav__item--has-children-js >a ").click(function (e) {
+		e.preventDefault();
+		$(this).next('.menu-mobile-sub--js').addClass('active');
+		// return false;
+	})
+	$(".toggle-menu-mobile--inner-js").click(function () {
+		$(this).parents('.menu-mobile-sub--js.active').removeClass('active');
+	})
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();
