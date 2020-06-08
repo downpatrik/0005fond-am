@@ -7,12 +7,7 @@
      @include block(1140, 700);
     }
   min-height: 280px;
-
-  @include media-breakpoint-down(xs) {
-    // margin-left: -15px;
-    // margin-right: -15px;
-  }
-
+ 
   color: #FFFFFF;
 
   &__head {
@@ -63,10 +58,10 @@
   position: relative;
   overflow: hidden;
 
+  border-radius: 8px;
+  box-shadow: 0px 16px 32px rgba(80, 87, 105, 0.3);
   @include media-breakpoint-up(sm) {
 
-    border-radius: 8px;
-    box-shadow: 0px 16px 32px rgba(80, 87, 105, 0.3);
   }
 
   z-index: 2;
@@ -320,7 +315,11 @@
   }
 
 }
+.main-page .project-lg{
+  @include media-breakpoint-down(xs){
 
+  }
+}
 .project-lg-wrap {
   ul {
     list-style-type: none;

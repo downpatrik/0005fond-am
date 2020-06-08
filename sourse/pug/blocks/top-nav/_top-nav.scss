@@ -160,17 +160,18 @@
 		display: block;
 		&--has-children{
 			position: relative;
-			&::after{
+			.toggle-l {
 				content: '';
 				position: absolute;
-				right: 0;
+				right: rem(- 5 * 2);
 				background-image: url(../img/svg/chevron-right.svg);
-				width: rem(10 * 2);
-				height: rem(5* 2);
-				background-size: 100%;
+				width: rem(10 * 4);
+				height: rem(5* 4);
+				background-size: rem(10 * 2) rem(5* 2);
 				background-repeat: no-repeat;
 				background-position: center;
-				top: em(8);
+				top: em(6);
+				cursor: pointer;
 			}
 		}
 	}

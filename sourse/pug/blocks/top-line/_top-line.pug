@@ -1,22 +1,23 @@
 mixin top-line()
 	// start .top-line
 	+b.top-line.block-with-lazy
-		.container-fluid
-			.row
-				+e.col--left.col-auto
-					+b.toggle-menu-mobile--js
-						span
-				.col.text-center
-					+e.logo(href="#")
-						
-						+icon('logo-top')
-						//- img.res-i(src="img/svg/logo-top.svg", alt="")
-				+e.col.col-auto.d-none.d-sm-block
-					+soc
-				+e.col.col-auto.text-right
-					+b.link-donate(href="#")
-						+e.icon-wrap.d-xxl-none
-							+icon('donate')
-						.d-none.d-xxl-block ПОЖЕРТВОВАТЬ
-					
+		+e.inner
+			.container-fluid
+				.row
+					+e.col--left.col-auto
+						+b.toggle-menu-mobile--js
+							span
+					.col.text-center
+						+e.logo(href="#")
+							
+							+icon('logo-top')
+							//- img.res-i(src="img/svg/logo-top.svg", alt="")
+					+e.col.col-auto.d-none.d-sm-block
+						+soc
+					+e.col.col-auto.text-right
+						+b.link-donate(href="#")
+							+e.icon-wrap.d-xxl-none
+								+icon('donate')
+							.d-none.d-xxl-block ПОЖЕРТВОВАТЬ
+		block
 	// end .top-line

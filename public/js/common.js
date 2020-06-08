@@ -122,21 +122,54 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/main.jpg);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/about.jpg);"></div>'); // /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
 		var w = $(window).width(); // скрывает моб меню
 
-		var topH = $("header ").innerHeight();
-		$(window).scroll(function () {
-			if ($(window).scrollTop() > 150) {
+		var topH = $("header ").innerHeight(); // $(window).scroll(function () {
+		// 	if ($(window).scrollTop() > 150) {
+		// 		$('.top-line  ').addClass('fixed');
+		// 	} else {
+		// 		$('.top-line  ').removeClass('fixed');
+		// 	}
+		// 	// if (document.body.scrollTop === 0) $('.top-line').addClass('fixed-mob');
+		// 	// else $('.top-line').removeClass('fixed-mob');
+		// });
+
+		var lastScrollTop = 0;
+
+		if ($("div").is(".top-line-sub")) {
+			$('.header').height($('.top-line').innerHeight());
+		}
+
+		$(window).scroll(function (event) {
+			var st = $(this).scrollTop();
+
+			if (st > lastScrollTop) {
 				$('.top-line  ').addClass('fixed');
 			} else {
 				$('.top-line  ').removeClass('fixed');
-			} // if (document.body.scrollTop === 0) $('.top-line').addClass('fixed-mob');
-			// else $('.top-line').removeClass('fixed-mob');
+			}
 
+			lastScrollTop = st;
+		});
+		$(window).scroll(function (event) {
+			var st = $(this).scrollTop();
+
+			if (st > 0) {
+				$('.top-line  ').addClass('fixed-ready');
+			} else {
+				$('.top-line  ').removeClass('fixed-ready');
+			}
+		});
+		$(window).scroll(function (event) {
+			var st = $(this).scrollTop();
+
+			if (st == 0) {
+				$('.top-line  ').removeClass('fixed ');
+			}
 		});
 		var lastScrollTop = 0;
 		$(window).scroll(function (event) {
@@ -351,6 +384,33 @@ function eventHandler() {
 			clickable: true
 		}
 	});
+	var mySwiperBody = new Swiper('.s-project-body__slider--js', {
+		slidesPerView: 1,
+		watchOverflow: true,
+		spaceBetween: 20,
+		loopedSlides: 6,
+		loop: true,
+		breakpoints: {
+			991: {
+				slidesPerView: 2,
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev'
+				},
+				pagination: {
+					el: '.swiper-pagination',
+					clickable: true,
+					renderBullet: function renderBullet(index, className) {
+						return '<span class="' + className + '">' + (index + 1) + '</span>';
+					}
+				}
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 30
+			}
+		}
+	});
 	$(".custom-select").chosen({
 		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
 	});
@@ -363,13 +423,61 @@ function eventHandler() {
 	// 	theme: 'bootstrap4',
 	// });
 
-	$(".nav__item--has-children-js >a ").click(function (e) {
-		e.preventDefault();
-		$(this).next('.menu-mobile-sub--js').addClass('active'); // return false;
+	$(".nav__item--has-children-js").each(function () {
+		$(this).append('<div class="toggle-l"></div>');
+	});
+	$(".nav__item--has-children-js   ").on('click', '.toggle-l', function () {
+		$(this).prev('.menu-mobile-sub--js').addClass('active'); // return false;
 	});
 	$(".toggle-menu-mobile--inner-js").click(function () {
 		$(this).parents('.menu-mobile-sub--js.active').removeClass('active');
-	});
+	}); // боковое меню
+	// Cache selectors
+
+	var lastId,
+			topMenu = $(" .s-about__nav"),
+			topMenuHeight = 0,
+			// topMenuHeight = topMenu.outerHeight()+15,
+	// All list items
+	menuItems = topMenu.find("a"),
+			// Anchors corresponding to menu items
+	scrollItems = menuItems.map(function () {
+		var item = $($(this).attr("href"));
+
+		if (item.length) {
+			return item;
+		}
+	}); // Bind click handler to menu items
+	// so we can get a fancy scroll animation
+
+	menuItems.click(function (e) {
+		var href = $(this).attr("href"),
+				offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+		$('html, body').stop().animate({
+			scrollTop: offsetTop
+		}, 1100);
+		e.preventDefault();
+	}); // Bind to scroll
+
+	$(window).scroll(function () {
+		// Get container scroll position
+		var fromTop = $(this).scrollTop() + topMenuHeight; // Get id of current scroll item
+
+		var cur = scrollItems.map(function () {
+			if ($(this).offset().top < fromTop) return this;
+		}); // Get the id of the current element
+
+		cur = cur[cur.length - 1];
+		var id = cur && cur.length ? cur[0].id : "";
+
+		if (lastId !== id) {
+			lastId = id; // Set/remove active class
+
+			menuItems.removeClass("active").parent().end().filter("[href='#" + id + "']").addClass("active");
+		}
+	}); // $(".sticky-js").data("margin-top",'200')
+
+	var sticky = new Sticky('.sticky-js');
 }
 
 ;

@@ -10,5 +10,12 @@
 1. <https://pashawol.github.io/0005fond-am/public/06.html>
 1. <https://pashawol.github.io/0005fond-am/public/07.html>
 1. <https://pashawol.github.io/0005fond-am/public/08.html>
-======
+
+- ======
+
 1. <https://pashawol.github.io/0005fond-am/public/09-about.html>
+1. <https://pashawol.github.io/0005fond-am/public/10-team.html>
+1. <https://pashawol.github.io/0005fond-am/public/11-projects.html>
+1. <https://pashawol.github.io/0005fond-am/public/11-projects-list.html>
+1. <https://pashawol.github.io/0005fond-am/public/11-projects-map.html>
+1. <https://pashawol.github.io/0005fond-am/public/12-projects-list-done.html>
