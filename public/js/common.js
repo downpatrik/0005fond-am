@@ -16,6 +16,7 @@ var JSCCommon = {
 			infobar: false,
 			touch: false,
 			type: 'inline',
+			autoFocus: false,
 			i18n: {
 				en: {
 					CLOSE: "Закрыть",
@@ -108,7 +109,7 @@ var JSCCommon = {
 };
 
 function eventHandler() {
-	var _, _Swiper;
+	var _;
 
 	// полифил для object-fit
 	objectFitImages(); // Picture element HTML5 shiv
@@ -228,24 +229,6 @@ function eventHandler() {
 			}, _defineProperty(_, "slidesPerView", 'auto'), _defineProperty(_, "watchOverflow", true), _defineProperty(_, "freeMode", true), _defineProperty(_, "freeModeMomentum", true), _defineProperty(_, "loop", false), _)
 		}
 	});
-	var mySwiperMob = new Swiper('.slider-auto-mob-js', (_Swiper = {
-		speed: 400,
-		loop: true,
-		loopedSlides: 4,
-		spaceBetween: 20,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		freeMode: true,
-		freeModeMomentum: true
-	}, _defineProperty(_Swiper, "loop", false), _defineProperty(_Swiper, "navigation", {
-		nextEl: $(this).find('.swiper-button-next'),
-		prevEl: $(this).find('.swiper-button-prev')
-	}), _defineProperty(_Swiper, "breakpoints", {
-		576: {
-			watchOverflow: true,
-			spaceBetween: 30
-		}
-	}), _Swiper));
 	var mySwiper2 = new Swiper('.s-project__slider--js', {
 		// effect: 'coverflow',
 		// grabCursor: true,
@@ -320,29 +303,49 @@ function eventHandler() {
 		freeMode: true // freeModeMomentum: true,
 
 	});
+	var mySwiperRew = new Swiper('.slider-rew-js', {
+		speed: 400,
+		loop: true,
+		loopedSlides: 4,
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
+		navigation: {
+			nextEl: '.s-rews .swiper-button-next',
+			prevEl: '.s-rews .swiper-button-prev'
+		},
+		breakpoints: {
+			992: {
+				slidesPerView: 3,
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false
+			}
+		}
+	});
 	$(".section").each(function () {
-		var mySwiperRew = new Swiper($(this).find('.slider-rew-js'), {
+		var _Swiper;
+
+		var mySwiperMob = new Swiper($(this).find('.slider-auto-mob-js'), (_Swiper = {
 			speed: 400,
 			loop: true,
 			loopedSlides: 4,
-			slidesPerView: 'auto',
 			spaceBetween: 20,
+			slidesPerView: 'auto',
 			watchOverflow: true,
 			freeMode: true,
-			freeModeMomentum: true,
-			navigation: {
-				nextEl: $(this).find('.swiper-button-next'),
-				prevEl: $(this).find('.swiper-button-prev')
-			},
-			breakpoints: {
-				992: {
-					slidesPerView: 3,
-					watchOverflow: false,
-					freeMode: false,
-					freeModeMomentum: false
-				}
+			freeModeMomentum: true
+		}, _defineProperty(_Swiper, "loop", false), _defineProperty(_Swiper, "navigation", {
+			nextEl: $(this).find('.swiper-button-next'),
+			prevEl: $(this).find('.swiper-button-prev')
+		}), _defineProperty(_Swiper, "breakpoints", {
+			576: {
+				watchOverflow: true,
+				spaceBetween: 30
 			}
-		});
+		}), _Swiper));
 		var mySwiper4 = new Swiper($(this).find('.slider-js'), {
 			speed: 400,
 			loop: true,
@@ -410,10 +413,11 @@ function eventHandler() {
 				spaceBetween: 30
 			}
 		}
-	});
-	$(".custom-select").chosen({
-		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
-	});
+	}); // $(".custom-select").chosen({
+	// 	html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
+	// });
+
+	$('.custom-select').ddslick();
 	$(".s-continue__col--map").click(function () {
 		$(".info-block").show();
 	});
@@ -477,7 +481,39 @@ function eventHandler() {
 		}
 	}); // $(".sticky-js").data("margin-top",'200')
 
-	var sticky = new Sticky('.sticky-js');
+	var sticky = new Sticky('.sticky-js'); // слайдер в модалке
+
+	var mySwiperModal = new Swiper('.modal-rew__slider--js', {
+		speed: 400,
+		spaceBetween: 20,
+		watchOverflow: true,
+		loop: true,
+		navigation: {
+			nextEl: '.modalArrow.swiper-button-next',
+			prevEl: '.modalArrow.swiper-button-prev'
+		}
+	});
+	$(".s-rews ").on('click', ".s-rews__link-more", function () {
+		$.fancybox.open({
+			src: '#modal-rew',
+			arrows: false,
+			infobar: false,
+			touch: false,
+			type: 'inline',
+			autoFocus: false,
+			i18n: {
+				en: {
+					CLOSE: "Закрыть",
+					NEXT: "Вперед",
+					PREV: "Назад"
+				}
+			}
+		});
+		var indexSlide = $(this).data('index'); // console.log(indexSlide);
+
+		mySwiperModal.slideTo(indexSlide);
+		mySwiperModal.update();
+	});
 }
 
 ;

@@ -13,6 +13,7 @@ const JSCCommon = {
 			infobar: false,
 			touch: false,
 			type: 'inline',
+			autoFocus: false,
 			i18n: {
 				en: {
 					CLOSE: "Закрыть",
@@ -52,8 +53,8 @@ const JSCCommon = {
 			});
 		});
 	},
-	
- 
+
+
 
 
 	closeMenu() {
@@ -174,7 +175,7 @@ function eventHandler() {
 				$('.top-line  ').addClass('fixed-ready');
 			} else {
 				$('.top-line  ').removeClass('fixed-ready');
-			} 
+			}
 		});
 
 		$(window).scroll(function (event) {
@@ -226,7 +227,7 @@ function eventHandler() {
 		navigation: {
 			nextEl: '.s-cards .swiper-button-next',
 			prevEl: '.s-cards .swiper-button-prev',
-		}, 
+		},
 		breakpoints: {
 			576: {
 				spaceBetween: 20,
@@ -251,32 +252,12 @@ function eventHandler() {
 				// slidesPerView: 4,
 				// spaceBetween: 40
 				loop: false,
-				
+
 			},
 
 		}
 	});
-	let mySwiperMob = new Swiper('.slider-auto-mob-js', {
-		speed: 400,
-		loop: true,
-		loopedSlides: 4,
-		spaceBetween: 20,
-		slidesPerView: 'auto',
-		watchOverflow: true,
-		freeMode: true,
-		freeModeMomentum: true,
-		loop: false,
-		navigation: {
-			nextEl: $(this).find('.swiper-button-next'),
-			prevEl: $(this).find('.swiper-button-prev'),
-		},
-		breakpoints: {
-			576: {
-				watchOverflow: true,
-				spaceBetween: 30,
-			},
-		}
-	});
+
 
 	var mySwiper2 = new Swiper('.s-project__slider--js', {
 		// effect: 'coverflow',
@@ -355,7 +336,7 @@ function eventHandler() {
 
 		}
 	});
-	
+
 	var mySwiperMob2222 = new Swiper('.project-lg__slider--mob-js', {
 		slidesPerView: 'auto',
 		// loop: true,
@@ -368,33 +349,56 @@ function eventHandler() {
 	});
 
 
+
+	let mySwiperRew = new Swiper('.slider-rew-js', {
+		speed: 400,
+		loop: true,
+		loopedSlides: 4,
+		slidesPerView: 'auto',
+		spaceBetween: 20,
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
+		navigation: {
+			nextEl: ('.s-rews .swiper-button-next'),
+			prevEl: ('.s-rews .swiper-button-prev'),
+		},
+		breakpoints: {
+			992: {
+
+				slidesPerView: 3,
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false,
+			}
+		}
+	});
+
 	$(".section").each(function () {
 
-		let mySwiperRew = new Swiper($(this).find('.slider-rew-js'), {
+		let mySwiperMob = new Swiper($(this).find('.slider-auto-mob-js'), {
 			speed: 400,
 			loop: true,
 			loopedSlides: 4,
-			slidesPerView: 'auto',
 			spaceBetween: 20,
+			slidesPerView: 'auto',
 			watchOverflow: true,
 			freeMode: true,
 			freeModeMomentum: true,
+			loop: false,
 			navigation: {
 				nextEl: $(this).find('.swiper-button-next'),
 				prevEl: $(this).find('.swiper-button-prev'),
 			},
 			breakpoints: {
-				992: {
-					
-					slidesPerView: 3,
-					watchOverflow: false,
-					freeMode: false,
-					freeModeMomentum: false, 
-				}
+				576: {
+					watchOverflow: true,
+					spaceBetween: 30,
+				},
 			}
 		});
- 
-	
+
+
 		let mySwiper4 = new Swiper($(this).find('.slider-js'), {
 			speed: 400,
 			loop: true,
@@ -428,11 +432,11 @@ function eventHandler() {
 	$(".project-item").hover(function () {
 		$(this).find(".project-item__hidden").slideToggle(150)
 	})
- 
+
 
 	var headerSwiper3 = new Swiper('.header-block__slider--js', {
 		slidesPerView: 1,
-		watchOverflow: true, 
+		watchOverflow: true,
 		spaceBetween: 0,
 		loop: true,
 		pagination: {
@@ -440,7 +444,7 @@ function eventHandler() {
 			type: 'bullets',
 			clickable: true
 		},
- 
+
 	});
 
 
@@ -449,14 +453,14 @@ function eventHandler() {
 	var mySwiperBody = new Swiper('.s-project-body__slider--js', {
 		slidesPerView: 1,
 		watchOverflow: true,
-		 
+
 		spaceBetween: 20,
 		loopedSlides: 6,
 		loop: true,
 		breakpoints: {
-		 
+
 			991: {
-		 
+
 				slidesPerView: 2,
 				navigation: {
 					nextEl: '.swiper-button-next',
@@ -473,21 +477,23 @@ function eventHandler() {
 
 
 			1200: {
-			 
+
 				slidesPerView: 3,
-				spaceBetween: 30, 
+				spaceBetween: 30,
 			},
 
 		},
-		
+
 	});
 
 
 
-	$(".custom-select").chosen({
-		html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
-	});
+	// $(".custom-select").chosen({
+	// 	html_template: '<span class="option-row"><span class="option-img-wrap"><img  class="{class_name}" src="{url}" /></span><span class="option-text">{text}</span></span> '
+	// });
 
+
+	$('.custom-select').ddslick();
 	$(".s-continue__col--map").click(function () {
 		$(".info-block").show();
 	})
@@ -502,10 +508,10 @@ function eventHandler() {
 		$(this).append('<div class="toggle-l"></div>');
 	})
 
- 
+
 
 	$(".nav__item--has-children-js   ").on('click', '.toggle-l', function () {
-	 
+
 		$(this).prev('.menu-mobile-sub--js').addClass('active');
 		// return false;
 	})
@@ -519,7 +525,7 @@ function eventHandler() {
 	// Cache selectors
 	var lastId,
 		topMenu = $(" .s-about__nav"),
-		topMenuHeight =  0,
+		topMenuHeight = 0,
 		// topMenuHeight = topMenu.outerHeight()+15,
 		// All list items
 		menuItems = topMenu.find("a"),
@@ -567,6 +573,46 @@ function eventHandler() {
 	// $(".sticky-js").data("margin-top",'200')
 
 	var sticky = new Sticky('.sticky-js');
+
+
+
+	// слайдер в модалке
+	let mySwiperModal = new Swiper('.modal-rew__slider--js', {
+
+		speed: 400,
+		spaceBetween: 20,
+		watchOverflow: true,
+		loop: true,
+		navigation: {
+			nextEl: ('.modalArrow.swiper-button-next'),
+			prevEl: ('.modalArrow.swiper-button-prev'),
+		},
+
+	});
+
+	$(".s-rews ").on('click', ".s-rews__link-more", function () {
+
+		$.fancybox.open({
+			src: '#modal-rew',
+			arrows: false,
+			infobar: false,
+			touch: false,
+			type: 'inline',
+			autoFocus: false,
+			i18n: {
+				en: {
+					CLOSE: "Закрыть",
+					NEXT: "Вперед",
+					PREV: "Назад",
+				},
+			},
+		});
+		let indexSlide = $(this).data('index');
+		// console.log(indexSlide);
+		mySwiperModal.slideTo(indexSlide);
+		mySwiperModal.update();
+	})
+
 
 };
 if (document.readyState !== 'loading') {

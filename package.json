@@ -49,6 +49,7 @@
     "animate.css": "^4.1.0",
     "bootstrap": "^4.5.0",
     "chosen-js": "^1.8.7",
+    "ddslick": "^1.0.3",
     "gijgo": "^1.9.13",
     "gulp-group-css-media-queries": "^1.2.2",
     "inputmask": "^5.0.3",

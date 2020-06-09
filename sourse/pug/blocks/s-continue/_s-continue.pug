@@ -11,7 +11,7 @@ mixin s-continue()
 						+e.select-wrap
 							select.custom-select
 								mixin option(p, i)
-									option(value= p data-img-src= (i || 'img/@1x/video.jpg'))&attributes(attributes)= p
+									option(value= p data-imagesrc= (i || 'img/@1x/video.jpg'))&attributes(attributes)= p
 								+option('Уставные цели фонда','img/svg/logo-color.svg')
 								optgroup(label='Проекты фонда')
 									+option('Новоспасский монастырь')

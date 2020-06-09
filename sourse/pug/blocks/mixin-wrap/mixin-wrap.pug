@@ -49,9 +49,9 @@ mixin pugin()
 //- h2.yel(class="  wow fadeInUp animated " data-wow-offset="120" data-wow-duration="1.2s")  
 //- arrow for swiper-slider
 mixin arrow()
-	.swiper-button-hand.swiper-button-hand-next.swiper-button-next
+	.swiper-button-hand.swiper-button-hand-next.swiper-button-next&attributes(attributes)
 		+icon('arrow-left')
-	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev
+	.swiper-button-hand.swiper-button-hand-prev.swiper-button-prev&attributes(attributes)
 		+icon('arrow-right')
 //- /arrow for swiper-slider
 		
