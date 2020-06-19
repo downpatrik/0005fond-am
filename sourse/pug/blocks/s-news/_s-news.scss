@@ -8,7 +8,11 @@
 	&__btn {
 		@extend .btn-outline-primary;
 		background-color: #ffffff !important;
-
+		&:hover{
+			background-color: $primary !important;
+			border-color: $primary !important;
+		}
+	
 		@include media-breakpoint-up(xl) {
 
 			margin-top: rem(50);
@@ -83,6 +87,11 @@
 	@include media-breakpoint-down(xs) {
 		&__slide {
 			max-width: 280px;
+			&--artical{
+				max-width: 262px;
+				margin-bottom: 40px;
+
+			}
 		}
 	}
 

@@ -1,9 +1,12 @@
  .main-page .top-line {
   // transform: translateY(-140%);
   @include media-breakpoint-down(xs) {
-    &:not(.fixed){
-      background: none;
-      box-shadow: none;
+    &:not(.fixed-ready) {
+      .top-line__inner{
+
+        background: none;
+        box-shadow: none;
+      }
       .top-line__logo{
         opacity: 0;
       }
@@ -51,13 +54,13 @@
     @include media-breakpoint-up(xxl) {
       --w: #{rem(205 + 160 + 60 + 30)};
     }
-        @include media-breakpoint-up(md) {
+        @include media-breakpoint-up(lg) {
           
           --w: calc(#{rem(205 + 35)} + 30px);
         }
-              @include media-breakpoint-up(sm) {
-        --w: calc(#{rem(220)} + 25px);
-              }
+        //       @include media-breakpoint-up(sm) {
+        // --w: calc(#{rem(220)} + 25px);
+        //       }
   //  width: var(--w);
    &--left{
      

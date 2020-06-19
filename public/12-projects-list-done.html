@@ -35,6 +35,13 @@
 								</svg>
 							</div>
 						</div>
+						<div class="col-auto">
+							<div class="toggle-menu-mobile toggle-menu-mobile--js">
+								<svg class="icon icon-close ">
+									<use xlink:href="img/svg/sprite.svg#close"></use>
+								</svg>
+							</div>
+						</div>
 					</div>
 					<ul class="nav nav--lg" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 						<li class="nav__item" itemprop="item"><a class="nav__link" href="#" itemprop="url">Главная</a>
@@ -93,7 +100,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="menu-mobile__title h3 text-primary">Текущие проекты
+									<div class="menu-mobile__title h3 text-primary"><a class="link-white tdn" href="#">Текущие проекты</a>
 									</div>
 									<div class="projects-nav">
 										<ul>
@@ -221,7 +228,7 @@
 						<svg class="icon icon-twitter ">
 							<use xlink:href="img/svg/sprite.svg#twitter"></use>
 						</svg></a>
-					</div><a class="menu-mobile__btn" href="#">ПОЖЕРТВОВАТЬ</a>
+					</div>
 				</div>
 			</div>
 			<!--  мобильное меню-->
@@ -240,7 +247,7 @@
 										<use xlink:href="img/svg/sprite.svg#logo-top"></use>
 									</svg></a>
 								</div>
-								<div class="top-line__col col-auto d-none d-sm-block">
+								<div class="top-line__col col-auto d-none d-lg-block">
 									<div class="soc"><a class="soc__item" href="#" target="_blank">
 										<svg class="icon icon-facebook ">
 											<use xlink:href="img/svg/sprite.svg#facebook"></use>
@@ -313,6 +320,7 @@
 			<!-- start s-project-list-->
 			<div class="s-project-list section" id="s-project-list">
 				<div class="container">
+					<div class="s-project-list__wrap">
 						<div class="project-item-list">
 							<div class="row">
 								<div class="col-auto"><a class="project-item-list__img-wrap" href="#"><img src="img/@2x/projec-1.jpg" alt=""/></a>
@@ -357,7 +365,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -404,7 +412,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -451,7 +459,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -498,7 +506,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -545,7 +553,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -592,7 +600,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
@@ -639,36 +647,37 @@
 											</div>
 										</div>
 									</div>
-									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm" href="#">Подробнее</a>
+									<div class="project-item-list__btn-wrap"><a class="project-item-list__btn btn-outline-primary btn-sm ttu" href="#">Подробнее</a>
 									</div>
 								</div>
 							</div>
 						</div>
-					<div class="d-none d-sm-block">
-						<div class="pagination-wrapper">
-							<ul class="page-numbers">
-										<li><span class="prev page-numbers">
-												<svg class="icon icon-arrow-right ">
-													<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
-												</svg></span>
-										</li>
-										<li><span class="page-numbers current"> 1</span>
-										</li>
-										<li><a class="page-numbers" href="#">1</a>
-										</li>
-										<li><a class="page-numbers" href="#">2</a>
-										</li>
-										<li><a class="page-numbers" href="#">3</a>
-										</li>
-										<li><a class="next page-numbers" href="#">
-												<svg class="icon icon-arrow-left ">
-													<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
-												</svg></a>
-										</li>
-							</ul>
+						<div class="d-none d-sm-block">
+							<div class="pagination-wrapper">
+								<ul class="page-numbers">
+											<li><span class="prev page-numbers">
+													<svg class="icon icon-arrow-right ">
+														<use xlink:href="img/svg/sprite.svg#arrow-right"></use>
+													</svg></span>
+											</li>
+											<li><span class="page-numbers current"> 1</span>
+											</li>
+											<li><a class="page-numbers" href="#">1</a>
+											</li>
+											<li><a class="page-numbers" href="#">2</a>
+											</li>
+											<li><a class="page-numbers" href="#">3</a>
+											</li>
+											<li><a class="next page-numbers" href="#">
+													<svg class="icon icon-arrow-left ">
+														<use xlink:href="img/svg/sprite.svg#arrow-left"></use>
+													</svg></a>
+											</li>
+								</ul>
+							</div>
 						</div>
-					</div>
-					<div class="d-sm-none text-center"><a class="s-project-list__btn btn-outline-primary btn-more" href="#">ПОКАЗАТЬ ЕЩЁ</a>
+						<div class="d-sm-none text-center"><a class="s-project-list__btn btn-outline-primary btn-more" href="#">ПОКАЗАТЬ ЕЩЁ</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -676,7 +685,9 @@
 			<footer class="footer block-with-lazy">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 img-wrap"><a href="#"><img class="res-i" src="img/svg/logo-lg.svg" alt=""/></a></div>
+						<div class="col-lg-3 img-wrap"><a href="#">
+								<div class="d-md-none d-lg-block"><img class="res-i" src="img/svg/logo-foot-new.svg" alt=""/></div>
+								<div class="d-none d-md-block d-lg-none"><img class="res-i" src="img/svg/logo-foot-new-md.svg" alt=""/></div></a></div>
 						<div class="col-lg-9 info-fond">
 							<div class="row">
 								<div class="footer__col col-lg col-sm-4">

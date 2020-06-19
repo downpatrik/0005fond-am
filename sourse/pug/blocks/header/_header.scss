@@ -10,7 +10,9 @@
 
   @include media-breakpoint-up(lg) {}
 
-  @include media-breakpoint-up(md) {}
+  @include media-breakpoint-up(md) {
+    z-index: 7;
+  }
 
   @include media-breakpoint-up(sm) {}
 

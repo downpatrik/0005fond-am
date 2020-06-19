@@ -27,10 +27,10 @@
 
     @include media-breakpoint-up(sm) {
 
-      padding: rem(30) rem(25) rem(20);
     }
+    padding: rem(30) rem(25) rem(40);
 
-    padding: rem(15) rem(15) rem(20);
+    // padding: rem(15) rem(15) rem(20);
   }
 
 
@@ -38,7 +38,7 @@
   // padding: rem(30) rem(15) rem(20);
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-color: rgba(60, 65, 79, 1);
-  mix-blend-mode: normal;
+  // mix-blend-mode: normal;
   box-shadow: 0px 16px 32px rgba(80, 87, 105, 0.3);
   picture {
     opacity: 0.4;
@@ -54,7 +54,7 @@
     background: rgba(0, 66, 103, 1);
   }
 
-  mix-blend-mode: normal;
+  
   position: relative;
   overflow: hidden;
 
@@ -76,7 +76,7 @@
     display: inline-block;
     border-radius: rem(20);
     margin-bottom: rem(15);
-    text-transform: uppercase;
+    // text-transform: uppercase;
 
     @include media-breakpoint-up(lg) {
 
@@ -87,22 +87,19 @@
 
     padding: em(5) em(15) em(3);
     min-width: em(25);
-    font-size: rem(11);
+    font-size: 11px;
     text-align: left;
     line-height: 1.2;
     text-transform: uppercase;
     color: #ffffff;
     letter-spacing: 0.1em;
-
-    &:first-letter {
-      font-size: 1.32em;
-    }
+ 
 
     @include media-breakpoint-down(xs) {
-      padding: rem(1) rem(5);
+      padding: rem(3) rem(5) rem(1);
       text-align: left;
       min-width: rem(20);
-      font-size: rem(7);
+      font-size: 9px;
     }
 
     z-index: 4;
@@ -129,8 +126,8 @@
 
     @include media-breakpoint-down(xs) {
       // font-size: rem(18);
-      font-size: 21px;
-      letter-spacing: normal;
+      font-size: 24px;
+      // letter-spacing: normal;
       margin-left: auto;
       margin-right: auto;
     }
@@ -213,18 +210,19 @@
       height: rem(160px);
       border: 3px solid #ffffff;
       margin-top: rem(90);
+      // margin-top: rem(50);
     }
+    margin-top: rem(30);
 
     border: 1px solid #ffffff;
 
-    @include media-breakpoint-down(xs) {
-      width: rem(60);
-      height: rem(60);
-    }
+    // @include media-breakpoint-down(xs) {
+    //   width: rem(60);
+    //   height: rem(60);
+    // }
 
-    margin-top: rem(50);
-    width: rem(80);
-    height: rem(80);
+    width: 80px;
+    height: 80px;
     display: block;
     color: #ffffff;
     border-radius: 50%;
@@ -247,7 +245,7 @@
         @include triangle(rem(70 * .9) rem(64 * .9), currentColor, right);
       }
 
-      @include triangle(rem(70 * .9 / 2) rem(64 * .9 / 2), currentColor, right);
+      @include triangle((70px * .9 / 2)  (64px * .9 / 2), currentColor, right);
       @include a-cent;
       margin-left: 5%;
     }
@@ -262,7 +260,8 @@
     }
 
     @include media-breakpoint-down(xs) {
-      font-size: 1.2rem;
+      // font-size: 1.2rem;
+      font-size: rem(22);
       min-height: rem(150);
       text-align: center;
 

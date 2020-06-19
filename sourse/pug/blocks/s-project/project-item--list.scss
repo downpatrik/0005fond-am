@@ -1,7 +1,19 @@
 .project-item-list {
   position: relative;
   height: 100%;
-  margin-bottom: rem(30);
+  @include media-breakpoint-up(lg) {
+
+    margin-bottom: rem(30);
+  }
+  @include media-breakpoint-up(sm){
+
+    margin-bottom: rem(10);
+  }
+  margin-bottom: rem(5);
+   &:hover &__btn {
+     opacity: 1;
+   }
+
   .row{
       @include media-breakpoint-down(xs){
         @include roww(10);
@@ -180,15 +192,12 @@
 
   }
 
-  &:hover &__btn {
-    opacity: 1;
-  }
-
+ 
 
   &__foot {
     display: flex; 
     align-items: center;
-    color: rgba(80, 87, 105, 0.25);
+    color: rgba(80, 87, 105, 0.5);
     font-size: $small;
     font-weight: 400;
     line-height: 1.2; 
@@ -259,7 +268,7 @@
     &__btn-wrap {
       // display: none;
       // display: block !important;
-      padding-top: rem(30);
+      padding-top: rem(10);
       padding-bottom: rem(5);
 
       position: absolute;
@@ -305,7 +314,7 @@
 
   }
 
-  &__right-col:hover &__btn-wrap {
+  &:hover &__btn-wrap {
     opacity: 1;
   }
 
@@ -329,22 +338,20 @@
 
      padding: em(4) em(11) em(3);
      min-width: em(25);
-     font-size: rem(11);
+     font-size: 11px;
      text-align: left;
      line-height: 1.2;
      text-transform: uppercase;
      color: #ffffff;
      letter-spacing: 0.1em;
 
-     &:first-letter {
-       font-size: 1.32em;
-     }
+    
 
      @include media-breakpoint-down(xs) {
-       padding: rem(1) rem(5);
+       padding: rem(3) rem(5) ;
        text-align: left;
        min-width: rem(20);
-       font-size: rem(7);
+       font-size: rem(10);
      }
 
      z-index: 4;

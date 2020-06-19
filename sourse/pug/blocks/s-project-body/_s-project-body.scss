@@ -11,8 +11,13 @@ padding-bottom: rem(90);
 		}
 		.swiper-pagination{
 			&-bullet{
-				width: 48px;
-				height: 48px; 
+				@include media-breakpoint-up(lg) {
+
+					width: 48px;
+					height: 48px; 
+				}
+				width: 10px;
+				height: 10px;
 				border: 1px solid #fff;
 				box-sizing: border-box;
 				display: inline-flex;

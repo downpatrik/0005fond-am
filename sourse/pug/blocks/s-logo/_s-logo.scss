@@ -20,6 +20,10 @@
 		font-size: rem(13);
 		color: rgba(60, 65, 79, 0.7);
 		line-height: 120%;
+		@include mt;
+		&:hover{
+			color: $primary;
+		}
 	}
 	&__img-wrap{
 		width: rem(60);
@@ -30,6 +34,7 @@
 		text-transform: uppercase;
 		margin-bottom: rem(5);
 		max-width: rem(150);
+		letter-spacing: 0.1em;
 	}
 	&__text{
 		max-width: rem(150);

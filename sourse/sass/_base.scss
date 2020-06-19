@@ -91,12 +91,14 @@ html {
 	&__text {
 		@include media-breakpoint-up(sm) {
 
-			font-size: rem(30);
 			padding-top: rem(25);
+			font-size: rem(30);
 		}
-
+		
+		font-size: rem(26);
 		// padding-top: rem(10);
-		font-size: rem(21);
+		// font-size: 24px;
+		font-weight: normal;
 		// letter-spacing: 0.1em;
 		@extend .mono;
 		font-family: $mono2;
@@ -492,7 +494,7 @@ input::-webkit-inner-spin-button {
 	@include a-cent(y);
 	width: rem(50px);
 	height: rem(50px);
-	box-shadow: 0 8px $em-base rgba(80, 87, 105, 0.25);
+	box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.25);
 	background-color: #3c414f;
 	@include mt;
 
@@ -520,17 +522,23 @@ input::-webkit-inner-spin-button {
 	}
 
 	&-next {
-
+		.icon{
+			margin-left: rem(5);
+		}
 		// background-image: url(../img/arr-right.png);
 		@include media-breakpoint-up(xxl) {
-
+			
 			right: rem(-80);
 		}
-
+		
 		right: rem(-15);
 	}
-
+	
 	&-prev {
+		.icon{
+
+			margin-right: rem(5);
+		}
 		@include media-breakpoint-up(xxl) {
 
 			left: rem(-80);
@@ -549,8 +557,13 @@ input::-webkit-inner-spin-button {
 
 	&-bullet {
 		opacity: 1;
-		width: rem(16);
-		height: rem(16);
+			@include media-breakpoint-up(lg){
+
+				width: rem(16);
+				height: rem(16);
+			}
+			width: 10px;
+			height: 10px;
 		border-radius: 50%;
 		background-color: $secondary;
 		outline: none !important;
@@ -646,7 +659,19 @@ datalist {
 
 .btn-outline-primary {
 	color: $body-color;
+	&.btn-more{
+		&:hover {
+			color: #C5AA79;
+			box-shadow: 0px 8px 16px rgba(197, 170, 121, 0.2);
+		}
 
+		&:focus,
+		&:not(:disabled):not(.disabled):active:focus {
+			color: #B9A073;
+			border: 1px solid #B9A073;
+			box-shadow: 0px 4px 8px rgba(197, 170, 121, 0.25);
+		}
+	}
 
 	&:hover {
 		color: #C5AA79;
@@ -669,6 +694,9 @@ datalist {
 	margin-right: auto;
 	max-width: rem(226);
 	box-shadow: 0 4px 8px rgba(80, 87, 105, 0.1);
+	&:hover{
+		background-color: $primary;
+	}
 	&.btn-outline-primary{
 			&:hover {
 		color: #fff;
@@ -924,8 +952,29 @@ a.hover-link:not(:hover){
 .font-default{
 	font-family: $default-font;
 }
+.container-fluid,
+.container{
+		@include media-breakpoint-up(lg){
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+		
+		@include media-breakpoint-up(sm){
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+		padding-left: 20px;
+		padding-right: 20px;
 
+}
 .container .container{
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.link-white{
+	color: #ffffff;
+	&:hover{
+		color: var(--primary);
+	}
 }

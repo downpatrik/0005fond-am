@@ -1,7 +1,7 @@
 mixin s-project-list()
 	// start s-project-list
 	+b.s-project-list.section#s-project-list&attributes(attributes)
-		.container
+		.container: +e.wrap
 			mixin item(t, v)
 				+b.project-item-list
 					.row
@@ -35,7 +35,7 @@ mixin s-project-list()
 										+e.price-title Требуется
 										+e.number 500 000 000 Р 
 							+e.btn-wrap
-								+e.btn.btn-sm(href="#") ПОМОЧЬ ХРАМУ
+								+e.btn.btn-sm.ttu(href="#") ПОМОЧЬ ХРАМУ
 			+item('Новоспасский монастырь')
 				+e.label Основной проект фонда
 			+item(`Храмовый комплекс св. муч. Анатолия и Протолеона, <em>г. Москва</em>`,'v')
@@ -55,7 +55,7 @@ mixin s-project-list()
 mixin s-project-list-done()
 	// start s-project-list
 	+b.s-project-list.section#s-project-list&attributes(attributes)
-		.container
+		.container: +e.wrap
 			mixin item(t, v)
 				+b.project-item-list
 					.row
@@ -89,7 +89,7 @@ mixin s-project-list-done()
 										+e.price-title Требуется
 										+e.number 500 000 000 Р 
 							+e.btn-wrap
-								+e.btn.btn-outline-primary.btn-sm(href="#") Подробнее
+								+e.btn.btn-outline-primary.btn-sm.ttu(href="#") Подробнее
 			+item('Новоспасский монастырь')
 				+e.label Основной проект фонда
 			+item(`Храмовый комплекс св. муч. Анатолия и Протолеона, <em>г. Москва</em>`,'v')

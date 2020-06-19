@@ -114,9 +114,9 @@ $h: em(2);
 		overflow-x: hidden;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
-		height: calc(100% - #{rem(50)}); 
+		height: 100%; 
 		.menu-mobile__inner{
-			height: calc(100% + #{rem(50)}); 
+			height:100%; 
 
 		}
 		// display: flex;
@@ -189,7 +189,7 @@ $h: em(2);
 	li {
 		display: block;
 		// margin: 0;
-		margin-bottom: em(10);
+		// margin-bottom: em(5);
 
 		a {
 			text-decoration: none !important;
@@ -302,6 +302,7 @@ $h: em(2);
 			width: rem(20);
 			font-size: rem(20);
 			margin-right: rem(10);
+			color: $primary;
 		}
 	}
 	&__link-share{
@@ -339,6 +340,12 @@ $h: em(2);
 			z-index: -1;
 			
 		}
+		.font-default{
+			li{
+				margin-bottom: 0.5em;
+				letter-spacing: 0.1em;
+			}
+		}
 	}
 	.img-bg{
 		z-index: -1;
@@ -368,4 +375,5 @@ $h: em(2);
 	em{
 		// display: block;
 	}
+
 }

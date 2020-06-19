@@ -606,12 +606,15 @@
 	top: 0;
 	background: #3C414F;
 	position: absolute;
+	&__head,
+	&__body{
 
-	p,
-	.strong {
-		@include media-breakpoint-up(md) {
-
-			font-size: rem(21);
+		p,
+		.strong {
+			@include media-breakpoint-up(md) {
+				
+				font-size: rem(21);
+			}
 		}
 	}
 
@@ -652,6 +655,7 @@
 	top: rem(18);
 	right: rem(20);
 	cursor: pointer;
+	z-index: 4;
 
 }
 

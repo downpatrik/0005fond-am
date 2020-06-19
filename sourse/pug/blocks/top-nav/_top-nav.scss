@@ -125,6 +125,7 @@
 	@include media-breakpoint-down(xs) {}
 	.link-donate{
 		@extend .text-body;
+	
 		&__icon-wrap{
 			position: relative;
 			top: rem(-6);
@@ -164,7 +165,7 @@
 				content: '';
 				position: absolute;
 				right: rem(- 5 * 2);
-				background-image: url(../img/svg/chevron-right.svg);
+				background-image: url(../img/svg/chevron-right-white.svg);
 				width: rem(10 * 4);
 				height: rem(5* 4);
 				background-size: rem(10 * 2) rem(5* 2);
@@ -180,11 +181,11 @@
 		
 		@media (min-width: 1440px) {
 
-			font-size: $h4-font-size;
+			font-size: 26px;
 		}
 
 
-		font-size: ($h4-font-size * .9);
+		font-size: (26px * .9);
 		@extend .mono;
 		font-weight: 500;
 		.menu-mobile__inner{
@@ -211,7 +212,12 @@
 
 .link-donate {
 	display: inline-flex;
-	color: $primary;
+		color: #ffffff;
+
+		&:hover,
+		&.active {
+			color: $primary;
+		}
 	// font-size: rem(13);
 	letter-spacing: rem(1.95px);
 	align-items: center;

@@ -1,10 +1,11 @@
-mixin s-why()
+mixin s-why(st)
 	// start s-why
 	+b.SECTION.s-why.section#s-why&attributes(attributes)
 		.container
 			+b.section-title.text-center
 				h2 Как пожертвовать
-				+e.text Если вам близки ценности фонда и&nbsp;вы&nbsp;хотите помочь нам в&nbsp;развитии благо дела &minus; храмоздания, вы&nbsp;можете сделать это  следующими способами:
+				if !st
+					+e.text.text-primary Если вам близки ценности фонда и&nbsp;вы&nbsp;хотите помочь нам в&nbsp;развитии благо дела &minus; храмоздания, вы&nbsp;можете сделать это  следующими способами:
 			+e.arrow-wrapper
 				+e.slider.slider-auto-mob-js.swiper-container
 					.swiper-wrapper

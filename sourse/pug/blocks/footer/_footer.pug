@@ -4,7 +4,10 @@ mixin footer()
 			.row
 				.col-lg-3.img-wrap
 					a(href="#")
-						img.res-i(src="img/svg/logo-lg.svg", alt="")
+						.d-md-none.d-lg-block
+							img.res-i(src="img/svg/logo-foot-new.svg", alt="")
+						.d-none.d-md-block.d-lg-none
+							img.res-i(src="img/svg/logo-foot-new-md.svg", alt="")
 				.col-lg-9.info-fond
 					.row
 						+e.col.col-lg.col-sm-4

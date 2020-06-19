@@ -224,6 +224,7 @@ function eventHandler() {
 		loopedSlides: 4,
 		slidesPerView: 1,
 		spaceBetween: 20,
+		loop: true,
 		navigation: {
 			nextEl: '.s-cards .swiper-button-next',
 			prevEl: '.s-cards .swiper-button-prev',
@@ -235,7 +236,7 @@ function eventHandler() {
 				watchOverflow: true,
 				freeMode: true,
 				freeModeMomentum: true,
-				loop: false,
+				loop: true,
 
 				// slidesPerView: 4,
 				// spaceBetween: 40
@@ -314,7 +315,7 @@ function eventHandler() {
 				watchOverflow: false,
 				freeMode: false,
 				freeModeMomentum: false,
-				slidesPerView: 2,
+				slidesPerView: 1,
 
 			},
 
@@ -429,9 +430,14 @@ function eventHandler() {
 		}
 	});
 
-	$(".project-item").hover(function () {
-		$(this).find(".project-item__hidden").slideToggle(150)
-	})
+	$(".project-item").hover(
+		function () {
+			
+			$(this).find(".project-item__hidden").slideToggle(300)
+			// $(this).find(".project-item__hidden.active").hide(300)
+		}
+
+	)
 
 
 	var headerSwiper3 = new Swiper('.header-block__slider--js', {
@@ -459,6 +465,11 @@ function eventHandler() {
 		loop: true,
 		breakpoints: {
 
+			576: {
+
+				slidesPerView: 2,
+				spaceBetween: 20,
+			},
 			991: {
 
 				slidesPerView: 2,
@@ -504,15 +515,17 @@ function eventHandler() {
 	// 	theme: 'bootstrap4',
 	// });
 
-	$(".nav__item--has-children-js").each(function () {
+	$(".nav__item--has-children-js > .nav__link").each(function () {
 		$(this).append('<div class="toggle-l"></div>');
 	})
 
 
+	$(".nav__item--has-children-js   .nav__link").click(function () {
+		return false;
+	})
+	$(".nav__item--has-children-js  .nav__link ").on('click', function () {
 
-	$(".nav__item--has-children-js   ").on('click', '.toggle-l', function () {
-
-		$(this).prev('.menu-mobile-sub--js').addClass('active');
+		$(this).next('.menu-mobile-sub--js').addClass('active');
 		// return false;
 	})
 	$(".toggle-menu-mobile--inner-js").click(function () {
@@ -590,7 +603,7 @@ function eventHandler() {
 
 	});
 
-	$(".s-rews ").on('click', ".s-rews__link-more", function () {
+	$(".s-rews ").on('click', ".rew-modal", function () {
 
 		$.fancybox.open({
 			src: '#modal-rew',

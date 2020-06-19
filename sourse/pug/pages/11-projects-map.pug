@@ -43,8 +43,9 @@ block pagecontent
 	+s-continue()(class='section') 
 		+e.map-wrap#map-block
 			+b.info-block.active 
+				.info-block-close
+					img(src="img/svg/close.svg", alt="")
 				+b.project-item.bg-wrap
-					.info-block-close
 					+pic("projec-1",'bg','')(class="picture-bg")
 					.project-item__hidden.active.mb-auto
 						+e.place(href="#")

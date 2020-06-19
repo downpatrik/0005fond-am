@@ -35,6 +35,13 @@
 								</svg>
 							</div>
 						</div>
+						<div class="col-auto">
+							<div class="toggle-menu-mobile toggle-menu-mobile--js">
+								<svg class="icon icon-close ">
+									<use xlink:href="img/svg/sprite.svg#close"></use>
+								</svg>
+							</div>
+						</div>
 					</div>
 					<ul class="nav nav--lg" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 						<li class="nav__item" itemprop="item"><a class="nav__link" href="#" itemprop="url">Главная</a>
@@ -93,7 +100,7 @@
 											</div>
 										</div>
 									</div>
-									<div class="menu-mobile__title h3 text-primary">Текущие проекты
+									<div class="menu-mobile__title h3 text-primary"><a class="link-white tdn" href="#">Текущие проекты</a>
 									</div>
 									<div class="projects-nav">
 										<ul>
@@ -221,7 +228,7 @@
 						<svg class="icon icon-twitter ">
 							<use xlink:href="img/svg/sprite.svg#twitter"></use>
 						</svg></a>
-					</div><a class="menu-mobile__btn" href="#">ПОЖЕРТВОВАТЬ</a>
+					</div>
 				</div>
 			</div>
 			<!--  мобильное меню-->
@@ -240,7 +247,7 @@
 										<use xlink:href="img/svg/sprite.svg#logo-top"></use>
 									</svg></a>
 								</div>
-								<div class="top-line__col col-auto d-none d-sm-block">
+								<div class="top-line__col col-auto d-none d-lg-block">
 									<div class="soc"><a class="soc__item" href="#" target="_blank">
 										<svg class="icon icon-facebook ">
 											<use xlink:href="img/svg/sprite.svg#facebook"></use>
@@ -280,15 +287,17 @@
 				<!-- end .top-line-->
 			</header>
 			<!-- start s-about-->
-			<section class="s-about section pt-0" id="s-about">
-				<div class="container" data-sticky-container="data-sticky-container">
+			<section class="s-about" id="s-about">
+				<div class="container">
 					<div class="page-head ttu page-head page-head--with-video">
 						<div class="container">
 							<h1>О фонде</h1>
 						</div>
 					</div>
-					<div class="s-about__sidebar">
-						<ul class="s-about__nav sticky-js" data-margin-top="120">
+				</div>
+				<div class="container" data-sticky-container="data-sticky-container">
+					<div class="sidebar">
+						<ul class="sidebar__nav sticky-js" data-margin-top="120">
 							<li><a href="#video">Видео презентация</a></li>
 							<li><a href="#mission">Наша миссия</a></li>
 							<li><a href="#tasks">Наши задачи</a></li>
@@ -307,11 +316,11 @@
 								<div class="video-block__center">
 									<div class="video-block__play">
 									</div>
-									<div class="video-block__center-text">Презентация  Фонда&nbsp;Архангела Михаила 
+									<div class="video-block__center-text">Презентация <br > Фонда Архангела Михаила 
 									</div>
 								</div></a>
 							</div>
-							<div class="s-about__group s-about__group--numbers">
+							<div class="s-about__group s-about__group--numbers d-none d-md-block">
 								<div class="row">
 										<div class="s-about__col-numbers col-auto">
 											<div class="s-about__text">Собрано и&nbsp;реализовано
@@ -359,14 +368,14 @@
 												<!-- /picture-->
 											</div>
 											<ol> 
-												<li><a href="#">Кафедральный собор Христа Спасителя, г. Калининград</a></li>
-												<li><a href="#">Храмовый комплекс святых мучеников Анатолия  и Протолеона, г. Москва</a></li>
-												<li><a href="#">Храм в честь святого мученика Иоанна Воина, г. Челябинск</a></li>
-												<li><a href="#">Храм Воскресения Христова, р.п. Павловка, Ульяновская обл.</a></li>
-												<li><a href="#">Храм Живоначальной Троицы, с. Медяны, Кировская обл.</a></li>
-												<li><a href="#">Храм равноапостольного князя Владимира,  п. Станционный-Полевской, Свердловская обл.</a></li>
-												<li><a href="#">Молитвенный дом Архангела Михаила, с. Каменный Брод,   Пензенская обл.</a></li>
-												<li><a href="#">Храм в честь свт. Тихона, Патриарха всероссийского, г. Клин, Московская обл.</a></li>
+												<li><a href="#">Кафедральный собор Христа Спасителя, <em>г.&nbsp;Калининград</em></a></li>
+												<li><a href="#">Храмовый комплекс святых мучеников Анатолия и&nbsp;Протолеона,&nbsp;<em>г.&nbsp;Москва</em></a></li>
+												<li><a href="#">Храм в честь святого мученика Иоанна Воина, <em> г.&nbsp;Челябинск</em></a></li>
+												<li><a href="#">Храм Воскресения Христова,  <em>р.п. Павловка, Ульяновская обл.</em></a></li>
+												<li><a href="#">Храм Живоначальной Троицы,  <em>с. Медяны, Кировская обл.</em></a></li>
+												<li><a href="#">Храм равноапостольного князя Владимира,  <em> п. Станционный-Полевской, Свердловская обл.</em></a></li>
+												<li><a href="#">Молитвенный дом Архангела Михаила,  <em>с. Каменный Брод,   Пензенская обл.</em></a></li>
+												<li><a href="#">Храм в честь свт. Тихона, Патриарха всероссийского, <em> г.&nbsp;Клин, Московская обл.</em></a></li>
 											</ol>
 										</div>
 										<div class="tabs__content">
@@ -377,17 +386,17 @@
 													<source srcset="#" data-srcset="img/@1x/tab-map-2.png" type="image/png"/><img src="#" data-src="img/@2x/tab-map-2.png" alt=""/>
 												</picture>
 												<!-- /picture-->
+												<ol> 
+													<li><a href="#">Кафедральный собор Христа Спасителя, <em>г.&nbsp;Калининград</em></a></li>
+													<li><a href="#">Храмовый комплекс святых мучеников Анатолия и&nbsp;Протолеона,&nbsp;<em>г.&nbsp;Москва</em></a></li>
+													<li><a href="#">Храм в честь святого мученика Иоанна Воина, <em> г.&nbsp;Челябинск</em></a></li>
+													<li><a href="#">Храм Воскресения Христова,  <em>р.п. Павловка, Ульяновская обл.</em></a></li>
+													<li><a href="#">Храм Живоначальной Троицы,  <em>с. Медяны, Кировская обл.</em></a></li>
+													<li><a href="#">Храм равноапостольного князя Владимира,  <em> п. Станционный-Полевской, Свердловская обл.</em></a></li>
+													<li><a href="#">Молитвенный дом Архангела Михаила,  <em>с. Каменный Брод,   Пензенская обл.</em></a></li>
+													<li><a href="#">Храм в честь свт. Тихона, Патриарха всероссийского, <em> г.&nbsp;Клин, Московская обл.</em></a></li>
+												</ol>
 											</div>
-											<ol> 
-												<li><a href="#">Кафедральный собор Христа Спасителя, г. Калининград</a></li>
-												<li><a href="#">Храмовый комплекс святых мучеников Анатолия  и Протолеона, г. Москва</a></li>
-												<li><a href="#">Храм в честь святого мученика Иоанна Воина, г. Челябинск</a></li>
-												<li><a href="#">Храм Воскресения Христова, р.п. Павловка, Ульяновская обл.</a></li>
-												<li><a href="#">Храм Живоначальной Троицы, с. Медяны, Кировская обл.</a></li>
-												<li><a href="#">Храм равноапостольного князя Владимира,  п. Станционный-Полевской, Свердловская обл.</a></li>
-												<li><a href="#">Молитвенный дом Архангела Михаила, с. Каменный Брод,   Пензенская обл.</a></li>
-												<li><a href="#">Храм в честь свт. Тихона, Патриарха всероссийского, г. Клин, Московская обл.</a></li>
-											</ol>
 										</div>
 									</div>
 								</div>
@@ -445,8 +454,6 @@
 									</div>
 									<div class="person-block__title ttu">архимандрит мелхиседек (артюхин)
 									</div>
-									<div class="person-block__text">Почетный член попечительского совета Фонда, настоятель храмов Покрова Пресвятой Богородицы в&nbsp;Ясеневе и&nbsp;подворья Введенского ставропигиального мужского монастыря Оптина Пустынь храма&nbsp;св. апп. Петра и&nbsp;Павла в&nbsp;Ясеневе
-									</div>
 								</div>
 								<ul class="col2">
 									<li> Любовь к Богу </li>
@@ -469,7 +476,7 @@
 							<div class="s-about__group row">
 								<div class="col-sm-auto order-sm-last text-center"><img class="res-i" src="img/@2x/achievements-1.png" alt=""/></div>
 								<div class="col">
-									<div class="h5 strong">Именной кирпич</div>
+									<div class="h5 strong text-sm-left text-center">Именной кирпич</div>
 									<p>Фонд стал известен тем, что первый  в&nbsp;новой истории России сделал доступной и&nbsp;популярной идею &laquo;именных кирпичей&raquo; для строительства храмов, возродив традицию строительства храмов &laquo;Всем миром&raquo;</p><a class="s-about__link-more" href="#">Подробнее
 									<svg class="icon icon-arrow-b-right ">
 										<use xlink:href="img/svg/sprite.svg#arrow-b-right"></use>
@@ -479,7 +486,7 @@
 							<div class="s-about__group row">
 								<div class="col-sm-auto order-sm-last text-center"><img class="res-i" src="img/@2x/achievements-2.png" alt=""/></div>
 								<div class="col">
-									<div class="h5 strong">Древняя Византия  под московским небом</div>
+									<div class="h5 strong text-sm-left text-center">Древняя Византия  под московским небом</div>
 									<p>Первым успешно реализованным проектом Фонда Архангела Михаила стал уже многим известный уникальный храм-памятник Покрова Пресвятой Богородицы в Ясеневе, построенный на Юго-Западе Москвы <a href="#">только на частные пожертвования</a>.</p>
 									<p>ПУдивителен тот факт, что всего за 5 лет удалось построить столь грандиозный храм. В том числе, благодаря усилиям Фонда, всего более миллиона человек и более 110 тысяч московских компаний приняли участие в столь масштабном строительстве.</p><a class="s-about__link-more" href="#">Подробнее
 									<svg class="icon icon-arrow-b-right ">
@@ -490,14 +497,14 @@
 							<div class="s-about__group row">
 								<div class="col-sm-auto order-sm-last text-center"><img class="res-i" src="img/@2x/achievements-3.png" alt=""/></div>
 								<div class="col">
-									<div class="h5 strong">Возрождение культуры</div>
+									<div class="h5 strong text-sm-left text-center">Возрождение культуры</div>
 									<p>Одним из&nbsp;первых Фонд Архангела Михаила стал оказывать помощь и&nbsp;небольшим объектам (храмы и&nbsp;монастыри России), нуждающимся в&nbsp;частичном восстановлении и&nbsp;реконструкции, ставя своей миссией не&nbsp;только строительство новых, но&nbsp;и&nbsp;восстановление разрушенных святынь.</p><a class="s-about__link-more" href="#">Подробнее
 									<svg class="icon icon-arrow-b-right ">
 										<use xlink:href="img/svg/sprite.svg#arrow-b-right"></use>
 									</svg></a>
 								</div>
 							</div>
-							<h4 class="mono">Фонд не&nbsp;имеет представительств в&nbsp;регионах и&nbsp;не&nbsp;сотрудничает с&nbsp;посредниками, внести пожертвования на&nbsp;строительство храмов, являющихся проектами Фонда можно только через информационные стойки расположенные в&nbsp;Торговых центрах и&nbsp;супермаркетах&nbsp;г. Москвы (<a href="#">смотреть все адреса стоек</a>) или он-лайн через сайт Фонда или непосредственно на&nbsp;сайте самих храмов или на&nbsp;их&nbsp;территории.</h4>
+							<h4 class="mono">Фонд не&nbsp;имеет представительств в&nbsp;регионах и&nbsp;не&nbsp;сотрудничает с&nbsp;посредниками, внести пожертвования на&nbsp;строительство храмов, являющихся проектами Фонда можно только через информационные стойки расположенные в&nbsp;Торговых центрах и&nbsp;супермаркетах&nbsp;г.&nbsp;Москвы (<a href="#">смотреть все адреса стоек</a>) или он-лайн через сайт Фонда или непосредственно на&nbsp;сайте самих храмов или на&nbsp;их&nbsp;территории.</h4>
 							<h4 class="mono">Для того чтоб стать попечителем Фонда, необходимо заполнить форму на&nbsp;сайте.</h4>
 							<h4 class="mono">Чтоб стать партнером Фонда юридическому лицу, необходимо связаться по&nbsp;телефону&nbsp;<a href="tel:+7(495)422-25-88">+7 (495) 422-25-88</a> или написать на&nbsp;почту <a href="mailto:info@fond-am.ru">info@fond-am.ru</a> c&nbsp;пометкой &laquo;Партнерство&raquo;. В&nbsp;каждом конкретном случае формы партнерства и&nbsp;информационного сопровождения обсуждаются индивидуально.</h4>
 						</div>
@@ -510,7 +517,7 @@
 				<div class="container">
 					<div class="section-title text-center">
 						<h2>Как пожертвовать</h2>
-						<div class="section-title__text">Если вам близки ценности фонда и&nbsp;вы&nbsp;хотите помочь нам в&nbsp;развитии благо дела &minus; храмоздания, вы&nbsp;можете сделать это  следующими способами:
+						<div class="section-title__text text-primary">Если вам близки ценности фонда и&nbsp;вы&nbsp;хотите помочь нам в&nbsp;развитии благо дела &minus; храмоздания, вы&nbsp;можете сделать это  следующими способами:
 						</div>
 					</div>
 					<div class="s-why__arrow-wrapper">
@@ -695,7 +702,9 @@
 			<footer class="footer block-with-lazy">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-3 img-wrap"><a href="#"><img class="res-i" src="img/svg/logo-lg.svg" alt=""/></a></div>
+						<div class="col-lg-3 img-wrap"><a href="#">
+								<div class="d-md-none d-lg-block"><img class="res-i" src="img/svg/logo-foot-new.svg" alt=""/></div>
+								<div class="d-none d-md-block d-lg-none"><img class="res-i" src="img/svg/logo-foot-new-md.svg" alt=""/></div></a></div>
 						<div class="col-lg-9 info-fond">
 							<div class="row">
 								<div class="footer__col col-lg col-sm-4">

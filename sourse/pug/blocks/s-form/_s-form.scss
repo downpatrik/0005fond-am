@@ -12,15 +12,15 @@
 
 		@include media-breakpoint-up(md) {
 
-			padding: rem(10) rem(30) rem(5);
+			padding: rem(10) rem(75) rem(5);
 		}
 
 		@include media-breakpoint-up(sm) {
 
-			padding: rem(20) rem(30) rem(10);
+			padding: rem(20) rem(45) rem(10);
 		}
 
-		padding: rem(20) rem(15) rem(10);
+		padding: rem(20) rem(30) rem(10);
 
 		// @include media-breakpoint-down(xs) {}
 		@include media-breakpoint-up(xl) {
@@ -124,7 +124,12 @@
 
 	@include media-breakpoint-down(lg) {}
 
-	@include media-breakpoint-down(md) {}
+	@include media-breakpoint-down(md) {
+		.container{
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 
 	@include media-breakpoint-down(sm) {}
 

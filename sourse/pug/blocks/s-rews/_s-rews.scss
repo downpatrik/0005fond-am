@@ -153,16 +153,18 @@
 	}
 
 	&__link-more {
-		color: $primary;
+		color: $body-color;
 		cursor: pointer;
 		@include mt;
-
+		
 		&:hover {
-			color: darken($color: $primary, $amount: 10%);
-
+			color: $primary;
+			// color: darken($color: $primary, $amount: 10%);
+			
 		}
-
+		
 		.icon {
+			color: $primary;
 			font-size: rem(10);
 			margin-left: rem(10);
 			position: relative;
