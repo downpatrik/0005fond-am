@@ -185,7 +185,17 @@ $h: em(2);
 		border-bottom: 1px solid #505769;
 		padding-bottom: rem(15);
 	}
-
+	.nav--sm{
+		li{
+			margin-bottom: .5em;
+		}
+	}
+	.nav.ttu{
+		li{
+			letter-spacing: 0.1em;
+			margin-bottom: 0.5em;
+		}
+	}
 	li {
 		display: block;
 		// margin: 0;

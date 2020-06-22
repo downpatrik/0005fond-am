@@ -433,7 +433,7 @@ function eventHandler() {
 	$(".project-item").hover(
 		function () {
 			
-			$(this).find(".project-item__hidden").slideToggle(300)
+			$(this).find(".project-item__hidden").toggle(300)
 			// $(this).find(".project-item__hidden.active").hide(300)
 		}
 
