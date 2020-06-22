@@ -267,16 +267,20 @@ function eventHandler() {
 		loopedSlides: 6,
 		loop: false,
 		breakpoints: {
-			576: {
+			576: _defineProperty({
 				// slidesPerView: 1,
-				loop: true
-			},
+				loop: true,
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false,
+				slidesPerView: 'auto'
+			}, "loop", true),
 			991: {
 				loop: true,
 				watchOverflow: false,
 				freeMode: false,
 				freeModeMomentum: false,
-				slidesPerView: 1
+				slidesPerView: 2
 			},
 			1200: {
 				loop: true,

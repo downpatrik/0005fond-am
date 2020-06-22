@@ -1,26 +1,40 @@
 .s-form {
 	.form-wrap {
 		box-shadow: 0 $em-base 32px rgba(154, 41, 68, 0.2);
-		border-radius: 8px;
 		background-color: #9a2944;
-
+			position: relative;
+			
 		@include media-breakpoint-up(lg) {
-
+			border-radius: 8px;
+			
 			padding: rem(30);
 			padding-bottom: rem(10);
+			padding-left: rem(120);
 		}
+	@include media-breakpoint-down(md){
+		&::before{
+			content: '';
+			position: absolute;
+			background-color: inherit;
+			height: 100%;
+			left: -100vw;
+			z-index: -1;
+			width: 300vw;
+			top: 0;
 
+		}
+	}
 		@include media-breakpoint-up(md) {
 
-			padding: rem(10) rem(75) rem(5);
+			padding: rem(30) rem(75) rem(15);
 		}
 
 		@include media-breakpoint-up(sm) {
 
-			padding: rem(20) rem(45) rem(10);
+			padding: rem(30) rem(45) rem(20);
 		}
 
-		padding: rem(20) rem(30) rem(10);
+		padding: rem(50) rem(30) rem(40);
 
 		// @include media-breakpoint-down(xs) {}
 		@include media-breakpoint-up(xl) {
@@ -49,14 +63,15 @@
 				margin-bottom: rem(20);
 			}
 
-			margin-bottom: rem(15);
+				font-size: 21px;
+			margin-bottom: rem(25);
 
 			@include media-breakpoint-up(md) {
 
 				text-align: left;
 			}
 
-			font-size: rem(21);
+			 
 
 			text-align: center;
 
@@ -87,6 +102,9 @@
 		}
 		&__btn{
 			width: rem(226);
+			@include media-breakpoint-down(xs) {
+				padding: rem(12) rem(10) !important;
+			}
 		}
 	}
 

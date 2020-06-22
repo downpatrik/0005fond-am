@@ -154,7 +154,7 @@
 
     .icon {
       font-size: em(22);
-      margin-right: em(10);
+      margin-right: em(5);
       position: relative;
       top: rem(-3);
     }
@@ -201,6 +201,13 @@
   &__price {
     position: relative;
     padding-top: rem(10);
+    .row{
+      justify-content: space-between;
+      .col-6{
+        width: auto;
+        max-width: 50%;
+      }
+    }
     &::before {
       content: '';
       background-image: url(../img/svg/chevron-right-sm.svg);
@@ -245,7 +252,7 @@
 
       font-size: rem(22);
     }
-
+    font-size: 21px;
     font-weight: 500;
     line-height: 1.2;
     @extend .mono;

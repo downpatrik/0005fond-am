@@ -331,7 +331,7 @@
 
      @include media-breakpoint-up(lg) {
 
-       padding: em(4) em(10);
+       padding: em(6) em(10) em(3);
        min-width: em(25);
        font-size: rem(10);
      }
@@ -348,7 +348,7 @@
     
 
      @include media-breakpoint-down(xs) {
-       padding: rem(3) rem(5) ;
+       padding: rem(5) rem(5) rem(2);
        text-align: left;
        min-width: rem(20);
        font-size: rem(10);

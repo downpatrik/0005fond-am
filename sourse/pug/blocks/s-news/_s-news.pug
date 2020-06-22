@@ -19,8 +19,8 @@ mixin video-item()
 mixin artical-item(i,p)
 	+e.slide--artical.swiper-slide
 		+b.video-item--artical(href="#") 
-			+e.DIV.img-wrap--artical
-				img.res-i(src=`img/@2x/artical-${i}.jpg`, alt="")
+			+e.DIV.img-wrap--artical.bg-wrap
+				img.res-i(src=`img/@2x/artical-${i}.jpg`, alt="").img-bg.object-fit-js
 			+e.DIV.caption--artical   
 				p.strong.mb-auto= p
 				+e.btn ЧИТАТЬ
@@ -58,10 +58,11 @@ mixin s-news()
 										block
 										if text 
 											+foot
-									+e.small-gal
-										- for (var x = 0; x < 4; x++)
-											+e.img-link(href="img/@2x/project-main-1.jpg" data-fancybox="news-gal")
-												img.res-i(src="img/@2x/project-main-1.jpg", alt="")
+									if !text 
+										+e.small-gal
+											- for (var x = 0; x < 4; x++)
+												+e.img-link(href="img/@2x/project-main-1.jpg" data-fancybox="news-gal")
+													img.res-i(src="img/@2x/project-main-1.jpg", alt="")
 									mixin foot()
 										+e.foot
 											+e.date  13.08.19

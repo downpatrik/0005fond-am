@@ -20,6 +20,7 @@
   }
 }
 .top-line {
+  z-index: 800;
   	&__inner {
       background: #3C414F;
       box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);

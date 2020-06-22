@@ -11,6 +11,9 @@
 		linear-gradient(104.64deg, #46498F 2.73%, #AA3F59 100%);
 		box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.05);
 			@include mt;
+			.video-item__date{
+				margin-left: 15px;
+			}
  .video-item__foot {
  	color: rgba(80, 87, 105, .5);
  }
@@ -40,7 +43,8 @@
 		font-size: 11px;
 		line-height: 100%;
 		@include media-breakpoint-down(md) {
-			display: none;
+			// display: none;
+			color: #ffffff;
 		}
 		/* identical to box height, or 11px */
 
@@ -119,7 +123,7 @@
 		padding-right: rem(15);
 		display: inline-flex;
 		align-items: center;
-		cursor: pointer;
+		// cursor: pointer;
 		position: relative;
 
 
@@ -140,7 +144,7 @@
 		}
 
 		.icon-eye {
-			font-size: rem(16);
+			font-size: rem(14);
 		}
 
 		.icon-donate {

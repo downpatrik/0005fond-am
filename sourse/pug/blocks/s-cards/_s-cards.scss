@@ -154,6 +154,10 @@
 	@include media-breakpoint-down(sm) {}
 
 	@include media-breakpoint-down(xs) {
+		&__slide:not(.swiper-slide-active) .s-cards__text {
+			opacity: 0;pointer-events: none;
+			@include mt;
+		}
 		padding-bottom: 0;
 		h2{
 			color: rgba(255, 255, 255, 0.5);

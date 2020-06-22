@@ -306,7 +306,11 @@ function eventHandler() {
 		breakpoints: {
 			576: {
 				// slidesPerView: 1,
-
+				loop: true,
+				watchOverflow: false,
+				freeMode: false,
+				freeModeMomentum: false,
+				slidesPerView: 'auto',
 				loop: true,
 			},
 
@@ -315,7 +319,7 @@ function eventHandler() {
 				watchOverflow: false,
 				freeMode: false,
 				freeModeMomentum: false,
-				slidesPerView: 1,
+				slidesPerView: 2,
 
 			},
 

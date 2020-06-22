@@ -28,7 +28,7 @@
     @include media-breakpoint-up(sm) {
 
     }
-    padding: rem(30) rem(25) rem(40);
+    padding: rem(30) rem(25) rem(20);
 
     // padding: rem(15) rem(15) rem(20);
   }
@@ -42,6 +42,9 @@
   box-shadow: 0px 16px 32px rgba(80, 87, 105, 0.3);
   picture {
     opacity: 0.4;
+    img{
+
+    }
   }
 
   &--blue {
@@ -179,6 +182,7 @@
      z-index: 5;
     @include media-breakpoint-down(xs){
       position: relative;
+     
     }
     position: absolute;
     width: 100%;
@@ -261,7 +265,7 @@
 
     @include media-breakpoint-down(xs) {
       // font-size: 1.2rem;
-      font-size: rem(22);
+      font-size: 24px;
       min-height: rem(150);
       text-align: center;
 
@@ -279,7 +283,7 @@
     // margin-bottom: rem(20);
   }
   &__slider--mob{
-    margin-top: -3rem;
+    margin-top: -1rem;
     margin-bottom: 5rem;
     z-index: 4;
   }
@@ -432,7 +436,7 @@
     @include media-breakpoint-up(xl) {
       bottom: 11%;
     }
-    bottom: 7%;
+    bottom: 10%;
     @include a-cent(x);
     z-index: 50;
     

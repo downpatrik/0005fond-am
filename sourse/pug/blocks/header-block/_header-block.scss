@@ -1,6 +1,10 @@
 .header-block {
 	// display: block;
-	
+	@include media-breakpoint-up(sm) {
+		margin-top: rem(60);
+	}
+
+	margin-bottom: rem(40);
 	margin-left: auto;
 	margin-right: auto;
 	@include media-breakpoint-up(lg) {
@@ -27,10 +31,7 @@
 
 		max-width: 1300px;
 		
-		@include media-breakpoint-up(sm) {
-		margin-top: rem(60);
-		}
-		margin-bottom: rem(40);
+		
 			@include media-breakpoint-up(md) {
 
 				
@@ -122,10 +123,14 @@
 		
 		&__swiper-pagination{
 			// bottom: 0;
-			@include media-breakpoint-down(md) {
-				margin-top: 20px;
+			@include media-breakpoint-down(lg) {
+				margin-top: 30px;
 				top: 100%;
 				width: calc(100% - 80px);
+			}
+			@include media-breakpoint-down(xs){
+				margin-top: 20px;
+
 			}
 		}
 		// 

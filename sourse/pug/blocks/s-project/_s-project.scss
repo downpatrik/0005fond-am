@@ -1,5 +1,11 @@
 // start .s-project
 .s-project {
+		&--cases {
+
+			.project-item__foot{
+				color: #ffffff;
+			}
+			}
 
 	&__slider--3-js{
 
@@ -150,6 +156,9 @@
 	}
 
 	@include media-breakpoint-down(md) {
+		.container{
+			max-width: none;
+		}
 		&__container-sm {
 			// max-width: 450px;
 		}
@@ -186,6 +195,10 @@
 	
 
 		&--cases {
+	 
+				.project-item__foot-item {
+					color: #ffffff;
+				} 
 			@media (max-width: 575.98px) {
 
 				.project-lg__center-text { 
@@ -209,6 +222,7 @@
 					background: $primary !important;
 					border-color:$primary;
 					color: #ffffff !important;
+					bottom: 6%;
 				}
 				h2{
 					color: rgba(80, 87, 105, 0.5);
@@ -269,11 +283,11 @@
 
 					picture {
 						opacity: 0.6;
-						top: -20%;
+						top: -15%;
 						height: 160%;
 						background: none;
 					}
-
+						
 					&::before {
 						content: '';
 						position: absolute;
@@ -284,7 +298,7 @@
 						
 						mix-blend-mode: normal;
 						height: 160%;
-						top: -20%;
+						top: -15%;
 						pointer-events: none;
 					}
 				}
