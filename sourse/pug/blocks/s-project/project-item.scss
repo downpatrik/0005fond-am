@@ -370,6 +370,18 @@
   &__btn-more {
     @extend .btn;
     @extend .btn-sm;
+    position: absolute;
+    @include media-breakpoint-up(xl) {
+      left: rem(30);
+      bottom: rem(36); 
+    } 
+    @include media-breakpoint-up(sm) { 
+    left: rem(20);
+    bottom: rem(20);
+    }
+    left: rem(15);
+    bottom: rem(22); 
+    // min-height: rem(335);
     // @extend .btn-outline-white;
     color: #ffffff;
     width: rem(196);
