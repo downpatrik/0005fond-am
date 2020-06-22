@@ -375,7 +375,7 @@ function eventHandler() {
 		}
 	});
 	$(".project-item").hover(function () {
-		$(this).find(".project-item__hidden").toggle(300); // $(this).find(".project-item__hidden.active").hide(300)
+		$(this).find(".project-item__hidden").toggle(); // $(this).find(".project-item__hidden.active").hide(300)
 	});
 	var headerSwiper3 = new Swiper('.header-block__slider--js', {
 		slidesPerView: 1,
