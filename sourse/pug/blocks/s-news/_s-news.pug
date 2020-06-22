@@ -4,7 +4,8 @@ mixin video-item()
 			+e.play
 			img.res-i(src="img/@2x/video.jpg", alt="")
 		+e.caption  
-			+e.top-title Новоспасский монастырь
+			+e.top-title
+				a.link-hover(href="#").strong Новоспасский монастырь
 			p
 				a(href="#").strong Благоукрашение Знамеского храма Новоспасского монатсыря
 			+e.foot

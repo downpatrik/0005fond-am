@@ -42,9 +42,13 @@
 	&__top-title{
 		font-size: 11px;
 		line-height: 100%;
-		@include media-breakpoint-down(md) {
-			// display: none;
-			color: #ffffff;
+		a{
+			color: rgba(80, 87, 105, 0.5);
+			@include media-breakpoint-down(md) {
+				// display: none;
+				color: #ffffff;
+			}
+			
 		}
 		/* identical to box height, or 11px */
 
@@ -201,7 +205,7 @@
 				padding-bottom: rem(25);
 			}
 		}
-		a {
+		p a {
 			text-decoration: none !important;
 			@extend .link-hover;
 
