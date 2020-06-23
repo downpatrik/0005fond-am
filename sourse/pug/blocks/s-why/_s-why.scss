@@ -24,6 +24,7 @@ margin-bottom: rem(5);
 			line-height: 135%;
 			@include media-breakpoint-down(xs){
 				padding-top: 1rem;
+				padding-bottom: 1rem;
 			}
 		}
 		@include media-breakpoint-up(sm) {

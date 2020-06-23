@@ -5,6 +5,9 @@
 		&__list{
 			padding-bottom: rem(60);
 		}
+		&__btn{
+			margin-top: 2rem;
+		}
 		 
 	@include media-breakpoint-up(xl) {}
 	@include media-breakpoint-up(lg) {}

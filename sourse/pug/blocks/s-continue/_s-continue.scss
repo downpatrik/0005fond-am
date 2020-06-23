@@ -656,6 +656,18 @@
 	right: rem(20);
 	cursor: pointer;
 	z-index: 4;
+	@include mt;
+	.icon{
+		color: #ffffff;
+
+		font-size: rem(30);
+		// color: transparent;
+		// stroke: currentColor;
+		// stroke-width: 3px;
+	}
+	&:hover{
+		color: $primary;
+	}
 
 }
 

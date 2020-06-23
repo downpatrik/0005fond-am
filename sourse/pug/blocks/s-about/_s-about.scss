@@ -32,6 +32,9 @@
 	.s-about {
 		padding-bottom: 0;
 		@include media-breakpoint-down(xs){
+			.container{
+				max-width: 100%;
+			}
 			&__group{
 
 				a,

@@ -370,7 +370,7 @@ function eventHandler() {
 		freeMode: true,
 		freeModeMomentum: true,
 		breakpoints: {
-			576: {
+			992: {
 				watchOverflow: false,
 				freeMode: false,
 				freeModeMomentum: false,
