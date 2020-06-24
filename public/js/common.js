@@ -142,7 +142,7 @@ function eventHandler() {
 		var lastScrollTop = 0;
 
 		if ($("div").is(".top-line-sub")) {
-			$('.header').height($('.top-line').innerHeight());
+			$('.top-line-sub-inner').height($('.top-line-sub').innerHeight());
 		}
 
 		$(window).scroll(function (event) {
@@ -172,18 +172,52 @@ function eventHandler() {
 				$('.top-line  ').removeClass('fixed ');
 			}
 		});
-		var lastScrollTop = 0;
+		var lastScrollTop2 = $('.top-line-sub-inner').offset().top;
 		$(window).scroll(function (event) {
-			var st = $(this).scrollTop();
+			var st2 = $(window).scrollTop(); // console.log(lastScrollTop2)
+			// console.log(st2)
 
-			if (st > lastScrollTop) {
-				$('.top-line  ').removeClass('fixed-mob');
+			if (st2 > lastScrollTop2) {
+				$('.top-line-sub  ').addClass('fixed');
 			} else {
-				$('.top-line  ').addClass('fixed-mob');
-			}
+				$('.top-line-sub  ').removeClass('fixed');
+			} // lastScrollTop2 = st2;
 
-			lastScrollTop = st;
-		}); // конец добавил
+		});
+		$(window).scroll(function (event) {
+			var st2 = $(window).scrollTop();
+
+			if (st2 > lastScrollTop2) {
+				// console.log(lastScrollTop2)
+				// console.log(st2)
+				$('.top-line-sub  ').addClass('fixed-ready');
+			} else {
+				$('.top-line-sub  ').removeClass('fixed-ready');
+			}
+		});
+		$(window).scroll(function (event) {
+			var st2 = $(window).scrollTop();
+
+			if (st2 <= lastScrollTop2) {
+				$('.top-line-sub-inner  ').removeClass('fixed ');
+			}
+		}); // $(window).scroll(function (event) {
+		// 	var st2 = $(window).scrollTop();
+		// 	if (st2 <= lastScrollTop2) {
+		// 		$('.top-line-sub-inner  ').removeClass('fixed ');
+		// 	}
+		// });
+		// var lastScrollTop2 = 0;
+		// $(window).scroll(function (event) {
+		// 	var st2 = $(this).scrollTop();
+		// 	if (st2 > lastScrollTop2) {
+		// 		$('.top-line  ').removeClass('fixed-mob');
+		// 	} else {
+		// 		$('.top-line  ').addClass('fixed-mob');
+		// 	}
+		// 	lastScrollTop2 = st2;
+		// });
+		// конец добавил
 		// 	if (window.matchMedia("(min-width: 992px)").matches) {
 		// 		JSCCommon.closeMenu();
 		// 	}

@@ -22,14 +22,16 @@ block pagecontent
 	+mob-mnu()
 	header.header
 		+top-line()
-			+b.top-line-sub.d-none.d-sm-block
-				.container
-					ul
-						li.current-menu-item: a(href="#") О фонде
-						li: a(href="#") Команда
-						li: a(href="#") Наши награды
-						li: a(href="#") документы
-						li: a(href="#") ОТЧЁТЫ
+	+s-why
+	+b.top-line-sub-inner
+		+b.top-line-sub.d-none.d-sm-block
+			.container
+				ul
+					li.current-menu-item: a(href="#") О фонде
+					li: a(href="#") Команда
+					li: a(href="#") Наши награды
+					li: a(href="#") документы
+					li: a(href="#") ОТЧЁТЫ
 	//- +header()
 	//- 	//- +top-nav()
 	//- 	+header-block()
