@@ -161,34 +161,107 @@
   width: 100%;
   top: 0;
   left: 0;
-  ul{
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--about-W);
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-transform: uppercase;
-    justify-content: space-between;
-  }
-  a{
-    line-height: (24 / 16); 
-    @include media-breakpoint-up(lg) {
 
-      
-      letter-spacing: 0.1em;
+  //1 lvl
+  .container{
+    & > ul{
+      margin-bottom: 0;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: var(--about-W);
+      display: flex;
+      align-items: center;
+      list-style: none;
+      text-transform: uppercase;
+      justify-content: space-between;
     }
-    text-transform: uppercase; 
-    color: #505769;
-    text-decoration: none !important;
-    text-decoration: none !important;
-    font-weight: bold;
+    & > ul > li{
+      position: relative;
+      &:hover{
+        ul{
+          display: block;
+        }
+      }
+    }
+    & > ul > li > a{
+      line-height: (24 / 16);
+      @include media-breakpoint-up(lg) {
 
+
+        letter-spacing: 0.1em;
+      }
+      text-transform: uppercase;
+      color: #505769;
+      text-decoration: none !important;
+      font-weight: bold;
+
+    }
+    & > ul > li > a:hover,
+    & > ul > .current-menu-item > a {
+      color: $primary;
+    }
   }
-  a:hover,
-  .current-menu-item a {
-    color: $primary;
+  //
+  .menu-item-has-children{
+
+    & > a{
+      //padding-right: 20px;
+      position: relative;
+      &:after{
+        @include mt();
+        position: absolute;
+        left: calc(100% + 0px); //?
+        top: 0;
+
+        content: '';
+        height: 100%;
+        width: 10px;
+        margin-left: 10px;
+
+        //background-color: red;
+        background-repeat: no-repeat;
+        background-image: url("../img/chevron-down.png");
+        background-position: center;
+      }
+    }
+
+    &:hover > a:after{
+      transform: rotate(180deg);
+    }
+  }
+
+  .sub-menu{
+    display: none;
+    position: absolute;
+    list-style: none;
+    background-color: $white;
+    box-shadow: 5px 5px 30px -15px lighten($dark2, 15);
+
+    left: 0;
+    top: 100%;
+    height: auto;
+
+    width: 200px;
+
+    padding: 20px;
+    border-radius: $border-radius;
+
+    //li
+    li{
+      display: block;
+      padding-bottom: 10px;
+      &:last-child{
+        padding-bottom: 0;
+      }
+    }
+    //a
+    a{
+      display: block;
+      text-decoration: none !important;
+      text-transform: none;
+      text-align: left;
+    }
   }
 }
 
+//chevron-down

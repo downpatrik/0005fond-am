@@ -19,3 +19,6 @@
 1. <https://pashawol.github.io/0005fond-am/public/11-projects-list.html>
 1. <https://pashawol.github.io/0005fond-am/public/11-projects-map.html>
 1. <https://pashawol.github.io/0005fond-am/public/12-projects-list-done.html>
+
+- ====== pages by lucky
+1. <https://pashawol.github.io/0005fond-am/public/020-about-icon.html>

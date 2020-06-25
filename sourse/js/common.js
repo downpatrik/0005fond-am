@@ -129,7 +129,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/about.jpg);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/020-1920.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -672,6 +672,38 @@ function eventHandler() {
 		mySwiperModal.slideTo(indexSlide);
 		mySwiperModal.update();
 	})
+
+	//luckyoneJS
+
+	//020
+	let wonderSlider =  new Swiper('.wonderfull-cases-js', {
+
+		spaceBetween: 20,
+		//loop: true,
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 3,
+		},
+		//naviation
+		navigation: {
+			nextEl: '.wonderful-next',
+			prevEl: '.wonderfull-prev',
+		},
+		breakpoints: {
+			996 : {
+				slidesPerView: 1,
+			},
+			576: {
+				slidesPerView: 'auto',
+			},
+			0 : {
+				slidesPerView: 1,
+			},
+		}
+	});
+
+	//endLuckyoneJs
 
 
 };
