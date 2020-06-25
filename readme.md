@@ -22,3 +22,4 @@
 
 - ====== pages by lucky
 1. <https://pashawol.github.io/0005fond-am/public/020-about-icon.html>
+1. <https://pashawol.github.io/0005fond-am/public/021-about-temple.html>

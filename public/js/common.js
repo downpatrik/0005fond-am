@@ -123,7 +123,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/020-1920.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/021-1920.png);"></div>'); // /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -586,6 +586,24 @@ function eventHandler() {
 				slidesPerView: 1
 			}
 		}
+	}); //old temple slider
+
+	$('.old-temple-slider').each(function () {
+		var oldTempleSlider = new Swiper($(this).find('.old-temple-slider-js'), {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			//loop: true,
+			//lazy
+			lazy: {
+				loadPrevNext: true,
+				loadPrevNextAmount: 3
+			},
+			//naviation
+			navigation: {
+				nextEl: $(this).find('.old-temple-slider-next-js'),
+				prevEl: $(this).find('.old-temple-slider-prev-js')
+			}
+		});
 	}); //endLuckyoneJs
 }
 

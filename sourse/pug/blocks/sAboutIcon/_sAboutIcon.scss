@@ -117,10 +117,7 @@
 	}
 
 	&__donate-btn{
-		margin-bottom: 40px;
-		@include media-breakpoint-up(sm){
-			margin-bottom: rem(80px);
-		}
+		margin-bottom: 0;
 		@extend .donate-btn-frame;
 	}
 
@@ -244,6 +241,11 @@
 //
 
 .about-icon-block020{
+	padding-top: 40px;
+	@include media-breakpoint-up(sm){
+		padding-top: rem(80px);
+	}
+
 
 	&__description-pre-foto{
 		position: relative;
@@ -367,10 +369,7 @@
 			margin-bottom: 0;
 		}
 
-		padding-bottom: 40px;
-		@include media-breakpoint-up(sm){
-			padding-bottom: rem(60);
-		}
+
 	}
 	&__{}
 	&__{}
@@ -379,6 +378,10 @@
 
 //wonderfull-cases
 .wonder-cases-block020{
+	padding-top: 40px;
+	@include media-breakpoint-up(sm){
+		padding-top: rem(60);
+	}
 
 	&__headline{
 		font-weight: bold;
@@ -417,46 +420,7 @@
 				max-width: 100%;
 			}
 		}
-		//prev-next
-		.wonderfull-prev, .wonderful-next{
-			outline: none !important;
 
-			position: absolute;
-			top: 42%;
-			@include mt();
-
-			width: rem(50);
-			height: rem(50);
-			transform: translateY(-50%);
-			border-radius: 50%;
-			display: flex;
-
-			.icon{
-				@include mt();
-				margin: auto;
-				color: $white;
-				font-size: 12px;
-			}
-			cursor: pointer;
-
-			background: $body-color;
-			box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.25);
-			&:hover{
-				background: lighten($body-color, 3);
-				box-shadow: 0px 8px 20px rgba(80, 87, 105, 0.25);
-				.icon{
-					transform: scale(1.2);
-				}
-			}
-		}
-		.wonderfull-prev{
-			right: calc(100% + 30px);
-		}
-		.wonderful-next{
-			left: calc(100% + 30px);
-			//background-color: red !important;
-		}
-		//
 	}
 
 	&__slide-content{
@@ -616,3 +580,42 @@
 	&__{}
 	&__{}
 }
+
+//wonderfull prev-next-frame
+
+//prev-next
+.wonderfull-prev, .wonderful-next{
+	outline: none !important;
+
+	position: absolute;
+	top: 42%;
+	@include mt();
+
+	width: rem(50);
+	height: rem(50);
+	transform: translateY(-50%);
+	border-radius: 50%;
+	display: flex;
+
+	.icon{
+		@include mt();
+		margin: auto;
+		color: $white;
+		font-size: 12px;
+	}
+	cursor: pointer;
+
+	background: $body-color;
+	box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.25);
+	&:hover{
+		background: $primary;
+		box-shadow: 0px 8px 20px rgba(80, 87, 105, 0.25);
+	}
+}
+.wonderfull-prev{
+	right: calc(100% + 30px);
+}
+.wonderful-next{
+	left: calc(100% + 30px);
+}
+//
