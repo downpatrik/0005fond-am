@@ -129,7 +129,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/021-1920.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/023-1920.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -722,8 +722,144 @@ function eventHandler() {
 			},
 		});
 	});
-	//endLuckyoneJs
 
+	//023
+	//
+	let donateSlider =  new Swiper('.donate-target-slider-js', {
+		spaceBetween: 0,
+		slidesPerView: 5,
+		initialSlide: 2,
+		loop: true,
+		//auto
+		//autoplay: {
+		//	delay: 4000,
+		//},
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 7,
+		},
+		on: {
+			slideChange: function () {
+				let SliderExist = window.setInterval(function () {
+					if (!donateSlider) return
+					window.clearInterval(SliderExist);
+					getCenterSlide(donateSlider);
+				},10);
+			},
+		},
+	});
+	function getCenterSlide(swiper){
+		let activeSlide = document.querySelector('.swiper-slide-active');
+		let centerSlide = activeSlide.nextElementSibling.nextElementSibling;
+		let leftSibling = centerSlide.previousElementSibling;
+		let rightSibling = centerSlide.nextElementSibling;
+
+		$('.center-slide').removeClass('center-slide');
+		$(centerSlide).addClass('center-slide');
+
+		$('.center-neighbor').removeClass('center-neighbor')
+		$(rightSibling).addClass('center-neighbor');
+		$(leftSibling).addClass('center-neighbor');
+	}
+
+	//name inputs js 023
+	function setAddRemoveInpsWork(parentContSelector){
+		let parent = document.querySelector(parentContSelector);
+		if (!parent) return
+
+		let addBtn = parent.querySelector('.add-name-btn-js');
+		if (!addBtn) return
+		addBtn.addEventListener('click', appendNewInp.bind(undefined, parent));
+
+
+		//it happens only at once
+		//bind removeItself to existing input
+		//for new items look at appendNewInp chain
+		let crossBtns = parent.querySelectorAll('.cross-btn');
+		for (let btn of crossBtns){
+			btn.addEventListener('click', removeItself.bind(btn, parent));
+		}
+	}
+	setAddRemoveInpsWork('.inputs-parent-js');
+
+	//remove Btn Js
+	function removeItself(parent){
+		let allInps = parent.querySelectorAll('.donate-input-name-box');
+
+		if (allInps.length > 1){
+			//scenarion for case we have a lot of inps
+
+			//remove clicked box
+			this.parentElement.parentElement.removeChild(this.parentElement);
+		}
+		else{
+			//scenarion for case we have 1 inp
+
+			//just clean it
+			this.parentElement.querySelector('input').value = '';
+		}
+
+		setSeqNumsForAllInps(parent);
+	}
+
+	//create New inp funcs
+	function appendNewInp(parent){
+		let allInps = parent.querySelectorAll('.donate-input-name-box');
+		let lasInp = allInps[allInps.length - 1].querySelector('input');
+
+		let lastInpName = lasInp.getAttribute('name');
+		let newName = generateNewName(lastInpName);
+
+		createNewInpBox(newName, parent);
+	}
+
+	function generateNewName(name){
+		let re = /\d+$/;
+		let nameNumber = name.match(re)[0];
+
+		return Number(nameNumber) + 1
+	}
+
+	function createNewInpBox(seqNumber, parent){
+		let newBox = document.createElement('div');
+		newBox.classList.add('donate-input-name-box');
+
+		let innerInp = document.createElement('input');
+		innerInp.setAttribute('placeHolder', "Введите Им'я");
+		innerInp.setAttribute('type', 'text');
+		innerInp.setAttribute('name', 'donate-inp-name-' + seqNumber);
+
+		let crossBtn = document.createElement('div');
+		crossBtn.classList.add('cross-btn');
+
+		let inpsBox = parent.querySelector('.donates-inputs-box-js')
+		inpsBox.appendChild(newBox);
+		newBox.appendChild(innerInp);
+		newBox.appendChild(crossBtn);
+
+		//
+		crossBtn.addEventListener('click', removeItself.bind(crossBtn, parent));
+
+		setSeqNumsForAllInps(parent);
+	}
+	//end create New inp funcs
+
+	//setSeqNumsForAllInps
+
+	function setSeqNumsForAllInps(parent){
+		let allInps = parent.querySelectorAll('.donate-input-name-box input');
+
+		for (let [index,inp] of Object.entries(allInps)) {
+			inp.setAttribute('name', 'donate-inp-name-' + (Number(index) + 1));
+		}
+	}
+
+
+	// end setSeqNumsForAllInps
+	//
+
+	//endLuckyoneJs
 
 };
 if (document.readyState !== 'loading') {

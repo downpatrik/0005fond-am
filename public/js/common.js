@@ -1,5 +1,19 @@
 "use strict";
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var JSCCommon = {
@@ -123,7 +137,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/021-1920.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/023-1920.png);"></div>'); // /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -604,7 +618,140 @@ function eventHandler() {
 				prevEl: $(this).find('.old-temple-slider-prev-js')
 			}
 		});
-	}); //endLuckyoneJs
+	}); //023
+	//
+
+	var donateSlider = new Swiper('.donate-target-slider-js', {
+		spaceBetween: 0,
+		slidesPerView: 5,
+		initialSlide: 2,
+		loop: true,
+		//auto
+		//autoplay: {
+		//	delay: 4000,
+		//},
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 7
+		},
+		on: {
+			slideChange: function slideChange() {
+				var SliderExist = window.setInterval(function () {
+					if (!donateSlider) return;
+					window.clearInterval(SliderExist);
+					getCenterSlide(donateSlider);
+				}, 10);
+			}
+		}
+	});
+
+	function getCenterSlide(swiper) {
+		var activeSlide = document.querySelector('.swiper-slide-active');
+		var centerSlide = activeSlide.nextElementSibling.nextElementSibling;
+		var leftSibling = centerSlide.previousElementSibling;
+		var rightSibling = centerSlide.nextElementSibling;
+		$('.center-slide').removeClass('center-slide');
+		$(centerSlide).addClass('center-slide');
+		$('.center-neighbor').removeClass('center-neighbor');
+		$(rightSibling).addClass('center-neighbor');
+		$(leftSibling).addClass('center-neighbor');
+	} //name inputs js 023
+
+
+	function setAddRemoveInpsWork(parentContSelector) {
+		var parent = document.querySelector(parentContSelector);
+		if (!parent) return;
+		var addBtn = parent.querySelector('.add-name-btn-js');
+		if (!addBtn) return;
+		addBtn.addEventListener('click', appendNewInp.bind(undefined, parent)); //it happens only at once
+		//bind removeItself to existing input
+		//for new items look at appendNewInp chain
+
+		var crossBtns = parent.querySelectorAll('.cross-btn');
+
+		var _iterator = _createForOfIteratorHelper(crossBtns),
+				_step;
+
+		try {
+			for (_iterator.s(); !(_step = _iterator.n()).done;) {
+				var btn = _step.value;
+				btn.addEventListener('click', removeItself.bind(btn, parent));
+			}
+		} catch (err) {
+			_iterator.e(err);
+		} finally {
+			_iterator.f();
+		}
+	}
+
+	setAddRemoveInpsWork('.inputs-parent-js'); //remove Btn Js
+
+	function removeItself(parent) {
+		var allInps = parent.querySelectorAll('.donate-input-name-box');
+
+		if (allInps.length > 1) {
+			//scenarion for case we have a lot of inps
+			//remove clicked box
+			this.parentElement.parentElement.removeChild(this.parentElement);
+		} else {
+			//scenarion for case we have 1 inp
+			//just clean it
+			this.parentElement.querySelector('input').value = '';
+		}
+
+		setSeqNumsForAllInps(parent);
+	} //create New inp funcs
+
+
+	function appendNewInp(parent) {
+		var allInps = parent.querySelectorAll('.donate-input-name-box');
+		var lasInp = allInps[allInps.length - 1].querySelector('input');
+		var lastInpName = lasInp.getAttribute('name');
+		var newName = generateNewName(lastInpName);
+		createNewInpBox(newName, parent);
+	}
+
+	function generateNewName(name) {
+		var re = /\d+$/;
+		var nameNumber = name.match(re)[0];
+		return Number(nameNumber) + 1;
+	}
+
+	function createNewInpBox(seqNumber, parent) {
+		var newBox = document.createElement('div');
+		newBox.classList.add('donate-input-name-box');
+		var innerInp = document.createElement('input');
+		innerInp.setAttribute('placeHolder', "Введите Им'я");
+		innerInp.setAttribute('type', 'text');
+		innerInp.setAttribute('name', 'donate-inp-name-' + seqNumber);
+		var crossBtn = document.createElement('div');
+		crossBtn.classList.add('cross-btn');
+		var inpsBox = parent.querySelector('.donates-inputs-box-js');
+		inpsBox.appendChild(newBox);
+		newBox.appendChild(innerInp);
+		newBox.appendChild(crossBtn); //
+
+		crossBtn.addEventListener('click', removeItself.bind(crossBtn, parent));
+		setSeqNumsForAllInps(parent);
+	} //end create New inp funcs
+	//setSeqNumsForAllInps
+
+
+	function setSeqNumsForAllInps(parent) {
+		var allInps = parent.querySelectorAll('.donate-input-name-box input');
+
+		for (var _i = 0, _Object$entries = Object.entries(allInps); _i < _Object$entries.length; _i++) {
+			var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+					index = _Object$entries$_i[0],
+					inp = _Object$entries$_i[1];
+
+			inp.setAttribute('name', 'donate-inp-name-' + (Number(index) + 1));
+		}
+	} // end setSeqNumsForAllInps
+	//
+	//endLuckyoneJs
+
 }
 
 ;

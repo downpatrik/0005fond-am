@@ -995,3 +995,32 @@ a.hover-link:not(:hover){
 	height: 50px;
 	padding: 10px 30px;
 }
+
+//show more btn frame
+.show-more-btn-frame{
+	@extend .btn;
+	@extend .btn-primary;
+
+	background: $white;
+	border: 1px solid #C5AA79;
+	box-shadow: 0px 8px 16px rgba(80, 87, 105, 0.1);
+	width: rem(226px);
+	height: rem(50px);
+
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	vertical-align: top;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	padding: 15px 20px;
+
+
+	font-weight: bold;
+	font-size: rem(16px);
+	line-height: 1;
+	letter-spacing: 0.15em;
+	color: $body-color;
+}
