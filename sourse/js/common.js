@@ -129,7 +129,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/023-1920.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/024-1920.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -843,7 +843,6 @@ function eventHandler() {
 
 		setSeqNumsForAllInps(parent);
 	}
-	//end create New inp funcs
 
 	//setSeqNumsForAllInps
 
@@ -857,7 +856,83 @@ function eventHandler() {
 
 
 	// end setSeqNumsForAllInps
-	//
+
+	//024
+	let preheader024Slider  = new Swiper('.preheader024-slider-js', {
+		slidesPerView: 'auto',
+		// loop: true,
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
+		//breakpoints
+		breakpoints: {
+			1200: {
+				spaceBetween: 128,
+			},
+			996: {
+				spaceBetween: 80,
+			},
+			576: {
+				spaceBetween: 60,
+			},
+			0: {
+				spaceBetween: 20,
+			}
+		},
+
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5,
+		},
+	});
+
+
+	let templeSlider024  = new Swiper('.temple-project-slider-js', {
+		slidesPerView: 'auto',
+		// loop: true,
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
+		//breakpoints
+		breakpoints: {
+			576: {
+				spaceBetween: 30,
+			},
+			0: {
+				spaceBetween: 0,
+			}
+		},
+
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5,
+		},
+	});
+
+	//report-full-screen-slider
+	$('.report-full-screen-slider').each(function () {
+		let reportFSSlider =  new Swiper($(this).find('.report-fs-slider-js'), {
+			slidesPerView: 1,
+			spaceBetween: 20,
+			loop: true,
+
+			//autoplay
+			//autoplay: {
+			//	delay: 4000,
+			//},
+			//lazy
+			lazy: {
+				loadPrevNext: true,
+			},
+			//naviation
+			navigation: {
+				nextEl: $(this).find('.report-fs-next'),
+				prevEl: $(this).find('.report-fs-prev'),
+			},
+		});
+	});
 
 	//endLuckyoneJs
 

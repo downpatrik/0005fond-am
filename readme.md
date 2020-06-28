@@ -24,5 +24,5 @@
 1. <https://pashawol.github.io/0005fond-am/public/020-about-icon.html>
 1. <https://pashawol.github.io/0005fond-am/public/021-about-temple.html>
 1. <https://pashawol.github.io/0005fond-am/public/022-news.html>
-
 1. <https://pashawol.github.io/0005fond-am/public/023-donate-target.html>
+1. <https://pashawol.github.io/0005fond-am/public/024-raport.html>
