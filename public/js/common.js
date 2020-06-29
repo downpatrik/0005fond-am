@@ -137,7 +137,7 @@ function eventHandler() {
 	JSCCommon.inputMask(); // JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
 
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/024-1920.png);"></div>'); // /добавляет подложку для pixel perfect
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/028-1920.png);"></div>'); // /добавляет подложку для pixel perfect
 	// /закрыть/открыть мобильное меню
 
 	function heightses() {
@@ -186,36 +186,40 @@ function eventHandler() {
 				$('.top-line  ').removeClass('fixed ');
 			}
 		});
-		var lastScrollTop2 = $('.top-line-sub-inner').offset().top;
-		$(window).scroll(function (event) {
-			var st2 = $(window).scrollTop(); // console.log(lastScrollTop2)
-			// console.log(st2)
 
-			if (st2 > lastScrollTop2) {
-				$('.top-line-sub  ').addClass('fixed');
-			} else {
-				$('.top-line-sub  ').removeClass('fixed');
-			} // lastScrollTop2 = st2;
-
-		});
-		$(window).scroll(function (event) {
-			var st2 = $(window).scrollTop();
-
-			if (st2 > lastScrollTop2) {
-				// console.log(lastScrollTop2)
+		if ($("div").is(".top-line-sub")) {
+			$('.top-line-sub-inner').height($('.top-line-sub').innerHeight());
+			var lastScrollTop2 = $('.top-line-sub-inner').offset().top;
+			$(window).scroll(function (event) {
+				var st2 = $(window).scrollTop(); // console.log(lastScrollTop2)
 				// console.log(st2)
-				$('.top-line-sub  ').addClass('fixed-ready');
-			} else {
-				$('.top-line-sub  ').removeClass('fixed-ready');
-			}
-		});
-		$(window).scroll(function (event) {
-			var st2 = $(window).scrollTop();
 
-			if (st2 <= lastScrollTop2) {
-				$('.top-line-sub-inner  ').removeClass('fixed ');
-			}
-		}); // $(window).scroll(function (event) {
+				if (st2 > lastScrollTop2) {
+					$('.top-line-sub  ').addClass('fixed');
+				} else {
+					$('.top-line-sub  ').removeClass('fixed');
+				} // lastScrollTop2 = st2;
+
+			});
+			$(window).scroll(function (event) {
+				var st2 = $(window).scrollTop();
+
+				if (st2 > lastScrollTop2) {
+					// console.log(lastScrollTop2)
+					// console.log(st2)
+					$('.top-line-sub  ').addClass('fixed-ready');
+				} else {
+					$('.top-line-sub  ').removeClass('fixed-ready');
+				}
+			});
+			$(window).scroll(function (event) {
+				var st2 = $(window).scrollTop();
+
+				if (st2 <= lastScrollTop2) {
+					$('.top-line-sub-inner  ').removeClass('fixed ');
+				}
+			});
+		} // $(window).scroll(function (event) {
 		// 	var st2 = $(window).scrollTop();
 		// 	if (st2 <= lastScrollTop2) {
 		// 		$('.top-line-sub-inner  ').removeClass('fixed ');
@@ -235,6 +239,7 @@ function eventHandler() {
 		// 	if (window.matchMedia("(min-width: 992px)").matches) {
 		// 		JSCCommon.closeMenu();
 		// 	}
+
 	}
 
 	$(window).resize(function () {
@@ -819,6 +824,31 @@ function eventHandler() {
 				prevEl: $(this).find('.report-fs-prev')
 			}
 		});
+	}); //026
+
+	var newsSlider026 = new Swiper('.news026-slider-js', {
+		//loop: true,
+		watchOverflow: true,
+		spaceBetween: 21,
+		//breakpoints
+		breakpoints: {
+			992: {
+				slidesPerView: 1
+			},
+			0: {
+				slidesPerView: 'auto'
+			}
+		},
+		//nav
+		navigation: {
+			nextEl: '.news-slider026-next-js',
+			prevEl: '.news-slider026-prev-js'
+		},
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5
+		}
 	}); //endLuckyoneJs
 }
 

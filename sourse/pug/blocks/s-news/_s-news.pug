@@ -43,45 +43,7 @@ mixin s-news()
 				h2 Новости 
 			.row
 				.col
-					mixin item(text)
-						+b.news-item
-							.container
-							.row
-								.col-auto
-									+e.img-wrap--lg(href="#")
-										img.res-i(src="img/@2x/projec-2.jpg", alt="")
-								.col
-									+e.small
-										a.link-hover(href="#").strong  НОВОСТИ ФОНДА
-									+e.title
-										a(href="#").strong Происхождение (изнесение) честных древ животворящего Креста Господня
-									.d-none.d-md-block
-										block
-										if text 
-											+foot
-									if !text 
-										+e.small-gal
-											- for (var x = 0; x < 4; x++)
-												+e.img-link(href="img/@2x/project-main-1.jpg" data-fancybox="news-gal")
-													img.res-i(src="img/@2x/project-main-1.jpg", alt="")
-									mixin foot()
-										+e.foot
-											+e.date  13.08.19
-											+e.foot-item
-												+icon("eye")
-												| 45
-		
-											+e.foot-item
-												+icon("share")
-												| 18
-									if !text 
-											+foot
-							.d-md-none
-								block
-								if text 
-									+foot
-						// /+b.news-item
-					+item()
+					+itemHorizontal()
 					+e.slider-wrap.d-lg-none
 						+e.inner
 							+e.slider--js.swiper-container
@@ -89,13 +51,12 @@ mixin s-news()
 									- for (var x = 0; x < 5; x++)
 										+e.slide.swiper-slide
 											+video-item()
-					+item('text')
+					+itemHorizontal('text')
 						p Этап по&nbsp;укладке полов в&nbsp;Знаменском храме Новоспасского монастыря завершен. Благодаря отделке из&nbsp;иерусалимского камня, храм приобрел светлый и&nbsp;торжественный вид. В&nbsp;этом смогли убедиться гости сегодняшней экскурсии, которую уже не&nbsp;в&nbsp;первый раз проводит в&nbsp;Новоспасском монастыре наш Фонд.
 					.d-none.d-lg-block
-						+item()
+						+itemHorizontal()
 				.col-auto.d-none.d-lg-block
 					+b.video
-						
 						+video-item()
 						+video-item()
 			+e.slider.slider-auto-mob-js.swiper-container
@@ -105,6 +66,85 @@ mixin s-news()
 					+artical-item('3','Благотворительность  как пример нравственного служения Церкви и обществу')
 					+artical-item('4','Воспоминание Чуда Архангела Михаила в Хонех')
 			.d-sm-none
-				+item()
+				+itemHorizontal()
 			+e.btn.btn-more(href="#") ВСЕ НОВОСТИ
 	// end s-news
+
+mixin itemHorizontal(text)
+	+b.news-item
+		.container
+		.row
+			.col-auto
+				+e.img-wrap--lg(href="#")
+					img.res-i(src="img/@2x/projec-2.jpg", alt="")
+			.col
+				+e.small
+					a.link-hover(href="#").strong  НОВОСТИ ФОНДА
+				+e.title
+					a(href="#").strong Происхождение (изнесение) честных древ животворящего Креста Господня
+				.d-none.d-md-block
+					block
+					if text
+						+foot
+				if !text
+					+e.small-gal
+						- for (var x = 0; x < 4; x++)
+						+e.img-link(href="img/@2x/project-main-1.jpg" data-fancybox="news-gal")
+							img.res-i(src="img/@2x/project-main-1.jpg", alt="")
+				mixin foot()
+					+e.foot
+						+e.date  13.08.19
+						+e.foot-item
+							+icon("eye")
+							| 45
+
+						+e.foot-item
+							+icon("share")
+							| 18
+				if !text
+					+foot
+		.d-md-none
+			block
+			if text
+				+foot
+	// /+b.news-item
+
+mixin s-news-for-025()
+	// start s-news
+	+b.SECTION.s-news.section#s-news&attributes(attributes)
+		.container
+			.row
+				.col
+					+itemHorizontal()
+					+e.slider-wrap.d-lg-none
+						+e.inner
+							+e.slider--js.swiper-container
+								.swiper-wrapper
+									- for (var x = 0; x < 5; x++)
+										+e.slide.swiper-slide
+											+video-item()
+					+itemHorizontal('text')
+						p Этап по&nbsp;укладке полов в&nbsp;Знаменском храме Новоспасского монастыря завершен. Благодаря отделке из&nbsp;иерусалимского камня, храм приобрел светлый и&nbsp;торжественный вид. В&nbsp;этом смогли убедиться гости сегодняшней экскурсии, которую уже не&nbsp;в&nbsp;первый раз проводит в&nbsp;Новоспасском монастыре наш Фонд.
+					.d-none.d-lg-block
+						+itemHorizontal()
+				.col-auto.d-none.d-lg-block
+					+b.video
+
+						+video-item()
+						+video-item()
+			+e.slider.slider-auto-mob-js.swiper-container
+				.swiper-wrapper
+					+artical-item('1','Благотворительность как пример нравственного служения Церкви и обществу')
+					+artical-item('2','Воспоминание Чуда Архангела Михаила в Хонех')
+					+artical-item('3','Благотворительность  как пример нравственного служения Церкви и обществу')
+					+artical-item('4','Воспоминание Чуда Архангела Михаила в Хонех')
+			.d-sm-none
+				+itemHorizontal()
+			//-+e.btn.btn-more(href="#") ВСЕ НОВОСТИ
+			.row.additional-news-box.d-none.d-lg-block
+				.col-lg-8
+					+itemHorizontal()
+					+itemHorizontal('text')
+						p Этап по&nbsp;укладке полов в&nbsp;Знаменском храме Новоспасского монастыря завершен. Благодаря отделке из&nbsp;иерусалимского камня, храм приобрел светлый и&nbsp;торжественный вид. В&nbsp;этом смогли убедиться гости сегодняшней экскурсии, которую уже не&nbsp;в&nbsp;первый раз проводит в&nbsp;Новоспасском монастыре наш Фонд.
+					+itemHorizontal()
+			block

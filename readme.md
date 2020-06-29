@@ -26,3 +26,7 @@
 1. <https://pashawol.github.io/0005fond-am/public/022-news.html>
 1. <https://pashawol.github.io/0005fond-am/public/023-donate-target.html>
 1. <https://pashawol.github.io/0005fond-am/public/024-raport.html>
+1. <https://pashawol.github.io/0005fond-am/public/025-news.html>
+1. <https://pashawol.github.io/0005fond-am/public/026-news.html>
+1. <https://pashawol.github.io/0005fond-am/public/027-news.html>
+1. <https://pashawol.github.io/0005fond-am/public/028-news.html>

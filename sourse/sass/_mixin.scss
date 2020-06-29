@@ -253,3 +253,9 @@
     padding: #{$var};
   }
 }
+
+@mixin tear($width){
+  position: relative;
+  width: $width;
+  left: calc(-1 * ($width - 100%) /2);
+}
