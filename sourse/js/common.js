@@ -129,7 +129,7 @@ function eventHandler() {
 
 	// JSCCommon.CustomInputFile();
 	// добавляет подложку для pixel perfect
-	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/028-1920.png);"></div>')
+	$(".main-wrapper").after('<div class="screen" style="background-image: url(screen/019-360.png);"></div>')
 	// /добавляет подложку для pixel perfect
 
 
@@ -712,9 +712,23 @@ function eventHandler() {
 	$('.old-temple-slider').each(function () {
 		let oldTempleSlider =  new Swiper($(this).find('.old-temple-slider-js'), {
 			slidesPerView: 1,
-			spaceBetween: 20,
+
 			//loop: true,
 
+			//breakpoints
+			breakpoints: {
+				996 : {
+					slidesPerView: 1,
+				},
+				576: {
+					slidesPerView: 'auto',
+					spaceBetween: 20,
+				},
+				0 : {
+					slidesPerView: 1,
+					spaceBetween: 10,
+				},
+			},
 			//lazy
 			lazy: {
 				loadPrevNext: true,
@@ -777,7 +791,6 @@ function eventHandler() {
 		if (!addBtn) return
 		addBtn.addEventListener('click', appendNewInp.bind(undefined, parent));
 
-
 		//it happens only at once
 		//bind removeItself to existing input
 		//for new items look at appendNewInp chain
@@ -787,6 +800,8 @@ function eventHandler() {
 		}
 	}
 	setAddRemoveInpsWork('.inputs-parent-js');
+	setAddRemoveInpsWork('.about-health-js');
+	setAddRemoveInpsWork('.about-piece-js');
 
 	//remove Btn Js
 	function removeItself(parent){
@@ -964,6 +979,85 @@ function eventHandler() {
 		},
 
 	});
+	//019
+
+	let dtSlider019 =  new Swiper('.donate-target-slider019-js', {
+		slidesPerView: 1,
+		spaceBetween: 20,
+		loop: true,
+
+		//autoplay
+		//autoplay: {
+		//	delay: 4000,
+		//},
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+		},
+		//naviation
+		navigation: {
+			nextEl: '.dt-slider019-next-js',
+			prevEl: '.dt-slider019-prev-js',
+		},
+	});
+
+
+	let certificatSlider019  = new Swiper('.certificat-slider-019-js', {
+		slidesPerView: 'auto',
+		// loop: true,
+		watchOverflow: true,
+		freeMode: true,
+		freeModeMomentum: true,
+		//breakpoints
+		breakpoints: {
+			576: {
+				spaceBetween: 30,
+			},
+			0: {
+				spaceBetween: 20,
+			}
+		},
+
+		//lazy
+		lazy: {
+			loadPrevNext: true,
+			loadPrevNextAmount: 5,
+		},
+	});
+
+
+	//bottom red strip js
+
+	//to use
+	//1 add mixin to page
+	//2 add class '.red-hook-js' to element,  scroll over/above of which will show/hide red str
+
+	function redBottomStip(){
+		let redBStrip = document.querySelector('.bottom-red-strip');
+		if(!redBStrip) return
+
+		let redHook = document.querySelector('.red-hook-js');
+		if(!redBStrip) return
+
+		window.addEventListener("scroll", toggleRedBStrip.bind(undefined, redHook, redBStrip), {passive:  true});
+	}
+	redBottomStip();
+
+	function toggleRedBStrip(redHook, redBStrip){
+		let hookTop = $(redHook)[0].getBoundingClientRect().top + $(window)['scrollTop']();
+		let hookHeight = redHook.offsetHeight;
+		let hookBot = hookTop + hookHeight;
+
+		if (hookBot > window.scrollY){
+			$(redBStrip).removeClass('active');
+		}
+		else {
+			$(redBStrip).addClass('active');
+		}
+	}
+
+
+
 	//endLuckyoneJs
 
 };

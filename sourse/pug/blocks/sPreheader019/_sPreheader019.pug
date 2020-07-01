@@ -1,0 +1,37 @@
+mixin sPreheader019()
+	// start sPreheader019
+	+b.SECTION.sPreheader019#sPreheader019&attributes(attributes)
+		+e.bg-block
+			img(src="img/@2x/project-main-1.jpg" alt="")
+		+e.content
+			+e.header-headline-block
+				+e.txt-content
+					+e.A.realised-proj(href="#") Основной проект фонда
+					h1
+						| Новоспасский
+						br
+						| монастырь
+					+e.A.location-link(href="#")
+						+icon('mark')
+						span Москва, Крестьянская площадь, 10
+				+e.icon-img-block
+					img(src="img/@2x/s-about-icon-icon-img.jpg" alt="")
+			+e.lower-descr-block
+				+e.lower-descr-headline
+					| Всем миром украсим храм
+					br
+					| для «Bсецарицы»
+				+e.lower-descr-par-box.d-none.d-lg-block
+					.row
+						.col-auto
+							+e.lower-descr-img
+								img(src="img/@2x/019-certificat.jpg" alt="")
+						+e.descr-col.col
+							p Жертвователям выдаются сертификаты, подтверждающие факт участия в&nbsp;строительстве храма. Имена всех благотворителей будут поминаться вечно на&nbsp;каждом богослужении как &laquo;строителей  и&nbsp;благоукрасителей храма сего&raquo;.
+			+e.progress-bar-cont
+				+progressBar('399 050 860 ₽', '500 000 000 ₽')
+				.text-center
+					+e.A.donate-btn.red-hook-js(href='#') ПОЖЕРТВОВАТЬ
+
+
+	// end sPreheader019

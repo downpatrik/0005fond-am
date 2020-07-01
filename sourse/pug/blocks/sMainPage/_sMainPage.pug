@@ -1,0 +1,214 @@
+mixin sMainPage()
+	// start sMainPage
+	+b.SECTION.sMainPage#sMainPage&attributes(attributes)
+		.container
+			block
+		.container(data-sticky-container)
+			+b.sidebar
+				+e.UL.nav.sticky-js(data-margin-top="120")
+					li: a(href="#video") Видео презентация
+					li: a(href="#about-icon") Об иконе
+					li: a(href="#donate-target") Цель сбора
+					li: a(href="#project") Проект
+					li: a(href="#certificat") Сертификат  благотворителя
+					li: a(href="#donate-form") Форма  пожертвования
+			+e.content
+				#video
+					+b.video-link019
+						+e.A.video-link(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
+							+e.video-link-img
+								img.lazy(src="#" data-src="img/@2x/video.jpg" alt="")
+							+e.video-link-descr
+								+e.play-btn
+								+e.descr-txt.d-none.d-md-block Всем миром украсим храм для «Bсецарицы»
+					p В&nbsp;2017 Фонд Архангела Михаила начал сбор средств на&nbsp;реставрацию и&nbsp;благоукрашение Знаменского храма Новоспасского монастыря. По&nbsp;старинным эскизам будет воссоздан иконостас и&nbsp;интерьеры храма, а&nbsp;также изготовлены сень и&nbsp;киот для чудотворного образа Божией матери &laquo;Bсецарица&raquo;.
+				#about-icon
+					+e.about-icon-bg.d-none.d-xl-block
+						img.lazy(src="#" data-src="img/@2x/019-about-bg-2.png" alt="")
+					+e.content.about-icon
+						+e.ai-descr-box
+							+e.H2.mob-headline.d-md-none
+								|Чудотворная икона
+								br
+								|«Всецарица»
+							+e.ai-img-cont
+								img.lazy(src="#" data-src="img/@2x/s-about-icon-icon-img.jpg" alt="")
+							+e.ai-txt-cont
+								+e.H2.desctop-headline.d-none.d-md-block Чудотворная икона «Всецарица»
+								+e.ai-par
+									span Чудотворная икона Божией Матери, именуемая &laquo;Всецарица&raquo; (по-гречески &laquo;Пантанасса&raquo;) находится на&nbsp;Святой горе Афон в&nbsp;Греции. Эта икона написана в&nbsp;XVII веке&nbsp;и, по&nbsp;преданию, была благословением звестного на&nbsp;Афоне старца Иосифа Исихаста
+									+infoInlineTooltip()
+									span своим ученикам. Чудотворный образ Богородицы &laquo;Всецарица&raquo; почитается как на&nbsp;Афоне, так и&nbsp;далеко за&nbsp;его пределами. &laquo;Всецариа&raquo; имеет благодать исцеления больных раком&nbsp;&mdash; страшнейшей из&nbsp;болезней современного человечества. Также перед образом молятся об&nbsp;избавлении от&nbsp;влияния колдовства, исцелении от&nbsp;алкогольной и&nbsp;наркотической зависимостей.
+								+e.A.ai-learn-more-btn(href="#")
+									span Подробнее
+									+icon('arrow-left')
+				+b.donate-target019#donate-target
+					p К&nbsp;особой святыне монастыря&nbsp;&mdash; иконе Божией Матери &laquo;Всецарица&raquo;, хранящейся в&nbsp;верхнем храме Преображенского собора нужно подниматься по&nbsp;высокой лестнице, что значительно затрудняет доступ людям с&nbsp;ограниченными возможностями. Чтобы люди на&nbsp;инвалидных колясках могли попасть к&nbsp;образу, икона будет перенесена в&nbsp;Знаменскую церковь.
+					+oldTempleSilder()
+						+oldTempleSilde('19-1', '')
+						+oldTempleSilde('19-1', 2)
+						+oldTempleSilde('19-1', 3)
+						+oldTempleSilde('19-1', 4)
+					p Икона в&nbsp;великолепном киоте будет находиться на&nbsp;первом этаже храма, куда к&nbsp;ней легко смогут добраться даже&nbsp;те, кто передвигается на&nbsp;костылях или инвалидных колясках. Весь первый этаж будет представлять собой особое молитвенное пространство, центром которого станет чудотворный образ.
+				+b.project-019#project
+					+e.big-img-block
+						+e.img-cont
+							img.lazy(src="#" data-src="img/@2x/019-project-big-img.png" alt="")
+						+e.img-descr-bl Поперечный разрез храма в честь иконы Божией Матери «Знамение»
+					p Будет произведена полная реставрация храма с&nbsp;изготовлением и&nbsp;укладкой новых полов и&nbsp;установкой нового иконостаса. Иконостас, вырезанный из&nbsp;бука по&nbsp;старинным технологиям, полностью повторит иконостас, который стоял в&nbsp;храме до&nbsp;революции 1917&nbsp;года. Для иконостаса будут специально написаны иконы в&nbsp;стиле XIX&nbsp;века.
+					+b.page-bg-019.d-none.d-xl-block
+						img.lazy(src="#" data-src="img/@2x/019-page-bg-3.png" alt="")
+					+b.video-link019
+						+e.A.video-link(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
+							+e.video-link-img
+								img.lazy(src="#" data-src="img/@2x/019-project-video-link.jpg" alt="")
+							+e.video-link-descr
+								+e.play-btn
+						+e.descr-after-link Патриарх Кирилл возле чудотворной иконы «Всецарица»
+					p Композиция киота и&nbsp;сени объединит в&nbsp;себе лучшие материалы и&nbsp;техники церковного благоукрашения: резное дерево и&nbsp;чеканный металл, мозаику и&nbsp;благородный камень.
+					p Поистине уникальным изделием храмового искусства станет сень. Из&nbsp;гранита и&nbsp;мрамора будет вырезан балдахин, имитирующий пышные ниспадающие складки ткани.
+					+DonateTargetSlider019()
+						+DonateTargetSlide019()
+						+DonateTargetSlide019(2)
+						+DonateTargetSlide019(3)
+					+e.H4.primary-headline Чудотворная икона &laquo;Всецарица&raquo; будет торжественно перенесена в&nbsp;отреставрированную Знаменскую церковь 31&nbsp;августа 2020&nbsp;года.
+					.text-center
+						+e.A.donate-btn(href="#") ПОЖЕРТВОВАТЬ
+					p После завершения работ по&nbsp;реставрации и&nbsp;благоукрашению Знаменской церкви, памятная капсула с&nbsp;именами жертвователей будет заложена в&nbsp;основание мраморного киота чудотворной иконы &laquo;Всецарица&raquo; в&nbsp;Новоспасском монастыре. Ежедневно Церковь молится за&nbsp;создателей, благотворителей и&nbsp;украсителей храма, и&nbsp;эта молитва будет возноситься к&nbsp;Престолу Божию столько времени, сколько будет стоять храм!
+				+b.certificat-019#certificat
+					h2
+						| Впишите своё имя в&nbsp;историю
+						br
+						| Новоспасского монастыря
+					p Всем жертвователям выдаются сертификаты, подтверждающие факт участия в проекте перенесения чудотворной иконы и реставрации Знаменского храма.
+					+certificatSlider019()
+					+e.original-link-box
+						+e.top-shape-circles.pair-circles-frame.d-none.d-md-block
+						+e.bottom-shape-circles.pair-circles-frame.d-none.d-md-block
+						//--
+						+e.ol-border-left.horizontal-border-frame019.d-none.d-md-block
+						+e.ol-border-right.horizontal-border-frame019.d-none.d-md-block
+						+e.ol-border-top.vertical-border-frame019.d-none.d-md-block
+						+e.ol-border-bottom.vertical-border-frame019.d-none.d-md-block
+						//--
+						+e.inner-txt
+							| Оригинал данного сертификата Вы можете получить по почте, указав адрес доставки при оформлении
+							|
+							a(href='#') пожертвования.
+				+b.donate-form#donate-form
+					h2 Внесите именное&#160;пожертвование
+					p Имена всех, за&nbsp;кого внесено пожертвование на&nbsp;реставрацию и&nbsp;благоукрашение Знаменского храма Новоспасского монастыря, будут поминаться вечно на&nbsp;каждом богослужении, как благотворители и&nbsp;благоукрасители храма сего.
+					+e.donate-form-conainer
+						+b.donate-form-local019
+							+e.inputs-names-bl.about-health-js
+								+e.group-title О здравии
+								+form-wrap()
+									.donates-inputs-box-js
+										.donate-input-name-box
+											input(type="text" name='donate-inp-name-1' value="Николай" placeholder="Введите Им\'я")
+											.cross-btn
+										.donate-input-name-box
+											input(type="text" name='donate-inp-name-2' value="Николай" placeholder="Введите Им\'я")
+											.cross-btn
+									.add-name-btn-cont.add-name-btn-js
+										.plus-btn-cont
+											+icon('cross-icon-023')
+										.add-btn-txt добавить ИМЯ — 300 руб.
+							+e.inputs-names-bl.about-piece-js
+								+e.group-title Об упокоении
+								+form-wrap()
+									.donates-inputs-box-js
+										.donate-input-name-box
+											input(type="text" name='donate-inp-name-1' value="Николай" placeholder="Введите Им\'я")
+											.cross-btn
+									.add-name-btn-cont.add-name-btn-js
+										.plus-btn-cont
+											+icon('cross-icon-023')
+										.add-btn-txt добавить ИМЯ — 300 руб.
+							//-taken from 02 st2
+							+e.group-title.small-title Частота пожертвования
+							.row.no-gutters.month-once-cont
+								+input-btn('Разовое','ch','col-sm-6')(checked)
+								+input-btn('Ежемесячное','ch','col-sm-6')
+							+e.group
+								+e.group-title.small-title Частота пожертвования
+								+b.form-wrap
+									+input('Телефон','tel')
+									+input('Эл. почта','email')(class="border-danger")
+									+input('Адрес доставки')
+									+in-c('mb-1')(checked  )
+										+e.SMALL.text Я хочу получать информацию о деятельности фонда на указанный адрес эл. почты
+
+									+in-c()(checked)
+										+e.SMALL.text Осуществляя пожертвование я принимаю условия #[a(href="#") договора-оферты]
+									.text-center.pt-2
+										+e.BUTTON.btn.btn-success(type="submit") ПОЖЕРТВОВАТЬ
+						+e.bg-block.d-none.d-md-flex
+							+e.elder-scroll-top
+								img.lazy(src="#" data-src="img/@2x/elder-scroll-top.png" alt="")
+							+e.elder-scroll-body
+								//img.lazy(src="#" data-src="img/@2x/elder-scroll-body.png" alt="")
+								//-img.lazy(src="#" data-src="img/@2x/elder-scroll-body2.png" alt="")
+								+e.elder-scroll-bot
+									img.lazy(src="#" data-src="img/@2x/elder-scroll-bot.png" alt="")
+		+bottomRedStrip()
+	// end sMainPage
+	//-
+mixin bottomRedStrip()
+	+b.bottom-red-strip
+		+e.donate-items
+			+e.A.item(href='#')
+				+e.icon-cont
+					+icon('red-strip-lightning')
+				+e.item-txt Быстрое пожертвование
+			+e.A.item(href='#')
+				+e.icon-cont
+					+icon('red-strip-portrait')
+				+e.item-txt Именное пожертвование
+			+e.A.item(href='#')
+				+e.icon-cont
+					+icon('red-strip-family')
+				+e.item-txt Семейное пожертвование
+		+e.A.share-btn
+			+icon('share')
+
+	//-certificat-slider019
+mixin certificatSlider019()
+	+e.slider
+		.swiper-container.certificat-slider-019-js
+			.swiper-wrapper
+				.swiper-slide
+					img.swiper-lazy(src='#' data-src='img/@2x/019-certificat-slider-1.jpg' alt='')
+				.swiper-slide
+					img.swiper-lazy(src='#' data-src='img/@2x/019-certificat-slider-2.jpg' alt='')
+
+
+	//-donate target slider
+mixin DonateTargetSlider019()
+	+b.donate-target-slider019
+		.dt-slider019-prev-js.wonderfull-prev.d-none.d-lg-flex
+			+icon('arrow-right')
+		.dt-slider019-prev-js.wonderful-next.d-none.d-lg-flex
+			+icon('arrow-left')
+		.swiper-container.donate-target-slider019-js
+			.swiper-wrapper
+				block
+
+mixin DonateTargetSlide019(slideNumber='')
+	.swiper-slide
+		+e.slide-img
+			img.swiper-lazy(src="#" data-src="img/@2x/019-donate-target-slider-img.png" alt="")
+		+e.slide-descr=`3D макет сени и киота${slideNumber}`
+
+
+mixin infoInlineTooltip()
+	+b.inline-tooltip
+		.icon-cont i
+		.tooltip-box
+			.tooltip-content
+				.img-block
+					img(src='img/@2x/019-tooltip-content.jpg' alt="")
+				.descr-block Ио&#769;сиф Исиха&#769;ст&nbsp;&mdash; афонский монах-старец, духовный наставник многих афонских монахов. С&nbsp;именами учеников Иосифа связано обновление 6&nbsp;из&nbsp;20&nbsp;афонских монастырей и&nbsp;многих обителей за&nbsp;пределами Афона
+
+
+

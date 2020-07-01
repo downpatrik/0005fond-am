@@ -36,7 +36,7 @@ mixin donationTarSlide(imgNum='1', slideNum=1)
 			+progressBar()
 
 
-mixin progressBar()
+mixin progressBar(gotMoney='399 860 ₽',needMoney='500 860 ₽')
 	+b.progress-bar
 		+e.container
 			+e.unready-strip
@@ -44,9 +44,9 @@ mixin progressBar()
 		+e.data-cont
 			+e.data-item.donate-ready
 				.data-txt Собрано
-				.money-str 399 860 ₽
+				.money-str=gotMoney
 			+e.chevron-right.d-sm-none
 				+icon('chevron-right')
 			+e.data-item.donate-target
 				.data-txt Требуется
-				.money-str 500 860 ₽
+				.money-str=needMoney

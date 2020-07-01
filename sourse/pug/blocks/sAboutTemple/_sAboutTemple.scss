@@ -208,11 +208,22 @@
 
 	//swiper-default
 	.swiper-container{
-		overflow: hidden !important;
+		@include media-breakpoint-up(lg){
+			overflow: hidden !important;
+		}
 	}
 	.swiper-wrapper{}
 	.swiper-slide{
 
+		width: 100%;
+		//width: calc(100vw - 40px);
+		@include media-breakpoint-up(md){
+			width: 571px;
+			max-width: 100%;
+		}
+		@include media-breakpoint-up(lg){
+			width: 100%;
+		}
 	}
 	//prev, next
 	.wonderfull-prev{
@@ -229,6 +240,7 @@
 			margin-bottom: 20px;
 		}
 		img{
+			border-radius: 8px;
 			margin: auto;
 			width: 100%;
 			max-width: 100%;
