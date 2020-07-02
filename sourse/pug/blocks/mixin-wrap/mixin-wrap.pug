@@ -267,3 +267,22 @@ mixin page-head(h1)
 			if h1
 				h1= h1
 			block
+
+//reb bot str
+mixin bottomRedStrip()
+	+b.bottom-red-strip
+		+e.donate-items
+			+e.A.item(href='#')
+				+e.icon-cont
+					+icon('red-strip-lightning')
+				+e.item-txt Быстрое пожертвование
+			+e.A.item(href='#')
+				+e.icon-cont
+					+icon('red-strip-portrait')
+				+e.item-txt Именное пожертвование
+			+e.A.item(href='#')
+				+e.icon-cont
+					+icon('red-strip-family')
+				+e.item-txt Семейное пожертвование
+		+e.A.share-btn
+			+icon('share')

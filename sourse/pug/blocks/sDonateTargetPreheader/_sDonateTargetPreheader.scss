@@ -2,7 +2,7 @@
 .sDonateTargetPreheader {
 	position: relative;
 
-	min-height: calc(100vh - 3.75rem);
+	//min-height: calc(100vh - 3.75rem);
 	@include media-breakpoint-up(sm){
 		min-height: calc(100vh - 4.0625rem);
 	}

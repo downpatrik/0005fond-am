@@ -1055,7 +1055,7 @@ function eventHandler() {
 			$(redBStrip).addClass('active');
 		}
 	}
-
+	//
 
 
 	//endLuckyoneJs

@@ -931,7 +931,8 @@ function eventHandler() {
 		} else {
 			$(redBStrip).addClass('active');
 		}
-	} //endLuckyoneJs
+	} //
+	//endLuckyoneJs
 
 }
 

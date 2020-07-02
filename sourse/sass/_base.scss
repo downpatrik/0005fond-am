@@ -1024,3 +1024,100 @@ a.hover-link:not(:hover){
 	letter-spacing: 0.15em;
 	color: $body-color;
 }
+
+
+//red bot strip
+.page-has-reb-bot-strip{
+	.footer{
+		padding-bottom: 68px;
+	}
+}
+
+.bottom-red-strip{
+	@include mt();
+	transform: translateY(100%);
+	&.active{
+		transform: translateY(0);
+	}
+
+	position: fixed;
+	z-index: 19000;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 68px;
+
+	background-color: $accent;
+
+	&__donate-items{
+		display: flex;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+
+	}
+	&__item{
+		text-decoration: none !important;
+
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		margin-right: 54px;
+		&:last-child{
+			margin-right: 0;
+		}
+
+		@include mt();
+		color: $white;
+		&:hover{
+			color: $primary;
+		}
+	}
+	&__icon-cont{
+		display: block;
+		.icon{
+			font-size: 30px;
+			color: $primary;
+			margin-right: 10px;
+		}
+	}
+	&__item-txt{
+		@include mt();
+		display: block;
+		line-height: 120%;
+		//color: $white;
+
+		font-size: 14px;
+		max-width: 97px;
+	}
+	//
+	&__share-btn{
+		position: absolute;
+		cursor: pointer;
+		right: 0;
+		top: 0;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+
+		padding: 0 28px;
+
+		&:hover{
+			.icon {
+				color: $primary;
+			}
+		}
+
+		.icon{
+			@include mt();
+			color: $white;
+			font-size: rem(25px);
+		}
+
+	}
+}
