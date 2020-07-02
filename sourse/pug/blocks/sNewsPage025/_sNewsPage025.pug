@@ -10,7 +10,8 @@ mixin sNewsPage025()
 					.text-center
 						+e.BUTTON.search-btn(type="submit") ИСКАТЬ
 			+b.news-filter-box
-				+newsNavBlock()
+				+e.date-filter-select-cont
+					+DatefilterSelect('floorSel', ['СТАРЫЕ', '2020', '2019'])
 		+s-news-for-025
 			.d-sm-none.text-center
 				+b.A.show-more-btn025(href="#") ПОКАЗАТЬ ЕЩЁ
@@ -20,24 +21,16 @@ mixin sNewsPage025()
 			+s-form()
 	// end sNewsPage025
 
-mixin newsNavBlock()
-	+e.last-btn ПОСЛЕДНИЕ
-	ul
-		li.menu-item-has-children
-			a(href="#") ПОСЛЕДНИЕ
-			ul.sub-menu
-				li: a(href="#") ПОСЛЕДНИЕ 1
-				li: a(href="#") ПОСЛЕДНИЕ 2
-				li: a(href="#") ПОСЛЕДНИЕ 3
-		li
-			a(href="#") СТАРЫЕ
-		li.menu-item-has-children
-			a(href="#") 2020
-			ul.sub-menu
-				li: a(href="#") Декабрь
-				li: a(href="#") Ноябрь
-		li.menu-item-has-children
-			a(href="#") 2019
-			ul.sub-menu
-				li: a(href="#") Декабрь
-				li: a(href="#") Ноябрь
+mixin DatefilterSelect(selectName, optionsArr=['1', '2', '3'], placeholder='ПОСЛЕДНИЕ', keyClass='custom-select2')
+	select(name=selectName data-placeholder=placeholder class=keyClass)
+		option(value="" label='#')
+		option(value="ПОСЛЕДНИЕ" selected) ПОСЛЕДНИЕ
+		- for (let item of optionsArr)
+			option(value=item)=item
+
+mixin ThemefilterSelect(selectName, optionsArr=['1', '2', '3'], placeholder='ПОСЛЕДНИЕ', keyClass='custom-select2')
+	select(name=selectName data-placeholder=placeholder class=keyClass)
+		option(value="" label='#')
+		option(value="Все темы" selected) Все темы
+		- for (let item of optionsArr)
+			option(value=item)=item

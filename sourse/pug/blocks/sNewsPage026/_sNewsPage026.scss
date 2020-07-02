@@ -77,6 +77,9 @@
 	}
 	&__view-txt{
 		margin-right: 20px;
+		.icon{
+			font-size: rem(13) !important;
+		}
 	}
 	//
 	&__share-btn-cont{

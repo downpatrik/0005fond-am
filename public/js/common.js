@@ -921,9 +921,13 @@ function eventHandler() {
 		} else {
 			$(redBStrip).addClass('active');
 		}
-	} //
-	//endLuckyoneJs
+	} // custom select
 
+
+	$('.custom-select2').select2({
+		minimumResultsForSearch: Infinity,
+		dropdownCssClass: "drop-down-full-grey"
+	}); //endLuckyoneJs
 }
 
 ;

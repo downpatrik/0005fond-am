@@ -21,6 +21,7 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3C414F">
 		<link rel="stylesheet" href="libs/swiper/css/swiper.min.css"/>
+		<link rel="stylesheet" href="libs/select2/css/select2.min.css"/>
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
@@ -318,33 +319,23 @@
 						</div>
 					</div>
 					<div class="news-filter-box">
-						<div class="news-filter-box__last-btn">ПОСЛЕДНИЕ
+						<div class="news-filter-box__date-filter-select-cont">
+							<select class="custom-select2" name="floorSel" data-placeholder="ПОСЛЕДНИЕ">
+								<option value="" label="#"></option>
+								<option value="ПОСЛЕДНИЕ" selected="selected">ПОСЛЕДНИЕ</option>
+								<option value="СТАРЫЕ">СТАРЫЕ</option>
+								<option value="2020">2020</option>
+								<option value="2019">2019</option>
+							</select>
 						</div>
-						<ul>
-							<li class="menu-item-has-children"><a href="#">ПОСЛЕДНИЕ</a>
-								<ul class="sub-menu">
-									<li><a href="#">ПОСЛЕДНИЕ 1</a></li>
-									<li><a href="#">ПОСЛЕДНИЕ 2</a></li>
-									<li><a href="#">ПОСЛЕДНИЕ 3</a></li>
-								</ul>
-							</li>
-							<li><a href="#">СТАРЫЕ</a></li>
-							<li class="menu-item-has-children"><a href="#">2020</a>
-								<ul class="sub-menu">
-									<li><a href="#">Декабрь</a></li>
-									<li><a href="#">Ноябрь</a></li>
-								</ul>
-							</li>
-							<li class="menu-item-has-children"><a href="#">2019</a>
-								<ul class="sub-menu">
-									<li><a href="#">Декабрь</a></li>
-									<li><a href="#">Ноябрь</a></li>
-								</ul>
-							</li>
-						</ul>
-						<div class="all-themes-block d-xl-none">
-							<div class="all-themes-block__all-themes-btn">Все темы
-							</div>
+						<div class="news-filter-box__date-filter-select-cont right-select d-xl-none">
+							<select class="custom-select2" name="floorSel" data-placeholder="ПОСЛЕДНИЕ">
+								<option value="" label="#"></option>
+								<option value="Все темы" selected="selected">Все темы</option>
+								<option value="СТАРЫЕ">СТАРЫЕ</option>
+								<option value="2020">2020</option>
+								<option value="2019">2019</option>
+							</select>
 						</div>
 					</div>
 				</div>
@@ -360,26 +351,6 @@
 					</div>
 					<div class="sNewsPage027__content">
 						<div class="sNewsPage027__items-bricks-row row">
-							<div class="col-12 col-md-6 col-lg-4 d-md-none">
-								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
-									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
-										<div class="sNewsPage027__date-view-share-cont">
-											<div class="sNewsPage027__date-txt">13.08.20
-											</div>
-											<div class="sNewsPage027__view-txt view-shar-frame">
-												<svg class="icon icon-eye ">
-													<use xlink:href="img/svg/sprite.svg#eye"></use>
-												</svg><span>45</span>
-											</div>
-											<div class="sNewsPage027__share-txt view-shar-frame">
-												<svg class="icon icon-share ">
-													<use xlink:href="img/svg/sprite.svg#share"></use>
-												</svg><span>45</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 							<div class="col-12 col-lg-8"><a class="sNewsPage027__big-brick-item" href="#"><span class="sNewsPage027__big-brick-item-img"><img src="img/@2x/027-big-brick-item.jpg" alt=""/></span><span class="sNewsPage027__big-brick-item-descr-box"><span class="sNewsPage027__big-brick-item-title">Благотворительность  как пример нравственного служения Церкви и обществу</span><span class="sNewsPage027__date-view-share-cont"><span class="sNewsPage027__date-txt">13.08.20</span><span class="sNewsPage027__view-txt view-shar-frame">
 								<svg class="icon icon-eye ">
 									<use xlink:href="img/svg/sprite.svg#eye"></use>
@@ -408,7 +379,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+							<div class="col-12 col-md-6 col-lg-4">
 								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
 									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
 										<div class="sNewsPage027__date-view-share-cont">
@@ -428,7 +399,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+							<div class="col-12 col-md-6 col-lg-4">
 								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
 									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
 										<div class="sNewsPage027__date-view-share-cont">
@@ -448,7 +419,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4 d-none d-md-block">
+							<div class="col-12 col-md-6 col-lg-4">
 								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
 									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
 										<div class="sNewsPage027__date-view-share-cont">
@@ -468,7 +439,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4 d-none d-lg-block">
+							<div class="col-12 col-md-6 col-lg-4">
 								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
 									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
 										<div class="sNewsPage027__date-view-share-cont">
@@ -488,7 +459,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4 d-none d-lg-block">
+							<div class="col-12 col-md-6 col-lg-4">
 								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
 									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
 										<div class="sNewsPage027__date-view-share-cont">
@@ -508,7 +479,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-md-6 col-lg-4 d-none d-lg-block">
+							<div class="col-12 col-md-6 col-lg-4">
 								<div class="sNewsPage027__brick-item"><a class="sNewsPage027__brick-item-img" href="#"><img src="img/@2x/027-news-brick-item.jpg" alt=""/></a>
 									<div class="sNewsPage027__brick-item-descr-box"><a class="sNewsPage027__brick-item-title" href="#">Благотворительность  как пример нравственного служения Церкви и обществу</a>
 										<div class="sNewsPage027__date-view-share-cont">
@@ -779,6 +750,7 @@
 		<!-- /for svg libs-->
 		<script src="libs/inputmask/jquery.inputmask.min.js"></script>
 		<script src="libs/ddslick/jquery.ddslick.min.js"></script>
+		<script src="libs/select2/js/select2.full.min.js"></script>
 		<script src="libs/sticky-js/sticky.min.js"></script>
 		<script src="js/common.js"></script>
 	</body>

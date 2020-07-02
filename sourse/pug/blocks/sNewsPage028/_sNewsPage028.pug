@@ -10,8 +10,10 @@ mixin sNewsPage028()
 					.text-center
 						+e.BUTTON.search-btn(type="submit") ИСКАТЬ
 			+b.news-filter-box
-				+newsNavBlock()
-				+newsAllThemesBlock()
+				+e.date-filter-select-cont
+					+DatefilterSelect('floorSel', ['СТАРЫЕ', '2020', '2019'])
+				+e.date-filter-select-cont.right-select.d-xl-none
+					+ThemefilterSelect('floorSel', ['СТАРЫЕ', '2020', '2019'])
 		.container(data-sticky-container)
 			+b.sidebar.d-none.d-xl-block
 				+e.UL.nav.sticky-js(data-margin-top="120")

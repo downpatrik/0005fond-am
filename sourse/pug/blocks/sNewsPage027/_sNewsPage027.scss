@@ -106,9 +106,31 @@
 		}
 		//pp
 
-		margin-top: -10px;
+		//margin-top: -10px;
 		@include media-breakpoint-up(md){
 			margin-top: 5px;
+		}
+
+		//
+		& > *:nth-child(2){
+			@include media-breakpoint-down(sm){
+				order: -1;
+			}
+		}
+
+		& > *:nth-child(4),
+		& > *:nth-child(5){
+			display: none;
+			@include media-breakpoint-up(md){
+				display: block;
+			}
+		}
+		//last 3
+		& > *:nth-child(n + 6){
+			display: none;
+			@include media-breakpoint-up(lg){
+				display: block;
+			}
 		}
 	}
 

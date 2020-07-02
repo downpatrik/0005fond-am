@@ -374,6 +374,7 @@
 		@include media-breakpoint-up(md){
 			top: 0;
 			right: 0;
+			left: unset;
 			padding-right: 31px;
 			margin-top: 0;
 			margin-right: 0;
@@ -382,6 +383,7 @@
 		}
 		@include media-breakpoint-up(xxxl){
 			left: 0;
+			right: unset;
 			padding-left: 31px;
 			padding-right: 0;
 		}

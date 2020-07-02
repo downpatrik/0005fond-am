@@ -25,6 +25,23 @@ mixin sContacts029()
 					| Смотреть на карте
 				+addressRow()
 				+e.map-wrap#map-block
+					+b.info-block.active
+						+e.head
+							.strong ТРЦ «Европейский»
+							.info-block-close
+								img(src="img/svg/close.svg", alt="")
+						+e.img-wrap
+							img.res-i(src="img/@2x/742453a2d7c4228c88263a7eaae3c42a.jpg", alt="")
+						+e.body
+							.strong м. Киевская
+							p пл. Киевского вокзала, стр. 2 <br> 0 этаж, возле эскалатора
+							.small Время работы: 10:00-22:00
+							.small По вопросам работы точки обращаться по телефонам:
+								a(href="tel:+7(495)422-25-88").tdn.text-white +7 (495) 422-25-88
+								| ,
+								a(href="tel:+7(926)935-93-24").tdn.text-white +7 (926) 935-93-24
+							.small
+								a(href="www.europe-tc.ru").tdn www.europe-tc.ru
 					img.map-img.res-i(src="img/@2x/map.jpg", alt="")
 	// end sContacts029
 

@@ -159,6 +159,8 @@
 	}
 	//date-view-share
 	&__date-view-share-cont{
+		height: 100%;
+
 		display: inline-flex;
 		@include media-breakpoint-up(sm){
 			display: flex;
@@ -257,7 +259,7 @@
 
 	.icon{
 		@include mt();
-		color: $dark2;
+		color: $dark;
 		font-size: rem(18px);
 		margin-right: 10px;
 	}
