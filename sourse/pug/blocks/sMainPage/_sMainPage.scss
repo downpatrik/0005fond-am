@@ -1,3 +1,12 @@
+
+:root{
+		@include media-breakpoint-up(xl) {
+
+			--canvasH: 1024px;
+		}
+
+		--canvasH: 900px;
+}
 // start .sMainPage
 .sMainPage {
 
@@ -844,7 +853,15 @@
 		}
 	}
 
+		@include media-breakpoint-up(md) {
+ 
+			margin-bottom: (215px + 120px);
+		}
 
+		@include media-breakpoint-up(lg) {
+	 
+			margin-bottom: (290px + 240px);
+		}
 	//donate-form-conainer
 	&__donate-form-conainer{
 		position: relative;
@@ -852,14 +869,14 @@
 		padding-top: 18px;
 		@include media-breakpoint-up(md){
 			padding-top: 130px;
-			padding-bottom: 120px;
-			margin-bottom: 215px;
+			// padding-bottom: 120px;
+			// margin-bottom: 215px;
 		}
 		@include media-breakpoint-up(lg){
 			padding-top: 180px;
-			padding-bottom: 240px;
+			// padding-bottom: 240px;
 
-			margin-bottom: 290px;
+			// margin-bottom: 290px;
 		}
 	}
 
@@ -872,6 +889,23 @@
 		z-index: -1;
 		top: 0;
 		height: 100%;
+			&::before {
+				content: '';
+				// bottom: -44%;
+				// top: (100%);
+				@include media-breakpoint-up(xl){
+
+					top: calc(var(--canvasH) + 180px);
+				}
+				top: calc(var(--canvasH) + 160px);
+				left: 0%;
+				width: 100%;
+				height: calc(100% - var(--canvasH) + 50px);
+				position: absolute;
+				z-index: -1;
+				background-size: 100% auto; //width/height
+				background-image: url(../img/@2x/elder-scroll-body.png);
+			}
 
 		@include media-breakpoint-up(lg){
 			left: calc(-1 * (940px - 100%)/ 2);
@@ -892,14 +926,21 @@
 			height: auto;
 		}
 	}
+
 	&__elder-scroll-body{
 		flex-grow: 1;
 		position: relative;
 		z-index: 1;
 		margin-top: -1px;
-
-		background-image: url(../img/@2x/elder-scroll-body2.png);
 		background-size: 100% auto; //width/height
+		// background-size: 100% 100%;
+		background-repeat: no-repeat;
+		// background-position: top right;
+		background-image: url(../img/@2x/elder-scroll-body2.png),
+		//  url(../img/@2x/elder-scroll-body.png)
+		;
+		max-height: var(--canvasH);
+		
 
 		/*& > img{
 			width: 100%;
@@ -912,8 +953,22 @@
 	&__elder-scroll-bot{
 		position: absolute;
 		transform: translateY(62%);
-		bottom: 0;
+		z-index: 4;
+	 
+			@include media-breakpoint-up(md) {
+			 
+				 bottom: -120px;
+				// margin-bottom: 215px;
+			}
+
+			@include media-breakpoint-up(lg) {
+			 
+			 bottom: -240px;
+
+				// margin-bottom: 290px;
+			}
 		left: 0;
+		
 		& > img{
 			width: 100%;
 			max-width: 100%;

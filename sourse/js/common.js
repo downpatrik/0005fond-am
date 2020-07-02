@@ -173,9 +173,9 @@ function eventHandler() {
 		$(window).scroll(function (event) {
 			var st = $(this).scrollTop();
 			if (st > 0) {
-				$('.top-line  ').addClass('fixed-ready');
+				$('.top-line , .top-line-sub ').addClass('fixed-ready');
 			} else {
-				$('.top-line  ').removeClass('fixed-ready');
+				$('.top-line , .top-line-sub ').removeClass('fixed-ready');
 			}
 		});
 
@@ -204,18 +204,9 @@ function eventHandler() {
 				} else {
 					$('.top-line-sub  ').removeClass('fixed');
 				}
-				// lastScrollTop2 = st2;
+				lastScrollTop2 = st2;
 			});
-			$(window).scroll(function (event) {
-				var st2 = $(window).scrollTop();
-				if (st2 > lastScrollTop2) {
-					// console.log(lastScrollTop2)
-					// console.log(st2)
-					$('.top-line-sub  ').addClass('fixed-ready');
-				} else {
-					$('.top-line-sub  ').removeClass('fixed-ready');
-				}
-			});
+ 
 			$(window).scroll(function (event) {
 				var st2 = $(window).scrollTop();
 				if (st2 <= lastScrollTop2) {
