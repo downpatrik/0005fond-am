@@ -271,18 +271,28 @@ mixin page-head(h1)
 //reb bot str
 mixin bottomRedStrip()
 	+b.bottom-red-strip
+		+icon('donate-hand')
+		+e.donate-report.d-none.d-xl-flex
+			+icon('donate-hand')
+			span Пётр + 300 ₽
 		+e.donate-items
-			+e.A.item(href='#')
-				+e.icon-cont
-					+icon('red-strip-lightning')
-				+e.item-txt Быстрое пожертвование
-			+e.A.item(href='#')
-				+e.icon-cont
-					+icon('red-strip-portrait')
-				+e.item-txt Именное пожертвование
-			+e.A.item(href='#')
-				+e.icon-cont
-					+icon('red-strip-family')
-				+e.item-txt Семейное пожертвование
-		+e.A.share-btn
-			+icon('share')
+			.swiper-container.donates-items-slider-js
+				.swiper-wrapper
+					.swiper-slide
+						+e.A.item(href='#')
+							+e.icon-cont
+								+icon('red-strip-lightning')
+							+e.item-txt Быстрое пожертвование
+					.swiper-slide
+						+e.A.item(href='#')
+							+e.icon-cont
+								+icon('red-strip-portrait')
+							+e.item-txt Именное пожертвование
+					.swiper-slide
+						+e.A.item(href='#')
+							+e.icon-cont
+								+icon('red-strip-family')
+							+e.item-txt Семейное пожертвование
+					.swiper-slide
+						+e.A.share-btn
+							+icon('share')

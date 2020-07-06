@@ -25,7 +25,7 @@
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
-	<body class="page-has-reb-bot-strip"><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+	<body><!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
 		<div class="main-wrapper">
 			<div class="menu-mobile menu-mobile menu-mobile--js">
 				<div class="menu-mobile__inner">
@@ -283,7 +283,9 @@
 				</div>
 				<div class="sPreheader019__content">
 					<div class="sPreheader019__header-headline-block">
-						<div class="sPreheader019__txt-content"><a class="sPreheader019__realised-proj" href="#">Основной проект фонда</a>
+						<div class="sPreheader019__txt-content">
+							<div class="sPreheader019__realised-proj">Основной проект фонда
+							</div>
 							<h1>Новоспасский<br/>монастырь</h1><a class="sPreheader019__location-link" href="#">
 							<svg class="icon icon-mark ">
 								<use xlink:href="img/svg/sprite.svg#mark"></use>
@@ -376,15 +378,15 @@
 			<!-- start sMainPage-->
 			<section class="sMainPage" id="sMainPage">
 				<div class="container">
-					<div class="page-head ttu page-head page-head--with-video">
+					<div class="page-head ttu page-head page-head--with-video page-head-downscaled">
 						<div class="container">
 							<h1>Цель сбора</h1>
 						</div>
 					</div>
 				</div>
 				<div class="container" data-sticky-container="data-sticky-container">
-					<div class="sidebar">
-						<ul class="sidebar__nav sticky-js" data-margin-top="120">
+					<div class="sidebar blured-background">
+						<ul class="sidebar__nav sticky-js" data-margin-top="140">
 							<li><a href="#video">Видео презентация</a></li>
 							<li><a href="#about-icon">Об иконе</a></li>
 							<li><a href="#donate-target">Цель сбора</a></li>
@@ -577,11 +579,11 @@
 												<input class="utm_campaign" type="hidden" name="utm_campaign"/>
 												<div class="donates-inputs-box-js">
 													<div class="donate-input-name-box">
-														<input type="text" name="donate-inp-name-1" value="Николай" placeholder="Введите Им'я"/>
+														<input type="text" name="donate-inp-name-1" value="" placeholder="Введите Им'я"/>
 														<div class="cross-btn"></div>
 													</div>
 													<div class="donate-input-name-box">
-														<input type="text" name="donate-inp-name-2" value="Николай" placeholder="Введите Им'я"/>
+														<input type="text" name="donate-inp-name-2" value="" placeholder="Введите Им'я"/>
 														<div class="cross-btn"></div>
 													</div>
 												</div>
@@ -609,7 +611,7 @@
 												<input class="utm_campaign" type="hidden" name="utm_campaign"/>
 												<div class="donates-inputs-box-js">
 													<div class="donate-input-name-box">
-														<input type="text" name="donate-inp-name-1" value="Николай" placeholder="Введите Им'я"/>
+														<input type="text" name="donate-inp-name-1" value="" placeholder="Введите Им'я"/>
 														<div class="cross-btn"></div>
 													</div>
 												</div>
@@ -649,7 +651,9 @@
 											<!-- +e.input-wrap-->
 											<label class="custom-input mb-1"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text">Я хочу получать информацию о деятельности фонда на указанный адрес эл. почты</small>
 											</label>
-											<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text">Осуществляя пожертвование я принимаю условия <a href="#">договора-оферты</a></small>
+											<label class="custom-input"><input class="custom-input__input" type="checkbox" name="checkbox" checked="checked"/><span class="custom-input__lab"></span><small class="custom-input__text">
+												Осуществляя пожертвование я принимаю условия
+												<a class="agreement-019" href="#">договора-оферты</a></small>
 											</label>
 											<div class="text-center pt-2">
 												<button class="form-wrap__btn btn-success" type="submit">ПОЖЕРТВОВАТЬ
@@ -662,7 +666,6 @@
 									<div class="donate-form__elder-scroll-top"><img class="lazy" src="#" data-src="img/@2x/elder-scroll-top.png" alt=""/>
 									</div>
 									<div class="donate-form__elder-scroll-body">
-										<!--img.lazy(src="#" data-src="img/@2x/elder-scroll-body.png" alt="")-->
 									</div>
 									<div class="donate-form__elder-scroll-bot"><img class="lazy" src="#" data-src="img/@2x/elder-scroll-bot.png" alt=""/>
 									</div>
@@ -672,20 +675,40 @@
 					</div>
 				</div>
 				<div class="bottom-red-strip">
-					<div class="bottom-red-strip__donate-items"><a class="bottom-red-strip__item" href="#"><span class="bottom-red-strip__icon-cont">
-						<svg class="icon icon-red-strip-lightning ">
-							<use xlink:href="img/svg/sprite.svg#red-strip-lightning"></use>
-						</svg></span><span class="bottom-red-strip__item-txt">Быстрое пожертвование</span></a><a class="bottom-red-strip__item" href="#"><span class="bottom-red-strip__icon-cont">
-						<svg class="icon icon-red-strip-portrait ">
-							<use xlink:href="img/svg/sprite.svg#red-strip-portrait"></use>
-						</svg></span><span class="bottom-red-strip__item-txt">Именное пожертвование</span></a><a class="bottom-red-strip__item" href="#"><span class="bottom-red-strip__icon-cont">
-						<svg class="icon icon-red-strip-family ">
-							<use xlink:href="img/svg/sprite.svg#red-strip-family"></use>
-						</svg></span><span class="bottom-red-strip__item-txt">Семейное пожертвование</span></a>
-					</div><a class="bottom-red-strip__share-btn">
-					<svg class="icon icon-share ">
-						<use xlink:href="img/svg/sprite.svg#share"></use>
-					</svg></a>
+					<svg class="icon icon-donate-hand ">
+						<use xlink:href="img/svg/sprite.svg#donate-hand"></use>
+					</svg>
+					<div class="bottom-red-strip__donate-report d-none d-xl-flex">
+						<svg class="icon icon-donate-hand ">
+							<use xlink:href="img/svg/sprite.svg#donate-hand"></use>
+						</svg><span>Пётр + 300 ₽</span>
+					</div>
+					<div class="bottom-red-strip__donate-items">
+						<div class="swiper-container donates-items-slider-js">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide"><a class="bottom-red-strip__item" href="#"><span class="bottom-red-strip__icon-cont">
+									<svg class="icon icon-red-strip-lightning ">
+										<use xlink:href="img/svg/sprite.svg#red-strip-lightning"></use>
+									</svg></span><span class="bottom-red-strip__item-txt">Быстрое пожертвование</span></a>
+								</div>
+								<div class="swiper-slide"><a class="bottom-red-strip__item" href="#"><span class="bottom-red-strip__icon-cont">
+									<svg class="icon icon-red-strip-portrait ">
+										<use xlink:href="img/svg/sprite.svg#red-strip-portrait"></use>
+									</svg></span><span class="bottom-red-strip__item-txt">Именное пожертвование</span></a>
+								</div>
+								<div class="swiper-slide"><a class="bottom-red-strip__item" href="#"><span class="bottom-red-strip__icon-cont">
+									<svg class="icon icon-red-strip-family ">
+										<use xlink:href="img/svg/sprite.svg#red-strip-family"></use>
+									</svg></span><span class="bottom-red-strip__item-txt">Семейное пожертвование</span></a>
+								</div>
+								<div class="swiper-slide"><a class="bottom-red-strip__share-btn">
+									<svg class="icon icon-share ">
+										<use xlink:href="img/svg/sprite.svg#share"></use>
+									</svg></a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			<!-- end sMainPage-->

@@ -5,7 +5,7 @@ mixin sReportPreheader()
 			img(src="img/@2x/project-main-2.jpg" alt="")
 		+e.content
 			+e.header-headline-block
-				+e.A.realised-proj(href="#") Основной реализованный проект фонда
+				+e.realised-proj Основной реализованный проект фонда
 				h1
 					| ХРам покрова Пресвятой богородицы
 					i в Ясеневе
@@ -15,19 +15,18 @@ mixin sReportPreheader()
 			+e.footer-slider
 				.swiper-container.preheader024-slider-js
 					.swiper-wrapper
-						+Preheader024FooterSlide(1 , 'О храме')
-						+Preheader024FooterSlide(2 , 'Византийская мозаика')
-						+Preheader024FooterSlide(3 , 'Икона Святой Земли')
-						+Preheader024FooterSlide(4 , 'Виртуальный тур')
-				+e.A.learn-more-btn.d-flex.d-lg-none(href="#") ПОДРОБНЕЕ
+						+Preheader024FooterSlide(1 , 'О храме', "#video")
+						+Preheader024FooterSlide(2 , 'Византийская мозаика', "#temple-project")
+						+Preheader024FooterSlide(3 , 'Икона Святой Земли', "#mosaic")
+						+Preheader024FooterSlide(4 , 'Виртуальный тур', "#icon")
+				+e.A.learn-more-btn(href="#") ПОДРОБНЕЕ
 	// end sReportPreheader
 
-mixin Preheader024FooterSlide(imgNum=1, SlideTxt='SlideTxt')
+mixin Preheader024FooterSlide(imgNum=1, SlideTxt='SlideTxt', itemHref)
 	.swiper-slide
-		+e.A.slide-link(href="#")
+		+e.A.slide-link(href=`${itemHref}`)
 			+e.slide-img
 				img(src=`img/@2x/024-preheader-slider-${imgNum}.jpg` alt="")
-				//-.swiper-lazy(src="#" data-
 			+e.slide-txt=SlideTxt
 
 	//

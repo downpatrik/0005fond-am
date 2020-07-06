@@ -3,7 +3,19 @@
 	.sidebar{
 		position: absolute;	
 		left: 15px;
-		top: -10px;
+		top: 0px;
+
+		&.blured-background{
+			.sidebar__nav{
+				background-color: rgba($body-bg, .7);
+				padding: rem(20px);
+				border-radius: 8px;
+				max-width: rem(200);
+				width: rem(180) !important;
+				margin-left: -20px;
+			}
+		}
+
 			@include media-breakpoint-up(lg) {
 				display: block;
 			}

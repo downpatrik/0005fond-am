@@ -205,7 +205,19 @@
 				}
 			}
 		}
-
+		&:not(.center-slide){
+			.slide-content:after{
+				content: '';
+				position: absolute;
+				cursor: pointer;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				//background-color: red;
+				//border: 1px solid;
+			}
+		}
 	}
 	//
 	.slide-content{
@@ -245,6 +257,7 @@
 		position: relative;
 		padding-top: 61.26%;
 
+
 		margin-bottom: rem(26px);
 	}
 	.video-img-block{
@@ -280,6 +293,9 @@
 		}
 	}
 	.play-cont{
+		border-radius: 8px;
+		//overflow: hidden;
+
 		position: absolute;
 		width: 100%;
 		height: 100%;

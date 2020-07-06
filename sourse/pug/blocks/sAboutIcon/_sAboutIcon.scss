@@ -162,8 +162,9 @@
 	}
 
 	&__main-found-btn{
-		@extend .btn;
-		@extend .btn-accent;
+		//@extend .btn;
+		//@extend .btn-accent;
+		background-color: $accent;
 
 		@include media-breakpoint-down(sm){
 			padding: 2px 5px;
@@ -173,11 +174,13 @@
 		margin-bottom: rem(0);
 		font-size: 8px;
 		height: rem(16px);
+		border-radius: rem(8);
 		@include media-breakpoint-up(sm){
 			min-width: 250px;
 			margin-bottom: rem(15px);
 			font-size: rem(13px);
 			height: rem(30);
+			border-radius: rem(15);
 		}
 
 		display: inline-flex;

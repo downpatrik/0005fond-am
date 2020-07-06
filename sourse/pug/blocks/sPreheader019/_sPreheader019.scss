@@ -97,8 +97,10 @@
 		}
 	}
 	&__realised-proj{
-		@extend .btn;
-		@extend .btn-accent;
+		//@extend .btn;
+		//@extend .btn-accent;
+		background-color: $accent;
+
 
 		display: inline-flex;
 		vertical-align: top;
@@ -116,11 +118,13 @@
 		font-size: 8px;
 		margin-bottom: 5px;
 		height: 10px;
+		border-radius: 5px;
 		@include media-breakpoint-up(sm){
 			line-height: 120%;
 			font-size: rem(13px);
 			margin-bottom: 18px;
 			height: rem(30px);
+			border-radius: rem(15);
 			padding: 7px 15px;
 		}
 		@include media-breakpoint-up(lg){

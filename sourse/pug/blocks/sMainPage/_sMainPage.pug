@@ -4,8 +4,8 @@ mixin sMainPage()
 		.container
 			block
 		.container(data-sticky-container)
-			+b.sidebar
-				+e.UL.nav.sticky-js(data-margin-top="120")
+			+b.sidebar.blured-background
+				+e.UL.nav.sticky-js(data-margin-top="140")
 					li: a(href="#video") Видео презентация
 					li: a(href="#about-icon") Об иконе
 					li: a(href="#donate-target") Цель сбора
@@ -105,10 +105,10 @@ mixin sMainPage()
 								+form-wrap()
 									.donates-inputs-box-js
 										.donate-input-name-box
-											input(type="text" name='donate-inp-name-1' value="Николай" placeholder="Введите Им\'я")
+											input(type="text" name='donate-inp-name-1' value="" placeholder="Введите Им\'я")
 											.cross-btn
 										.donate-input-name-box
-											input(type="text" name='donate-inp-name-2' value="Николай" placeholder="Введите Им\'я")
+											input(type="text" name='donate-inp-name-2' value="" placeholder="Введите Им\'я")
 											.cross-btn
 									.add-name-btn-cont.add-name-btn-js
 										.plus-btn-cont
@@ -119,7 +119,7 @@ mixin sMainPage()
 								+form-wrap()
 									.donates-inputs-box-js
 										.donate-input-name-box
-											input(type="text" name='donate-inp-name-1' value="Николай" placeholder="Введите Им\'я")
+											input(type="text" name='donate-inp-name-1' value="" placeholder="Введите Им\'я")
 											.cross-btn
 									.add-name-btn-cont.add-name-btn-js
 										.plus-btn-cont
@@ -138,16 +138,18 @@ mixin sMainPage()
 									+input('Адрес доставки')
 									+in-c('mb-1')(checked  )
 										+e.SMALL.text Я хочу получать информацию о деятельности фонда на указанный адрес эл. почты
-
 									+in-c()(checked)
-										+e.SMALL.text Осуществляя пожертвование я принимаю условия #[a(href="#") договора-оферты]
+										+e.SMALL.text
+											| Осуществляя пожертвование я принимаю условия
+											|
+											a.agreement-019(href="#") договора-оферты
 									.text-center.pt-2
 										+e.BUTTON.btn.btn-success(type="submit") ПОЖЕРТВОВАТЬ
 						+e.bg-block.d-none.d-md-flex
 							+e.elder-scroll-top
 								img.lazy(src="#" data-src="img/@2x/elder-scroll-top.png" alt="")
 							+e.elder-scroll-body
-								//img.lazy(src="#" data-src="img/@2x/elder-scroll-body.png" alt="")
+								//-img.lazy(src="#" data-src="img/@2x/elder-scroll-body.png" alt="")
 								//-img.lazy(src="#" data-src="img/@2x/elder-scroll-body2.png" alt="")
 							+e.elder-scroll-bot
 								img.lazy(src="#" data-src="img/@2x/elder-scroll-bot.png" alt="")
