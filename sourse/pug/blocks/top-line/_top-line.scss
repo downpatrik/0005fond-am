@@ -185,11 +185,8 @@
     }
     & > ul > li > a{
       line-height: (24 / 16);
-      @include media-breakpoint-up(lg) {
-
-
-        letter-spacing: 0.1em;
-      }
+      letter-spacing: 0.1em;
+      
       text-transform: uppercase;
       color: #505769;
       text-decoration: none !important;

@@ -13,6 +13,7 @@ mixin sDonateTargetPreheader()
 						+icon('mark')
 						span Брянская обл., с. Мужиново
 			+b.donate-target-slider
+				+e.we-need-txt.text-center='Требуется набор колоколов'
 				.swiper-container.donate-target-slider-js
 					.swiper-wrapper
 						+donationTarSlide(1,'')
@@ -20,6 +21,8 @@ mixin sDonateTargetPreheader()
 						+donationTarSlide(1,3)
 						+donationTarSlide(1,4)
 						+donationTarSlide(1,5)
+				+e.progress-bar-cont
+					+progressBar()
 			.text-center
 				+e.A.donate-btn(href="#") ПОЖЕРТВОВАТЬ
 	// end sDonateTargetPreheader
@@ -27,13 +30,11 @@ mixin sDonateTargetPreheader()
 mixin donationTarSlide(imgNum='1', slideNum=1)
 	.swiper-slide
 		.slide-content
-			.we-need-txt.text-center='Требуется набор колоколов' + slideNum
 			.video-link
 				.video-img-block
 					img.swiper-lazy(src="#" data-src=`img/@2x/donation-tar-sl-img-${imgNum}.jpg` alt="")
 				a.play-cont(href="https://www.youtube.com/watch?v=en6gms6e54Q&list=PLIU76b8Cjem5B3sufBJ_KFTpKkMEvaTQR" data-fancybox="video")
 					.play-btn
-			+progressBar()
 
 
 mixin progressBar(gotMoney='399 860 ₽',needMoney='500 860 ₽')

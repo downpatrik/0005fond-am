@@ -696,9 +696,9 @@ function eventHandler() {
 		//initialSlide: 2,
 		loop: true,
 		//auto
-		//autoplay: {
-		//	delay: 4000,
-		//},
+		autoplay: {
+			delay: 4000
+		},
 		//lazy
 		lazy: {
 			loadPrevNext: true,
